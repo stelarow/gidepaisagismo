@@ -1,0 +1,53 @@
+# GIDI Paisagismo - Robots.txt
+
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Disallow admin areas (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Disallow API endpoints (if any)
+Disallow: /api/
+
+# Allow access to CSS and JS for rendering
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Crawl-delay (optional, adjust if needed)
+# Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://gidipaisagismo.com.br/sitemap.xml
+
+# Specific bot rules (optional)
+
+# Google Bot
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing Bot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+# Facebook Bot (for Open Graph)
+User-agent: Facebot
+Allow: /
+
+# Twitter Bot (for Twitter Cards)
+User-agent: Twitterbot
+Allow: /
+
+# Block bad bots (optional - uncomment if needed)
+# User-agent: AhrefsBot
+# Disallow: /
+
+# User-agent: SemrushBot
+# Disallow: /
+
+# User-agent: DotBot
+# Disallow: /

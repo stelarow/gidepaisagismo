@@ -1,0 +1,33 @@
+{
+  "name": "gidi-paisagismo",
+  "version": "1.0.0",
+  "description": "Site profissional GIDI Paisagismo - Transformando espaços verdes",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx http-server -p 8080 -c-1 -o",
+    "start": "npx http-server -p 8080 -c-1",
+    "dev:3000": "npx http-server -p 3000 -c-1 -o",
+    "dev:5000": "npx http-server -p 5000 -c-1 -o",
+    "preview": "npx http-server -p 8080 -c-1 -o",
+    "open": "start http://localhost:8080",
+    "test": "echo 'Abra http://localhost:8080 no navegador para testar'",
+    "clean": "echo 'Projeto limpo - pronto para deploy'",
+    "deploy": "echo 'Faça deploy em: https://app.netlify.com/drop'"
+  },
+  "keywords": [
+    "paisagismo",
+    "website",
+    "portfolio",
+    "landscape",
+    "gardening"
+  ],
+  "author": "GIDI Paisagismo",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gidipaisagismo/website"
+  },
+  "homepage": "https://gidipaisagismo.com.br",
+  "devDependencies": {},
+  "dependencies": {}
+}

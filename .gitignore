@@ -1,0 +1,97 @@
+# GIDI Paisagismo - Git Ignore
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencies (if using npm/yarn later)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# Build Output (if using build tools)
+dist/
+build/
+*.min.js
+*.min.css
+
+# Temporary Files
+*.tmp
+*.temp
+.cache/
+
+# Backup Files
+*.bak
+*.backup
+*_backup
+*_old
+
+# Client Images (uncomment if you don't want to commit client images)
+# images/portfolio/*
+# images/instagram/*
+# images/cliente-*.jpg
+# images/logo.png
+# images/hero-bg.jpg
+# images/about.jpg
+
+# Test Files
+test/
+tests/
+*.test.js
+
+# Documentation (if generated)
+docs/
+
+# Deploy Files
+.htaccess
+.htpasswd
+
+# Analytics & Tracking IDs (security)
+google-analytics.js
+facebook-pixel.js
+
+# API Keys and Secrets
+config.js
+secrets.json
+credentials.json
+
+# WordPress (if migrating to WordPress later)
+wp-config.php
+wp-content/uploads/
+
+# Compressed Files
+*.zip
+*.tar.gz
+*.rar
+
+# Large Media Files
+*.mp4
+*.mov
+*.avi
+*.mkv
+
+# Sass/SCSS (if using preprocessors)
+.sass-cache/
+*.css.map
+*.scss.map

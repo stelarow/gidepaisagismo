@@ -1,0 +1,627 @@
+/* ===================================
+   GIDI Paisagismo - Responsive Design
+   =================================== */
+
+/* Tablet (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+    :root {
+        --fs-h1: 3rem;
+        --fs-h2: 2rem;
+        --fs-h3: 1.5rem;
+        --spacing-lg: 3rem;
+        --spacing-xl: 4rem;
+    }
+
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+
+    /* Serviços Grid */
+    .servicos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Portfolio Grid */
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Instagram Grid */
+    .instagram-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Calculadora */
+    .calculadora-wrapper {
+        gap: var(--spacing-md);
+    }
+
+    .valor-range {
+        font-size: 2rem;
+    }
+}
+
+/* Mobile (< 768px) */
+@media screen and (max-width: 768px) {
+    :root {
+        --fs-h1: 2.5rem;
+        --fs-h2: 1.75rem;
+        --fs-h3: 1.25rem;
+        --fs-body: 0.95rem;
+        --spacing-md: 1.5rem;
+        --spacing-lg: 2.5rem;
+        --spacing-xl: 3rem;
+    }
+
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    /* Navigation */
+    .mobile-menu-toggle {
+        display: flex;
+        z-index: 1001;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: var(--bg-white);
+        padding: var(--spacing-md);
+        gap: var(--spacing-sm);
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-150%);
+        transition: transform var(--transition-normal);
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+    }
+
+    .nav-menu.active {
+        transform: translateY(0);
+    }
+
+    .nav-link {
+        padding: var(--spacing-sm);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        width: 100%;
+    }
+
+    .btn-nav-contact {
+        width: 100%;
+        text-align: center;
+        border-bottom: none;
+    }
+
+    /* Hero */
+    .hero {
+        height: 80vh;
+        background-attachment: scroll;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
+
+    .scroll-indicator {
+        bottom: 2rem;
+        font-size: 1.5rem;
+    }
+
+    /* Sobre */
+    .sobre-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .sobre-content {
+        padding-right: 0;
+    }
+
+    .sobre-stats {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
+    /* Serviços */
+    .servicos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        padding: var(--spacing-md);
+    }
+
+    /* Portfolio */
+    .portfolio-filters {
+        gap: var(--spacing-xs);
+    }
+
+    .filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    /* Depoimentos */
+    .depoimentos-carousel {
+        padding: var(--spacing-sm);
+    }
+
+    .depoimento-card {
+        padding: var(--spacing-md);
+    }
+
+    .depoimento-text {
+        font-size: 1rem;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: none;
+    }
+
+    /* Calculadora */
+    .calculadora-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .calculadora-form {
+        padding: var(--spacing-md);
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .valor-range {
+        font-size: 1.75rem;
+    }
+
+    .resultado-card {
+        padding: var(--spacing-md);
+    }
+
+    /* Instagram */
+    .instagram-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+    }
+
+    /* Contato */
+    .contato-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .contato-info {
+        padding: var(--spacing-md);
+    }
+
+    .info-item {
+        margin-bottom: var(--spacing-md);
+    }
+
+    .contato-form-wrapper {
+        padding: var(--spacing-md);
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer */
+    .footer {
+        padding: var(--spacing-lg) 0 var(--spacing-md);
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .footer-col {
+        text-align: center;
+    }
+
+    .footer-social,
+    .social-links {
+        justify-content: center;
+    }
+
+    .footer-links,
+    .footer-contact {
+        text-align: center;
+    }
+
+    .footer-contact li {
+        justify-content: center;
+    }
+
+    /* Floating Buttons */
+    .scroll-top-btn,
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+
+    .whatsapp-float {
+        bottom: 1.5rem;
+        left: 1.5rem;
+    }
+
+    .scroll-top-btn {
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+
+    /* Section Padding */
+    section {
+        padding: var(--spacing-lg) 0 !important;
+    }
+
+    .section-header {
+        margin-bottom: var(--spacing-md);
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    /* Buttons */
+    .btn-primary {
+        padding: 0.875rem 2rem;
+        font-size: 0.95rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .btn-instagram {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Small Mobile (< 480px) */
+@media screen and (max-width: 480px) {
+    :root {
+        --fs-h1: 2rem;
+        --fs-h2: 1.5rem;
+        --fs-h3: 1.125rem;
+        --fs-body: 0.9rem;
+        --spacing-sm: 0.75rem;
+        --spacing-md: 1rem;
+        --spacing-lg: 2rem;
+        --spacing-xl: 2.5rem;
+    }
+
+    /* Logo */
+    .logo img {
+        height: 50px;
+    }
+
+    /* Hero */
+    .hero-title {
+        font-size: 1.75rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero .btn-primary {
+        padding: 0.75rem 1.5rem;
+    }
+
+    /* Stats */
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+    }
+
+    /* Service Cards */
+    .service-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
+    .service-title {
+        font-size: 1.125rem;
+    }
+
+    /* Instagram Grid */
+    .instagram-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Depoimentos */
+    .depoimento-author img {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Calculadora */
+    .valor-range {
+        font-size: 1.5rem;
+    }
+
+    /* Info Items */
+    .info-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    /* Social Links */
+    .social-links a {
+        width: 40px;
+        height: 40px;
+        font-size: 1.125rem;
+    }
+
+    /* Footer */
+    .footer-col h3 {
+        font-size: 1.125rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.85rem;
+    }
+
+    /* Floating Buttons */
+    .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        font-size: 1.75rem;
+        bottom: 1rem;
+        left: 1rem;
+    }
+
+    .scroll-top-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.125rem;
+        bottom: 1rem;
+        right: 1rem;
+    }
+}
+
+/* Landscape Mobile */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        height: 100vh;
+        min-height: 500px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    /* Increase touch targets */
+    .nav-link,
+    .btn-primary,
+    .filter-btn,
+    .social-links a {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Remove hover effects */
+    .service-card:hover,
+    .portfolio-item:hover,
+    .instagram-item:hover {
+        transform: none;
+    }
+
+    /* Disable parallax on touch devices */
+    .hero,
+    .parallax {
+        background-attachment: scroll;
+    }
+}
+
+/* Print Styles */
+@media print {
+    /* Hide non-essential elements */
+    .navbar,
+    .scroll-indicator,
+    .scroll-top-btn,
+    .whatsapp-float,
+    .mobile-menu-toggle,
+    .portfolio-filters,
+    .swiper-button-prev,
+    .swiper-button-next,
+    .swiper-pagination {
+        display: none !important;
+    }
+
+    /* Adjust colors for print */
+    body {
+        color: #000;
+        background: #fff;
+    }
+
+    /* Show links */
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    /* Page breaks */
+    section {
+        page-break-inside: avoid;
+    }
+
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Optimize images for retina displays */
+    .logo img,
+    .service-icon,
+    .portfolio-item img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .parallax {
+        background-attachment: scroll;
+    }
+}
+
+/* Dark Mode Support (Optional) */
+@media (prefers-color-scheme: dark) {
+    /* Uncomment to enable dark mode */
+    /*
+    :root {
+        --color-white: #1a1a1a;
+        --color-dark: #f5f5f5;
+        --bg-white: #1a1a1a;
+        --bg-light: #2a2a2a;
+        --bg-dark: #f5f5f5;
+    }
+
+    .navbar {
+        background: var(--bg-dark);
+    }
+
+    .service-card,
+    .depoimento-card,
+    .calculadora-form,
+    .contato-info,
+    .contato-form-wrapper {
+        background: var(--bg-light);
+    }
+    */
+}
+
+/* Container Queries (Future-proofing) */
+@container (max-width: 768px) {
+    .servicos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Specific Device Targeting */
+
+/* iPhone SE and similar small devices */
+@media screen and (max-width: 375px) {
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .btn-primary {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* iPad and similar tablets */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .hero {
+        height: 90vh;
+    }
+
+    .sobre-grid {
+        gap: var(--spacing-xl);
+    }
+
+    .contato-wrapper {
+        gap: var(--spacing-xl);
+    }
+}
+
+/* Large Desktops */
+@media screen and (min-width: 1400px) {
+    :root {
+        --container-width: 1320px;
+        --fs-h1: 4rem;
+        --fs-h2: 3rem;
+    }
+
+    .servicos-grid {
+        gap: var(--spacing-xl);
+    }
+
+    .portfolio-grid {
+        gap: var(--spacing-xl);
+    }
+
+    .instagram-grid {
+        gap: var(--spacing-xl);
+    }
+}
+
+/* Ultra-wide Displays */
+@media screen and (min-width: 1920px) {
+    :root {
+        --container-width: 1600px;
+    }
+
+    .hero-title {
+        font-size: 4.5rem;
+    }
+
+    .section-title {
+        font-size: 3.5rem;
+    }
+}

@@ -1,0 +1,244 @@
+═══════════════════════════════════════════════════════════════════
+  LISTA DE IMAGENS NECESSÁRIAS - GIDI PAISAGISMO
+═══════════════════════════════════════════════════════════════════
+
+📋 CLIENTE DEVE FORNECER AS SEGUINTES IMAGENS:
+
+═══════════════════════════════════════════════════════════════════
+1. LOGO DA EMPRESA
+═══════════════════════════════════════════════════════════════════
+   Arquivo: logo.png
+   Local: /images/logo.png
+   Tamanho: 150 x 60 pixels (ou proporção similar)
+   Formato: PNG com fundo transparente
+   Uso: Navbar, footer
+   Qualidade: Alta (para Retina)
+
+═══════════════════════════════════════════════════════════════════
+2. HERO SECTION (Banner Principal)
+═══════════════════════════════════════════════════════════════════
+   Arquivo: hero-bg.jpg
+   Local: /images/hero-bg.jpg
+   Tamanho mínimo: 1920 x 1080 pixels
+   Formato: JPG ou WebP
+   Uso: Background da seção principal
+   Dica: Imagem impactante de jardim/paisagem
+   Exemplos:
+   - Vista panorâmica de jardim bem cuidado
+   - Projeto de destaque da empresa
+   - Paisagem natural exuberante
+
+═══════════════════════════════════════════════════════════════════
+3. SOBRE A EMPRESA
+═══════════════════════════════════════════════════════════════════
+   Arquivo: about.jpg
+   Local: /images/about.jpg
+   Tamanho: 800 x 600 pixels (mínimo)
+   Formato: JPG
+   Uso: Seção "Sobre"
+   Dica: Foto da equipe, escritório, ou projeto em andamento
+
+═══════════════════════════════════════════════════════════════════
+4. PORTFÓLIO (MÍNIMO 6 PROJETOS)
+═══════════════════════════════════════════════════════════════════
+   Arquivos: projeto-1.jpg até projeto-6.jpg (ou mais)
+   Local: /images/portfolio/
+   Tamanho: 800 x 800 pixels (quadrado preferencial)
+   Formato: JPG
+   Uso: Galeria de projetos
+
+   Para cada projeto, informar:
+   - Nome do projeto
+   - Descrição breve (1-2 linhas)
+   - Categoria:
+     * residencial (jardins de casas/apartamentos)
+     * comercial (empresas, condomínios)
+     * vertical (jardins verticais)
+     * telhado (telhados verdes)
+
+   Sugestões de projetos:
+   ✓ Pelo menos 2 residenciais
+   ✓ Pelo menos 1 comercial
+   ✓ 1 jardim vertical (se tiver)
+   ✓ 1 telhado verde (se tiver)
+   ✓ Projetos mais recentes e impactantes
+
+═══════════════════════════════════════════════════════════════════
+5. INSTAGRAM FEED (8 POSTS)
+═══════════════════════════════════════════════════════════════════
+   Arquivos: post-1.jpg até post-8.jpg
+   Local: /images/instagram/
+   Tamanho: 600 x 600 pixels (quadrado)
+   Formato: JPG
+   Uso: Seção "Siga Nossos Projetos"
+   Dica: Use posts recentes do Instagram da empresa
+
+   Crie uma pasta "instagram" dentro de /images/
+   Nomeie as imagens sequencialmente
+
+═══════════════════════════════════════════════════════════════════
+6. DEPOIMENTOS - FOTOS CLIENTES (3 PESSOAS)
+═══════════════════════════════════════════════════════════════════
+   Arquivos: cliente-1.jpg, cliente-2.jpg, cliente-3.jpg
+   Local: /images/
+   Tamanho: 100 x 100 pixels (mínimo 200x200 para qualidade)
+   Formato: JPG
+   Uso: Carrossel de depoimentos
+   Dica: Fotos profissionais ou com boa qualidade
+   Nota: Serão exibidas em formato circular
+
+   Para cada cliente, fornecer também:
+   - Nome completo
+   - Projeto realizado (ex: "Residencial Premium")
+   - Depoimento (2-3 linhas)
+
+═══════════════════════════════════════════════════════════════════
+📝 INFORMAÇÕES ADICIONAIS PARA OS DEPOIMENTOS
+═══════════════════════════════════════════════════════════════════
+
+CLIENTE 1:
+Nome: _______________________________________________
+Projeto: ____________________________________________
+Depoimento: _________________________________________
+_____________________________________________________
+_____________________________________________________
+
+CLIENTE 2:
+Nome: _______________________________________________
+Projeto: ____________________________________________
+Depoimento: _________________________________________
+_____________________________________________________
+_____________________________________________________
+
+CLIENTE 3:
+Nome: _______________________________________________
+Projeto: ____________________________________________
+Depoimento: _________________________________________
+_____________________________________________________
+_____________________________________________________
+
+═══════════════════════════════════════════════════════════════════
+📝 INFORMAÇÕES ADICIONAIS PARA O PORTFÓLIO
+═══════════════════════════════════════════════════════════════════
+
+PROJETO 1:
+Arquivo: projeto-1.jpg
+Nome: _______________________________________________
+Descrição: __________________________________________
+Categoria: [ ] residencial [ ] comercial [ ] vertical [ ] telhado
+
+PROJETO 2:
+Arquivo: projeto-2.jpg
+Nome: _______________________________________________
+Descrição: __________________________________________
+Categoria: [ ] residencial [ ] comercial [ ] vertical [ ] telhado
+
+PROJETO 3:
+Arquivo: projeto-3.jpg
+Nome: _______________________________________________
+Descrição: __________________________________________
+Categoria: [ ] residencial [ ] comercial [ ] vertical [ ] telhado
+
+PROJETO 4:
+Arquivo: projeto-4.jpg
+Nome: _______________________________________________
+Descrição: __________________________________________
+Categoria: [ ] residencial [ ] comercial [ ] vertical [ ] telhado
+
+PROJETO 5:
+Arquivo: projeto-5.jpg
+Nome: _______________________________________________
+Descrição: __________________________________________
+Categoria: [ ] residencial [ ] comercial [ ] vertical [ ] telhado
+
+PROJETO 6:
+Arquivo: projeto-6.jpg
+Nome: _______________________________________________
+Descrição: __________________________________________
+Categoria: [ ] residencial [ ] comercial [ ] vertical [ ] telhado
+
+═══════════════════════════════════════════════════════════════════
+✅ DICAS IMPORTANTES
+═══════════════════════════════════════════════════════════════════
+
+1. QUALIDADE DAS IMAGENS:
+   - Use imagens de alta resolução
+   - Boa iluminação
+   - Cores vibrantes
+   - Evite imagens borradas ou pixeladas
+
+2. OTIMIZAÇÃO:
+   - Comprima as imagens antes de usar
+   - Use https://tinypng.com (gratuito)
+   - Mantenha qualidade, mas reduza tamanho do arquivo
+
+3. FORMATO DOS ARQUIVOS:
+   - JPG para fotos (menor tamanho)
+   - PNG para logo (mantém transparência)
+   - WebP se possível (melhor compressão)
+
+4. NOMES DOS ARQUIVOS:
+   - Use exatamente os nomes sugeridos
+   - Sem espaços ou caracteres especiais
+   - Tudo em minúsculas
+   - Use hífen (-) ao invés de underscore (_)
+
+5. DIREITOS DE IMAGEM:
+   - Certifique-se de ter permissão para usar
+   - Fotos de clientes: obter autorização
+   - Fotos de projetos: documentar permissões
+
+═══════════════════════════════════════════════════════════════════
+📁 ESTRUTURA DE PASTAS
+═══════════════════════════════════════════════════════════════════
+
+ProjetoGIDI/
+└── images/
+    ├── logo.png                    ← Logo da empresa
+    ├── hero-bg.jpg                 ← Banner principal
+    ├── about.jpg                   ← Foto sobre
+    ├── cliente-1.jpg               ← Depoimento 1
+    ├── cliente-2.jpg               ← Depoimento 2
+    ├── cliente-3.jpg               ← Depoimento 3
+    ├── portfolio/
+    │   ├── projeto-1.jpg           ← Portfólio
+    │   ├── projeto-2.jpg
+    │   ├── projeto-3.jpg
+    │   ├── projeto-4.jpg
+    │   ├── projeto-5.jpg
+    │   └── projeto-6.jpg
+    └── instagram/
+        ├── post-1.jpg              ← Instagram feed
+        ├── post-2.jpg
+        ├── post-3.jpg
+        ├── post-4.jpg
+        ├── post-5.jpg
+        ├── post-6.jpg
+        ├── post-7.jpg
+        └── post-8.jpg
+
+═══════════════════════════════════════════════════════════════════
+📊 RESUMO
+═══════════════════════════════════════════════════════════════════
+
+Total de imagens necessárias: 21
+
+✓ 1 Logo
+✓ 1 Hero background
+✓ 1 Sobre
+✓ 6 Portfólio (mínimo)
+✓ 3 Clientes (depoimentos)
+✓ 8 Instagram posts
+✓ Informações textuais (depoimentos, descrições)
+
+═══════════════════════════════════════════════════════════════════
+
+Depois de preparar todas as imagens:
+1. Organize nas pastas corretas
+2. Verifique os nomes dos arquivos
+3. Teste o site localmente
+4. Publique!
+
+Dúvidas? Consulte INSTRUCOES_CLIENTE.md
+
+═══════════════════════════════════════════════════════════════════

@@ -1,0 +1,150 @@
+/* ===================================
+   GIDI Paisagismo - Scroll Expansion Hero CSS
+   =================================== */
+
+/* Hero container com scroll expansion */
+.scroll-expansion-hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Background layer (fade out ao rolar) */
+.hero-bg-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    transition: opacity 0.1s linear;
+}
+
+.hero-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Media container (expande ao rolar) */
+.hero-media-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    border-radius: 1rem;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+    transition: width 0.05s linear, height 0.05s linear;
+    overflow: hidden;
+}
+
+.hero-media-video,
+.hero-media-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.hero-media-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
+    transition: opacity 0.2s linear;
+}
+
+/* Text container */
+.hero-text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+}
+
+.hero-title-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hero-title-wrapper.text-blend {
+    mix-blend-mode: difference;
+}
+
+.hero-title-first,
+.hero-title-rest {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: #e0f2fe;
+    transition: transform 0.05s linear;
+    margin: 0;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #e0f2fe;
+    margin-top: 1rem;
+    opacity: 0.9;
+}
+
+/* Scroll indicator */
+.hero-scroll-indicator {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: #e0f2fe;
+    text-align: center;
+    transition: opacity 0.2s linear, transform 0.2s linear;
+}
+
+.hero-scroll-indicator p {
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-scroll-indicator i {
+    font-size: 1.5rem;
+    animation: bounce 2s infinite;
+}
+
+/* Content section (aparece após expansão) */
+.hero-content-section {
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out;
+    pointer-events: none;
+    padding: 4rem 0;
+}
+
+.hero-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .hero-title-first,
+    .hero-title-rest {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+}

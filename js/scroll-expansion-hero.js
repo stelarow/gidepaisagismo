@@ -171,14 +171,16 @@ class ScrollExpansionHero {
             e.preventDefault();
             const sobre = document.getElementById('sobre');
             if (sobre) sobre.scrollIntoView({ behavior: 'smooth' });
-        } else if (!this.mediaFullyExpanded && e.deltaY > 0) {
-            // Primeiro scroll para baixo → expandir
+        } else if (!this.mediaFullyExpanded && e.deltaY > 0 && window.scrollY <= 5) {
+            // Primeiro scroll para baixo → expandir (só quando já no topo)
             e.preventDefault();
             this.targetProgress = 1;
             this.startAnimationLoop();
-        } else if (!this.mediaFullyExpanded) {
+        } else if (!this.mediaFullyExpanded && window.scrollY <= 5) {
+            // Bloquear scroll acima do topo apenas quando já no topo
             e.preventDefault();
         }
+        // Se scrollY > 5 e hero não expandido, permite scroll livre (usuário voltando ao topo)
     }
 
     handleTouchStart(e) {
@@ -205,13 +207,14 @@ class ScrollExpansionHero {
             e.preventDefault();
             const sobre = document.getElementById('sobre');
             if (sobre) sobre.scrollIntoView({ behavior: 'smooth' });
-        } else if (!this.mediaFullyExpanded && deltaY > 10) {
-            // Primeiro swipe para baixo → expandir
+        } else if (!this.mediaFullyExpanded && deltaY > 10 && window.scrollY <= 5) {
+            // Primeiro swipe para baixo → expandir (só quando já no topo)
             e.preventDefault();
             this.targetProgress = 1;
             this.startAnimationLoop();
             this.touchStartY = touchY;
-        } else if (!this.mediaFullyExpanded) {
+        } else if (!this.mediaFullyExpanded && window.scrollY <= 5) {
+            // Bloquear scroll acima do topo apenas quando já no topo
             e.preventDefault();
         }
     }
@@ -229,7 +232,7 @@ class ScrollExpansionHero {
     }
 
     handleScroll() {
-        if (!this.mediaFullyExpanded && !this.navigationOverride && this.heroVisible) {
+        if (!this.mediaFullyExpanded && !this.navigationOverride && this.heroVisible && window.scrollY <= 5) {
             window.scrollTo(0, 0);
         }
     }
@@ -247,7 +250,7 @@ class ScrollExpansionHero {
             this.heroVisible = entry.isIntersecting;
 
             // Ao retornar ao hero não expandido, garantir posição 0
-            if (this.heroVisible && !this.mediaFullyExpanded) {
+            if (this.heroVisible && !this.mediaFullyExpanded && window.scrollY <= 5) {
                 window.scrollTo(0, 0);
             }
         }, { threshold: 0.1 });

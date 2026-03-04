@@ -197,7 +197,7 @@ function initializePortfolio() {
     if (typeof GLightbox !== 'undefined') {
         const lightbox = GLightbox({
             touchNavigation: true,
-            loop: true,
+            loop: false,
             autoplayVideos: true
         });
     }
@@ -206,17 +206,17 @@ function initializePortfolio() {
 /* ===================================
    Counter Animation
    =================================== */
-function animateCounter(element, target, duration = 3000) {
+function animateCounter(element, target, duration = 1200) {
     const startTime = performance.now();
 
-    function easeOutQuad(t) {
-        return 1 - (1 - t) * (1 - t);
+    function easeOutExpo(t) {
+        return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
     }
 
     function update(currentTime) {
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / duration, 1);
-        element.textContent = Math.round(easeOutQuad(progress) * target);
+        element.textContent = Math.round(easeOutExpo(progress) * target);
         if (progress < 1) {
             requestAnimationFrame(update);
         }
@@ -245,7 +245,7 @@ window.addEventListener('scroll', function() {
                 const target = parseInt(stat.getAttribute('data-count'));
                 animateCounter(stat, target);
             });
-        }, 1200);
+        }, 400);
     }
 });
 

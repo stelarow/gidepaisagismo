@@ -100,8 +100,8 @@
 .hero-scroll-indicator {
     position: absolute;
     bottom: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    right: 0;
     z-index: 2;
     color: #e0f2fe;
     text-align: center;

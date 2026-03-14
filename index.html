@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <script>history.scrollRestoration = 'manual'; window.scrollTo(0, 0);</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="GIDI Paisagismo - Projetos de paisagismo que transformam seus espaços verdes e conectam você com a natureza. Jardins, manutenção, irrigação e consultoria ambiental.">
     <meta name="keywords" content="paisagismo, jardins, manutenção paisagística, irrigação, telhado verde, jardim vertical">
@@ -36,6 +37,9 @@
 
     <!-- GLightbox CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+
+    <!-- Font Awesome 6.5.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -77,7 +81,8 @@
 </head>
 <body>
     <!-- Skip to content for accessibility -->
-    <a href="#main-content" class="skip-to-content">Ir para o conteúdo principal</a>
+    <a href="#main-content" class="skip-to-content" data-i18n="skip_content">Ir para o conteúdo principal</a>
+
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar" role="navigation" aria-label="Menu principal">
@@ -87,22 +92,50 @@
                     <img src="images/Whisk_a4c79c927cf0f9f856e49038fd4f30f6dr.png" alt="GIDI Paisagismo Logo">
                 </div>
 
-                <button class="mobile-menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <button class="mobile-menu-toggle" aria-label="Abrir menu" aria-expanded="false" data-i18n-aria="nav.mobile_open">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
 
                 <ul class="nav-menu">
-                    <li><a href="#hero" class="nav-link active">Início</a></li>
-                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
-                    <li><a href="#servicos" class="nav-link">Serviços</a></li>
-                    <li><a href="#portfolio" class="nav-link">Portfólio</a></li>
-                    <li><a href="#blog" class="nav-link">Blog</a></li>
-                    <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
-                    <li><a href="https://instagram.com/gidipaisagismo" class="nav-link btn-nav-contact btn-nav-instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram GIDI Paisagismo"><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-instagram"></use></svg></a></li>
-                    <li><a href="#contato" class="nav-link btn-nav-contact btn-nav-contato" aria-label="Contato"><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-envelope"></use></svg></a></li>
-                    <li><a href="https://wa.me/5511999999999" class="nav-link btn-nav-contact" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp"><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-whatsapp"></use></svg></a></li>
+                    <li><a href="#hero" class="nav-link active" data-i18n="nav.home">Início</a></li>
+                    <li><a href="#servicos" class="nav-link" data-i18n="nav.services">Serviços</a></li>
+                    <li><a href="#sobre" class="nav-link" data-i18n="nav.about">Sobre</a></li>
+<li><a href="https://wa.me/5511999999999" class="nav-link btn-nav-contact" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp" data-i18n-aria="nav.whatsapp_aria"><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-whatsapp"></use></svg></a></li>
+                    <li class="nav-lang-switcher">
+                      <button class="lang-globe-btn" aria-label="Selecionar idioma" aria-expanded="false" aria-haspopup="listbox">
+                        <svg class="lang-globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <circle cx="12" cy="12" r="10"/>
+                          <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                        <span class="lang-current-code">PT</span>
+                        <svg class="lang-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                      </button>
+
+                      <div class="lang-dropdown" role="listbox" aria-label="Idiomas disponíveis">
+                        <button class="lang-option" data-lang="pt-BR" role="option" aria-selected="true">
+                          <span class="lang-option-code">PT</span>
+                          <svg class="lang-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="20 6 9 17 4 12"/>
+                          </svg>
+                        </button>
+                        <button class="lang-option" data-lang="en-US" role="option" aria-selected="false">
+                          <span class="lang-option-code">EN</span>
+                          <svg class="lang-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="20 6 9 17 4 12"/>
+                          </svg>
+                        </button>
+                        <button class="lang-option" data-lang="es-ES" role="option" aria-selected="false">
+                          <span class="lang-option-code">ES</span>
+                          <svg class="lang-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="20 6 9 17 4 12"/>
+                          </svg>
+                        </button>
+                      </div>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -114,38 +147,148 @@
     </section>
 
     <main id="main-content">
+        <!-- Serviços -->
+        <section id="servicos" class="section-servicos">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow" data-aos="fade-up" data-aos-delay="0" data-i18n="services.eyebrow">O Que Fazemos</span>
+                    <h2 class="section-title" data-aos="fade-up" data-aos-delay="150" data-i18n="services.title">Nossos Serviços</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="300" data-i18n="services.subtitle">Soluções completas em paisagismo para seu espaço</p>
+                </div>
+            </div>
+
+            <div class="servicos-gucci-strip" data-aos="fade-up" data-aos-delay="400">
+
+                <a href="jardins.html" class="svc-panel">
+                    <div class="svc-panel__bg" style="background-image: url('images/Whisk_6248fa72bf28391ab9d40f060a2d8b7cdr.jpeg')"></div>
+                    <div class="svc-panel__overlay"></div>
+                    <div class="svc-panel__caption">
+                        <span class="svc-panel__label" data-i18n="service.garden.title">Projetos de Jardins</span>
+                    </div>
+                </a>
+
+                <a href="manutencao.html" class="svc-panel">
+                    <div class="svc-panel__bg" style="background-image: url('images/Whisk_b04e1b58984334db3214244b8823884cdr.jpeg')"></div>
+                    <div class="svc-panel__overlay"></div>
+                    <div class="svc-panel__caption">
+                        <span class="svc-panel__label" data-i18n="service.maintenance.title">Manutenção Paisagística</span>
+                    </div>
+                </a>
+
+                <a href="irrigacao.html" class="svc-panel">
+                    <div class="svc-panel__bg" style="background-image: url('images/Whisk_c09991102452d0789544fe81cddfd4e3dr.jpeg')"></div>
+                    <div class="svc-panel__overlay"></div>
+                    <div class="svc-panel__caption">
+                        <span class="svc-panel__label" data-i18n="service.irrigation.title">Irrigação Automatizada</span>
+                    </div>
+                </a>
+
+                <a href="jardins-verticais.html" class="svc-panel">
+                    <div class="svc-panel__bg" style="background-image: url('images/Whisk_ff16fe037a561c48f97410dd6414c2d7dr.jpeg')"></div>
+                    <div class="svc-panel__overlay"></div>
+                    <div class="svc-panel__caption">
+                        <span class="svc-panel__label" data-i18n="service.vertical.title">Jardins Verticais</span>
+                    </div>
+                </a>
+
+                <a href="telhados-verdes.html" class="svc-panel">
+                    <div class="svc-panel__bg" style="background-image: url('images/Whisk_7175f6df214ab45b2824ae9ba3962f9ddr.jpeg')"></div>
+                    <div class="svc-panel__overlay"></div>
+                    <div class="svc-panel__caption">
+                        <span class="svc-panel__label" data-i18n="service.green_roof.title">Telhados Verdes</span>
+                    </div>
+                </a>
+
+                <a href="consultoria.html" class="svc-panel">
+                    <div class="svc-panel__bg" style="background-image: url('images/Whisk_9e2d26daf57840a816b4a5b85cf41aa8dr.jpeg')"></div>
+                    <div class="svc-panel__overlay"></div>
+                    <div class="svc-panel__caption">
+                        <span class="svc-panel__label" data-i18n="service.consulting.title">Consultoria Ambiental</span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+
+        <!-- Como Trabalhamos -->
+        <section id="processo" class="section-processo">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow" data-aos="fade-up" data-aos-delay="0" data-i18n="process.eyebrow">Nosso Método</span>
+                    <h2 class="section-title" data-aos="fade-up" data-aos-delay="150" style="color:#b0cdbf" data-i18n="process.title">Como Trabalhamos</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="300" style="color:rgba(255,255,255,0.6)" data-i18n="process.subtitle">
+                        Da primeira conversa à entrega final, cada etapa é cuidadosamente planejada
+                    </p>
+                </div>
+                <div class="processo-grid" data-aos="fade-up" data-aos-delay="450">
+                    <div class="processo-step">
+                        <div class="processo-step-number">01</div>
+                        <div class="processo-step-icon">
+                            <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-seedling"></use></svg>
+                        </div>
+                        <div class="processo-step-title" data-i18n="process.step1.title">Consultoria</div>
+                        <p class="processo-step-text" data-i18n="process.step1.text">Conversamos sobre sua visão e necessidades do espaço</p>
+                    </div>
+                    <div class="processo-step">
+                        <div class="processo-step-number">02</div>
+                        <div class="processo-step-icon">
+                            <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-tree"></use></svg>
+                        </div>
+                        <div class="processo-step-title" data-i18n="process.step2.title">Projeto Detalhado</div>
+                        <p class="processo-step-text" data-i18n="process.step2.text">Criamos um projeto personalizado com especificações técnicas completas</p>
+                    </div>
+                    <div class="processo-step">
+                        <div class="processo-step-number">03</div>
+                        <div class="processo-step-icon">
+                            <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-grip-vertical"></use></svg>
+                        </div>
+                        <div class="processo-step-title" data-i18n="process.step3.title">Execução Precisa</div>
+                        <p class="processo-step-text" data-i18n="process.step3.text">Nossa equipe executa cada detalhe com materiais de primeira linha</p>
+                    </div>
+                    <div class="processo-step">
+                        <div class="processo-step-number">04</div>
+                        <div class="processo-step-icon">
+                            <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-home"></use></svg>
+                        </div>
+                        <div class="processo-step-title" data-i18n="process.step4.title">Entrega com Garantia</div>
+                        <p class="processo-step-text" data-i18n="process.step4.text">Entregamos o projeto com garantia de 12 meses em mão de obra</p>
+                    </div>
+                    <div class="processo-step">
+                        <div class="processo-step-number">05</div>
+                        <div class="processo-step-icon">
+                            <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-leaf"></use></svg>
+                        </div>
+                        <div class="processo-step-title" data-i18n="process.step5.title">Manutenção Contínua</div>
+                        <p class="processo-step-text" data-i18n="process.step5.text">Planos de manutenção para seu jardim prosperar por anos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Sobre a Empresa -->
         <section id="sobre" class="section-sobre">
             <div class="container">
                 <div class="sobre-grid">
                     <div class="sobre-content">
-                        <h2 class="section-title">Sobre a GIDI Paisagismo</h2>
-                        <p class="sobre-text">
-                            Com anos de experiência no mercado, a GIDI Paisagismo se dedica a criar espaços verdes únicos
-                            que transformam ambientes e melhoram a qualidade de vida das pessoas.
+                        <span class="section-eyebrow" data-aos="fade-up" data-aos-delay="0" data-i18n="about.eyebrow">Nossa História</span>
+                        <h2 class="section-title" data-aos="fade-up" data-aos-delay="150" data-i18n="about.title">Sobre a GIDI Paisagismo</h2>
+                        <p class="sobre-text" data-aos="fade-up" data-aos-delay="300" data-i18n="about.p1">
+                            Com 15 anos de experiência em paisagismo, a GIDI transforma espaços
+                            ordinários em ambientes extraordinários — jardins residenciais,
+                            coberturas verdes e interiores vivos que elevam a qualidade de vida.
                         </p>
-                        <p class="sobre-text">
-                            Nossa equipe de profissionais qualificados trabalha com paixão e comprometimento para
-                            entregar projetos que harmonizam beleza estética com sustentabilidade ambiental.
+                        <p class="sobre-text" data-aos="fade-up" data-aos-delay="420" data-i18n="about.p2">
+                            Cada projeto começa com escuta ativa: entendemos o espaço, o clima
+                            local e o estilo de vida do cliente antes de qualquer traçado. O
+                            resultado é um jardim que funciona, cresce e encanta ao longo do tempo.
                         </p>
-                        <!-- Foto equipe — visível apenas em mobile, antes das estatísticas -->
+                        <p class="sobre-credibility" data-aos="fade-up" data-aos-delay="600">Cada projeto tem acompanhamento do início ao fim</p>
+
+                        <!-- Foto equipe — visível apenas em mobile, antes dos botões -->
                         <div class="sobre-image-mobile">
                             <div class="sobre-image">
                                 <img src="plantasgidi.jpeg" alt="GIDI Paisagismo" loading="lazy">
-                            </div>
-                        </div>
-                        <div class="sobre-stats">
-                            <div class="stat-item">
-                                <span class="stat-number" data-count="500">0</span>
-                                <span class="stat-label">Projetos Realizados</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number" data-count="15">0</span>
-                                <span class="stat-label">Anos de Experiência</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number" data-count="98">0</span>
-                                <span class="stat-label">% Satisfação</span>
                             </div>
                         </div>
                     </div>
@@ -156,294 +299,43 @@
             </div>
         </section>
 
-        <!-- Serviços -->
-        <section id="servicos" class="section-servicos">
+        <!-- Sustentabilidade -->
+        <section id="sustentabilidade" class="section-sustentabilidade">
             <div class="container">
                 <div class="section-header" data-aos="fade-up">
-                    <h2 class="section-title">Nossos Serviços</h2>
-                    <p class="section-subtitle">Soluções completas em paisagismo para seu espaço</p>
+                    <span class="section-eyebrow" data-i18n="sustentabilidade.eyebrow">Compromisso Verde</span>
+                    <h2 class="section-title" data-i18n="sustentabilidade.title">Paisagismo com Propósito</h2>
+                    <p class="section-subtitle" data-i18n="sustentabilidade.subtitle">Cada projeto da GIDI é pensado para coexistir com o meio ambiente — usando recursos com eficiência, respeitando o bioma local e deixando o entorno mais vivo do que encontramos.</p>
                 </div>
-
-                <div class="servicos-grid">
-                    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="service-icon">
-                            <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-seedling"></use></svg>
+                <div class="sustentabilidade-grid">
+                    <div class="sustentabilidade-card" data-aos="fade-up" data-aos-delay="0">
+                        <div class="sustentabilidade-card__icon">
+                            <i class="fas fa-tree"></i>
                         </div>
-                        <h3 class="service-title">Projetos de Jardins</h3>
-                        <p class="service-description">
-                            Criação de jardins personalizados que refletem sua personalidade e harmonizam com o ambiente.
-                        </p>
-                        <a href="#contato" class="service-link">Saiba Mais <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-arrow-right"></use></svg></a>
+                        <h3 data-i18n="sustentabilidade.card1.title">Plantas Nativas</h3>
+                        <p data-i18n="sustentabilidade.card1.desc">Priorizamos espécies do bioma local em todos os projetos — menos consumo hídrico, suporte direto à fauna nativa e maior resiliência às variações climáticas da região.</p>
                     </div>
-
-                    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="service-icon">
-                            <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-leaf"></use></svg>
+                    <div class="sustentabilidade-card" data-aos="fade-up" data-aos-delay="150">
+                        <div class="sustentabilidade-card__icon">
+                            <i class="fas fa-layer-group"></i>
                         </div>
-                        <h3 class="service-title">Manutenção Paisagística</h3>
-                        <p class="service-description">
-                            Cuidados regulares para manter seu jardim sempre bonito, saudável e bem cuidado.
-                        </p>
-                        <a href="#contato" class="service-link">Saiba Mais <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-arrow-right"></use></svg></a>
+                        <h3 data-i18n="sustentabilidade.card2.title">Telhados e Paredes Verdes</h3>
+                        <p data-i18n="sustentabilidade.card2.desc">Coberturas vegetais reduzem até 3°C a temperatura interna, gerenciam águas pluviais com eficiência e ampliam a biodiversidade no ambiente urbano construído.</p>
                     </div>
-
-                    <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                        <div class="service-icon">
-                            <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-tint"></use></svg>
+                    <div class="sustentabilidade-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="sustentabilidade-card__icon">
+                            <i class="fas fa-faucet-drip"></i>
                         </div>
-                        <h3 class="service-title">Irrigação Automatizada</h3>
-                        <p class="service-description">
-                            Sistemas inteligentes de irrigação que economizam água e mantêm suas plantas saudáveis.
-                        </p>
-                        <a href="#contato" class="service-link">Saiba Mais <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-arrow-right"></use></svg></a>
+                        <h3 data-i18n="sustentabilidade.card3.title">Irrigação Eficiente</h3>
+                        <p data-i18n="sustentabilidade.card3.desc">Sistemas de gotejamento e captação de água da chuva integrados ao projeto — redução média de 40% no consumo hídrico em relação à irrigação convencional.</p>
                     </div>
-
-                    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="service-icon">
-                            <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-grip-vertical"></use></svg>
+                    <div class="sustentabilidade-card" data-aos="fade-up" data-aos-delay="450">
+                        <div class="sustentabilidade-card__icon">
+                            <i class="fas fa-clipboard-check"></i>
                         </div>
-                        <h3 class="service-title">Jardins Verticais</h3>
-                        <p class="service-description">
-                            Soluções verticais criativas para aproveitar espaços pequenos e criar ambientes únicos.
-                        </p>
-                        <a href="#contato" class="service-link">Saiba Mais <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-arrow-right"></use></svg></a>
+                        <h3 data-i18n="sustentabilidade.card4.title">Consultoria Ambiental</h3>
+                        <p data-i18n="sustentabilidade.card4.desc">Diagnóstico completo do espaço, inventário de espécies existentes e planos de compensação vegetal alinhados à legislação ambiental vigente.</p>
                     </div>
-
-                    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="service-icon">
-                            <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-home"></use></svg>
-                        </div>
-                        <h3 class="service-title">Telhados Verdes</h3>
-                        <p class="service-description">
-                            Implementação de coberturas vegetais que promovem sustentabilidade e conforto térmico.
-                        </p>
-                        <a href="#contato" class="service-link">Saiba Mais <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-arrow-right"></use></svg></a>
-                    </div>
-
-                    <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                        <div class="service-icon">
-                            <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-tree"></use></svg>
-                        </div>
-                        <h3 class="service-title">Consultoria Ambiental</h3>
-                        <p class="service-description">
-                            Orientação especializada para projetos sustentáveis e adequação ambiental.
-                        </p>
-                        <a href="#contato" class="service-link">Saiba Mais <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-arrow-right"></use></svg></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Portfólio -->
-        <section id="portfolio" class="section-portfolio">
-            <div class="container">
-                <div class="section-header" data-aos="fade-up">
-                    <h2 class="section-title">Nosso Portfólio</h2>
-                    <p class="section-subtitle">Conheça alguns dos projetos que transformamos</p>
-                </div>
-
-                <div class="portfolio-filters" data-aos="fade-up" data-aos-delay="100">
-                    <button class="filter-btn active" data-filter="all">Todos</button>
-                    <button class="filter-btn" data-filter="residencial">Residencial</button>
-                    <button class="filter-btn" data-filter="comercial">Comercial</button>
-                    <button class="filter-btn" data-filter="vertical">Jardim Vertical</button>
-                    <button class="filter-btn" data-filter="telhado">Telhado Verde</button>
-                </div>
-
-                <div class="portfolio-grid">
-                    <!-- Portfolio items will be populated with client images -->
-                    <div class="portfolio-item" data-category="residencial" data-aos="zoom-in">
-                        <a href="images/Whisk_3cd310ce4638e51831a45a665c924b6adr.jpeg" class="glightbox" data-gallery="jardim-residencial">
-                            <img src="images/Whisk_3cd310ce4638e51831a45a665c924b6adr.jpeg" alt="Jardim Residencial" loading="lazy">
-                            <div class="portfolio-overlay">
-                                <h3>Jardim Residencial</h3>
-                                <p>Projeto residencial completo</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Imagens extras do Jardim Residencial — aparecem na galeria, não na grid -->
-                    <a href="images/Whisk_23d761854c52a4fa153474b3f207d825dr.jpeg"
-                       class="glightbox"
-                       data-gallery="jardim-residencial"
-                       style="display:none"
-                       aria-hidden="true"></a>
-
-                    <a href="images/Whisk_34eb84f404469049d104dfe6e066f78bdr.jpeg"
-                       class="glightbox"
-                       data-gallery="jardim-residencial"
-                       style="display:none"
-                       aria-hidden="true"></a>
-
-                    <a href="images/Whisk_765bc38e9f9eba8bafc43527d072093ddr.jpeg"
-                       class="glightbox"
-                       data-gallery="jardim-residencial"
-                       style="display:none"
-                       aria-hidden="true"></a>
-
-                    <a href="images/Whisk_165841b4cabcfce9df7401511b01dc2fdr.jpeg"
-                       class="glightbox"
-                       data-gallery="jardim-residencial"
-                       style="display:none"
-                       aria-hidden="true"></a>
-
-                    <div class="portfolio-item" data-category="comercial" data-aos="zoom-in" data-aos-delay="100">
-                        <a href="images/Whisk_359e614c62905f09b894a64d742d1d44dr.jpeg" class="glightbox" data-gallery="paisagismo-comercial">
-                            <img src="images/Whisk_359e614c62905f09b894a64d742d1d44dr.jpeg" alt="Paisagismo Comercial" loading="lazy">
-                            <div class="portfolio-overlay">
-                                <h3>Paisagismo Comercial</h3>
-                                <p>Área corporativa</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Imagens extras do Paisagismo Comercial — aparecem na galeria, não na grid -->
-                    <a href="images/Whisk_78d0f5d745523a094fc4d0762f1c691cdr.jpeg"
-                       class="glightbox"
-                       data-gallery="paisagismo-comercial"
-                       style="display:none"
-                       aria-hidden="true"></a>
-
-                    <a href="images/Whisk_c09991102452d0789544fe81cddfd4e3dr.jpeg"
-                       class="glightbox"
-                       data-gallery="paisagismo-comercial"
-                       style="display:none"
-                       aria-hidden="true"></a>
-
-                    <a href="images/Whisk_2bc6b299001fc3d8d5f4d5c728469b17dr.jpeg"
-                       class="glightbox"
-                       data-gallery="paisagismo-comercial"
-                       style="display:none"
-                       aria-hidden="true"></a>
-
-                    <div class="portfolio-item" data-category="vertical" data-aos="zoom-in" data-aos-delay="200">
-                        <a href="images/Whisk_618a2cd7dffeba0a17046696cbbf2beadr.jpeg" class="glightbox" data-gallery="jardim-vertical">
-                            <img src="images/Whisk_618a2cd7dffeba0a17046696cbbf2beadr.jpeg" alt="Jardim Vertical 1" loading="lazy">
-                            <div class="portfolio-overlay">
-                                <h3>Jardim Vertical</h3>
-                                <p>Parede verde interior</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Imagens extras do Jardim Vertical — aparecem na galeria, não na grid -->
-                    <a href="images/Whisk_5596f0b9f14389ab1b247acb3353d278dr.jpeg"
-                       class="glightbox"
-                       data-gallery="jardim-vertical"
-                       style="display:none"
-                       aria-hidden="true"></a>
-
-                    <a href="images/Whisk_56c81a7951dfa31bc7a4bcc136b9a985dr.jpeg"
-                       class="glightbox"
-                       data-gallery="jardim-vertical"
-                       style="display:none"
-                       aria-hidden="true"></a>
-
-                    <a href="images/Whisk_9431d07235b6a2fa4844d27d1f80db29dr.jpeg"
-                       class="glightbox"
-                       data-gallery="jardim-vertical"
-                       style="display:none"
-                       aria-hidden="true"></a>
-
-                    <a href="images/Whisk_5790256072da15f8c364e3a40fdaac15dr.jpeg"
-                       class="glightbox"
-                       data-gallery="jardim-vertical"
-                       style="display:none"
-                       aria-hidden="true"></a>
-
-                    <a href="images/Whisk_ff16fe037a561c48f97410dd6414c2d7dr.jpeg"
-                       class="glightbox"
-                       data-gallery="jardim-vertical"
-                       style="display:none"
-                       aria-hidden="true"></a>
-
-                    <a href="images/Whisk_1f6f8410f8c4d6fa0cf4be0ca6dbe272dr.jpeg"
-                       class="glightbox"
-                       data-gallery="jardim-vertical"
-                       style="display:none"
-                       aria-hidden="true"></a>
-
-                    <div class="portfolio-item" data-category="telhado" data-aos="zoom-in">
-                        <a href="images/Whisk_fdb6bf82e802b08b8164cb39dff26773dr.jpeg" class="glightbox" data-gallery="telhado">
-                            <img src="images/Whisk_fdb6bf82e802b08b8164cb39dff26773dr.jpeg" alt="Telhado Verde 1" loading="lazy">
-                            <div class="portfolio-overlay">
-                                <h3>Telhado Verde</h3>
-                                <p>Cobertura sustentável</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Imagens extras do Telhado Verde — aparecem na galeria, não na grid -->
-                    <a href="images/Whisk_7175f6df214ab45b2824ae9ba3962f9ddr.jpeg"
-                       class="glightbox"
-                       data-gallery="telhado"
-                       style="display:none"
-                       aria-hidden="true"></a>
-
-                    <a href="images/Whisk_2a063581163fae4b97a42b23f5df1393dr.jpeg"
-                       class="glightbox"
-                       data-gallery="telhado"
-                       style="display:none"
-                       aria-hidden="true"></a>
-
-                    <a href="images/Whisk_b0b782a6f4ba553b3a5473626e38a5cadr.jpeg"
-                       class="glightbox"
-                       data-gallery="telhado"
-                       style="display:none"
-                       aria-hidden="true"></a>
-
-                    <a href="images/Whisk_3101a67b206d87898f543260c396e5d8dr.jpeg"
-                       class="glightbox"
-                       data-gallery="telhado"
-                       style="display:none"
-                       aria-hidden="true"></a>
-
-                    <div class="portfolio-item" data-category="residencial" data-aos="zoom-in" data-aos-delay="100">
-                        <a href="images/Whisk_6248fa72bf28391ab9d40f060a2d8b7cdr.jpeg" class="glightbox" data-gallery="jardim-moderno">
-                            <img src="images/Whisk_6248fa72bf28391ab9d40f060a2d8b7cdr.jpeg" alt="Jardim Moderno" loading="lazy">
-                            <div class="portfolio-overlay">
-                                <h3>Jardim Moderno</h3>
-                                <p>Design contemporâneo</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Imagens extras do Jardim Moderno — aparecem na galeria, não na grid -->
-                    <a href="images/Whisk_ee391a1224cc719bb114cf46b6bf837bdr.jpeg"
-                       class="glightbox" data-gallery="jardim-moderno"
-                       style="display:none" aria-hidden="true"></a>
-                    <a href="images/Whisk_21163d86c34c07ba7e64c056fe1a1b37dr.jpeg"
-                       class="glightbox" data-gallery="jardim-moderno"
-                       style="display:none" aria-hidden="true"></a>
-                    <a href="images/Whisk_99e80a3923965e7b7ea4db988b741075dr.jpeg"
-                       class="glightbox" data-gallery="jardim-moderno"
-                       style="display:none" aria-hidden="true"></a>
-                    <a href="images/Whisk_9561123ad85403db6ab48dee9e9dd88adr.jpeg"
-                       class="glightbox" data-gallery="jardim-moderno"
-                       style="display:none" aria-hidden="true"></a>
-
-                    <div class="portfolio-item" data-category="comercial" data-aos="zoom-in" data-aos-delay="200">
-                        <a href="images/Whisk_9e2d26daf57840a816b4a5b85cf41aa8dr.jpeg" class="glightbox" data-gallery="area-externa">
-                            <img src="images/Whisk_9e2d26daf57840a816b4a5b85cf41aa8dr.jpeg" alt="Área Externa" loading="lazy">
-                            <div class="portfolio-overlay">
-                                <h3>Área Externa</h3>
-                                <p>Espaço de convivência</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Imagens extras da Área Externa — aparecem na galeria, não na grid -->
-                    <a href="images/Whisk_b04e1b58984334db3214244b8823884cdr.jpeg"
-                       class="glightbox" data-gallery="area-externa"
-                       style="display:none" aria-hidden="true"></a>
-                    <a href="images/Whisk_fb0f5b5d77250dc82454f6483dc67c4edr.jpeg"
-                       class="glightbox" data-gallery="area-externa"
-                       style="display:none" aria-hidden="true"></a>
-                    <a href="images/Whisk_f392c99901db0f4942048875b6bc9432dr.jpeg"
-                       class="glightbox" data-gallery="area-externa"
-                       style="display:none" aria-hidden="true"></a>
-                    <a href="images/Whisk_142cd9c123f9d0b94f5416d5ad571f5fdr.jpeg"
-                       class="glightbox" data-gallery="area-externa"
-                       style="display:none" aria-hidden="true"></a>
                 </div>
             </div>
         </section>
@@ -451,65 +343,66 @@
         <!-- Blog -->
         <section id="blog" class="section-blog">
             <div class="container">
-                <div class="section-header" data-aos="fade-up">
-                    <h2 class="section-title">Blog & Inspirações</h2>
-                    <p class="section-subtitle">Dicas, tendências e insights sobre paisagismo</p>
+                <div class="section-header">
+                    <span class="section-eyebrow" data-aos="fade-up" data-aos-delay="0" data-i18n="blog.eyebrow">Inspire-se</span>
+                    <h2 class="section-title" data-aos="fade-up" data-aos-delay="150" data-i18n="blog.title">Blog & Inspirações</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="300" data-i18n="blog.subtitle">Dicas, tendências e insights sobre paisagismo</p>
                 </div>
 
-                <div class="blog-grid" data-aos="fade-up" data-aos-delay="100">
+                <div class="blog-grid" data-aos="fade-up" data-aos-delay="450">
 
                     <!-- Post Destaque -->
                     <article class="blog-card blog-card--featured">
                         <div class="blog-card__image">
-                            <img src="images/blog/post-1.jpg" alt="Design Biofílico" loading="lazy">
-                            <span class="blog-card__category">Tendências</span>
+                            <img src="images/Whisk_e18a178117b8b83a0bb4c7d44400d80cdr.jpeg" alt="Design Biofílico" loading="lazy">
+                            <span class="blog-card__category" data-i18n="blog.post1.category">Tendências</span>
                         </div>
                         <div class="blog-card__content">
                             <div class="blog-card__meta">
-                                <time datetime="2026-02-15">15 Fev 2026</time>
+                                <time datetime="2026-02-15" data-i18n="blog.post1.date">15 Fev 2026</time>
                                 <span class="blog-card__dot">·</span>
-                                <span>6 min de leitura</span>
+                                <span data-i18n="blog.post1.readtime">6 min de leitura</span>
                             </div>
-                            <h3 class="blog-card__title">Design Biofílico: A Arte de Trazer a Natureza para Dentro de Casa</h3>
-                            <p class="blog-card__excerpt">Descubra como o design biofílico transforma espaços comuns em ambientes que promovem bem-estar, produtividade e conexão com a natureza — e como aplicá-lo no seu projeto.</p>
-                            <a href="#" class="blog-card__link">Ler Artigo <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-arrow-right"></use></svg></a>
+                            <h3 class="blog-card__title" data-i18n="blog.post1.title">Design Biofílico: A Arte de Trazer a Natureza para Dentro de Casa</h3>
+                            <p class="blog-card__excerpt" data-i18n="blog.post1.excerpt">Descubra como o design biofílico transforma espaços comuns em ambientes que promovem bem-estar, produtividade e conexão com a natureza — e como aplicá-lo no seu projeto.</p>
+                            <a href="blog/post-1.html" class="blog-card__link"><span data-i18n="blog.read_article">Ler Artigo</span> <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-arrow-right"></use></svg></a>
                         </div>
                     </article>
 
                     <!-- Posts Secundários -->
                     <div class="blog-secondary">
 
-                        <article class="blog-card blog-card--compact" data-aos="fade-left" data-aos-delay="150">
+                        <article class="blog-card blog-card--compact" data-aos="fade-left" data-aos-delay="550">
                             <div class="blog-card__image">
-                                <img src="images/blog/post-2.jpg" alt="Plantas Nativas" loading="lazy">
-                                <span class="blog-card__category">Plantas</span>
+                                <img src="images/Whisk_757ba4aaa0263eeab7c41240de07ed10dr.jpeg" alt="Plantas Nativas" loading="lazy">
+                                <span class="blog-card__category" data-i18n="blog.post2.category">Plantas</span>
                             </div>
                             <div class="blog-card__content">
                                 <div class="blog-card__meta">
-                                    <time datetime="2026-02-08">08 Fev 2026</time>
+                                    <time datetime="2026-02-08" data-i18n="blog.post2.date">08 Fev 2026</time>
                                     <span class="blog-card__dot">·</span>
-                                    <span>4 min de leitura</span>
+                                    <span data-i18n="blog.post2.readtime">4 min de leitura</span>
                                 </div>
-                                <h3 class="blog-card__title">10 Plantas Nativas do Brasil que Transformam Qualquer Jardim</h3>
-                                <p class="blog-card__excerpt">Espécies adaptadas ao clima brasileiro, com beleza e baixíssima manutenção.</p>
-                                <a href="#" class="blog-card__link">Ler Artigo <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-arrow-right"></use></svg></a>
+                                <h3 class="blog-card__title" data-i18n="blog.post2.title">10 Plantas Nativas do Brasil que Transformam Qualquer Jardim</h3>
+                                <p class="blog-card__excerpt" data-i18n="blog.post2.excerpt">Espécies adaptadas ao clima brasileiro, com beleza e baixíssima manutenção.</p>
+                                <a href="blog/post-2.html" class="blog-card__link"><span data-i18n="blog.read_article">Ler Artigo</span> <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-arrow-right"></use></svg></a>
                             </div>
                         </article>
 
-                        <article class="blog-card blog-card--compact" data-aos="fade-left" data-aos-delay="250">
+                        <article class="blog-card blog-card--compact" data-aos="fade-left" data-aos-delay="650">
                             <div class="blog-card__image">
-                                <img src="images/blog/post-3.jpg" alt="Jardim Vertical" loading="lazy">
-                                <span class="blog-card__category">Dicas Práticas</span>
+                                <img src="images/Whisk_38060fbd322acd6a61340a1b1066128deg.png" alt="Jardim Vertical" loading="lazy">
+                                <span class="blog-card__category" data-i18n="blog.post3.category">Dicas Práticas</span>
                             </div>
                             <div class="blog-card__content">
                                 <div class="blog-card__meta">
-                                    <time datetime="2026-01-28">28 Jan 2026</time>
+                                    <time datetime="2026-01-28" data-i18n="blog.post3.date">28 Jan 2026</time>
                                     <span class="blog-card__dot">·</span>
-                                    <span>3 min de leitura</span>
+                                    <span data-i18n="blog.post3.readtime">3 min de leitura</span>
                                 </div>
-                                <h3 class="blog-card__title">Jardim Vertical: Solução Verde para Pequenos Espaços</h3>
-                                <p class="blog-card__excerpt">Como criar paredes vivas em apartamentos, sacadas e escritórios sem grandes obras.</p>
-                                <a href="#" class="blog-card__link">Ler Artigo <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-arrow-right"></use></svg></a>
+                                <h3 class="blog-card__title" data-i18n="blog.post3.title">Jardim Vertical: Solução Verde para Pequenos Espaços</h3>
+                                <p class="blog-card__excerpt" data-i18n="blog.post3.excerpt">Como criar paredes vivas em apartamentos, sacadas e escritórios sem grandes obras.</p>
+                                <a href="blog/post-3.html" class="blog-card__link"><span data-i18n="blog.read_article">Ler Artigo</span> <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-arrow-right"></use></svg></a>
                             </div>
                         </article>
 
@@ -517,7 +410,7 @@
                 </div>
 
                 <div class="blog-cta" data-aos="fade-up">
-                    <a href="#" class="btn btn-outline">Ver Todos os Artigos</a>
+                    <a href="#" class="btn btn-outline" id="blog-view-all-btn" data-i18n="blog.view_all">Ver Todos os Artigos</a>
                 </div>
             </div>
         </section>
@@ -525,209 +418,350 @@
         <!-- Depoimentos -->
         <section id="depoimentos" class="section-depoimentos">
             <div class="container">
-                <div class="section-header" data-aos="fade-up">
-                    <h2 class="section-title">O Que Nossos Clientes Dizem</h2>
-                    <p class="section-subtitle">Depoimentos de quem confia no nosso trabalho</p>
+                <div class="section-header">
+                    <span class="section-eyebrow" data-aos="fade-up" data-aos-delay="0" data-i18n="testimonials.eyebrow">Clientes</span>
+                    <h2 class="section-title" data-aos="fade-up" data-aos-delay="150" data-i18n="testimonials.title">O Que Nossos Clientes Dizem</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="300" data-i18n="testimonials.subtitle">Depoimentos de quem confia no nosso trabalho</p>
                 </div>
 
-                <div class="depoimentos-carousel swiper" data-aos="fade-up" data-aos-delay="200">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="depoimento-card">
-                                <div class="depoimento-stars">
-                                    <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-star"></use></svg>
-                                    <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-star"></use></svg>
-                                    <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-star"></use></svg>
-                                    <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-star"></use></svg>
-                                    <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-star"></use></svg>
-                                </div>
-                                <p class="depoimento-text">
-                                    "A GIDI transformou completamente nosso jardim! O resultado superou todas as expectativas.
-                                    Profissionais competentes e atenciosos."
-                                </p>
-                                <div class="depoimento-author">
-                                    <img src="images/cliente-1.jpg" alt="Maria Silva" loading="lazy">
-                                    <div class="author-info">
-                                        <h4>Maria Silva</h4>
-                                        <p>Residencial Premium</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="depoimento-card">
-                                <div class="depoimento-stars">
-                                    <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-star"></use></svg>
-                                    <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-star"></use></svg>
-                                    <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-star"></use></svg>
-                                    <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-star"></use></svg>
-                                    <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-star"></use></svg>
-                                </div>
-                                <p class="depoimento-text">
-                                    "Excelente trabalho! O jardim vertical ficou incrível e trouxe vida ao nosso escritório.
-                                    Recomendo muito!"
-                                </p>
-                                <div class="depoimento-author">
-                                    <img src="images/cliente-2.jpg" alt="João Santos" loading="lazy">
-                                    <div class="author-info">
-                                        <h4>João Santos</h4>
-                                        <p>Empresa TechCorp</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="depoimento-card">
-                                <div class="depoimento-stars">
-                                    <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-star"></use></svg>
-                                    <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-star"></use></svg>
-                                    <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-star"></use></svg>
-                                    <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-star"></use></svg>
-                                    <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-star"></use></svg>
-                                </div>
-                                <p class="depoimento-text">
-                                    "Projeto executado com perfeição! A equipe é pontual, organizada e o resultado foi além do esperado.
-                                    Nosso telhado verde é simplesmente maravilhoso."
-                                </p>
-                                <div class="depoimento-author">
-                                    <img src="images/cliente-3.jpg" alt="Ana Costa" loading="lazy">
-                                    <div class="author-info">
-                                        <h4>Ana Costa</h4>
-                                        <p>Condomínio Solar</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="depoimentos-scroll-wrapper" data-aos="fade-up" data-aos-delay="450" aria-label="Depoimentos em scroll">
+                    <!-- Coluna 1 -->
+                    <div class="depoimentos-coluna" aria-hidden="false">
+                        <ul class="depoimentos-lista depoimentos-lista--speed-15">
+                            <li class="depoimento-card">
+                                <div class="depoimento-stars">★★★★★</div>
+                                <blockquote>
+                                    <p class="depoimento-text" data-i18n="testimonial.1.text">"A GIDI transformou completamente nosso jardim! O resultado superou todas as expectativas. Profissionais competentes e atenciosos."</p>
+                                    <footer class="depoimento-author">
+                                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=80&h=80" alt="Maria Silva" loading="lazy" width="48" height="48">
+                                        <div class="author-info">
+                                            <h4>Maria Silva</h4>
+                                            <p data-i18n="testimonial.1.loc">Residencial Premium</p>
+                                        </div>
+                                    </footer>
+                                </blockquote>
+                            </li>
+                            <li class="depoimento-card">
+                                <div class="depoimento-stars">★★★★★</div>
+                                <blockquote>
+                                    <p class="depoimento-text" data-i18n="testimonial.2.text">"Excelente trabalho! O jardim vertical ficou incrível e trouxe vida ao nosso escritório. Recomendo muito!"</p>
+                                    <footer class="depoimento-author">
+                                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=80&h=80" alt="João Santos" loading="lazy" width="48" height="48">
+                                        <div class="author-info">
+                                            <h4>João Santos</h4>
+                                            <p data-i18n="testimonial.2.loc">Empresa TechCorp</p>
+                                        </div>
+                                    </footer>
+                                </blockquote>
+                            </li>
+                            <li class="depoimento-card">
+                                <div class="depoimento-stars">★★★★★</div>
+                                <blockquote>
+                                    <p class="depoimento-text" data-i18n="testimonial.3.text">"Projeto executado com perfeição! A equipe é pontual, organizada e o resultado foi além do esperado. Nosso telhado verde é simplesmente maravilhoso."</p>
+                                    <footer class="depoimento-author">
+                                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=80&h=80" alt="Ana Costa" loading="lazy" width="48" height="48">
+                                        <div class="author-info">
+                                            <h4>Ana Costa</h4>
+                                            <p data-i18n="testimonial.3.loc">Condomínio Solar</p>
+                                        </div>
+                                    </footer>
+                                </blockquote>
+                            </li>
+                            <!-- Duplicados para loop seamless -->
+                            <li class="depoimento-card" aria-hidden="true">
+                                <div class="depoimento-stars">★★★★★</div>
+                                <blockquote>
+                                    <p class="depoimento-text" data-i18n="testimonial.1.text">"A GIDI transformou completamente nosso jardim! O resultado superou todas as expectativas. Profissionais competentes e atenciosos."</p>
+                                    <footer class="depoimento-author">
+                                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=80&h=80" alt="Maria Silva" loading="lazy" width="48" height="48">
+                                        <div class="author-info">
+                                            <h4>Maria Silva</h4>
+                                            <p data-i18n="testimonial.1.loc">Residencial Premium</p>
+                                        </div>
+                                    </footer>
+                                </blockquote>
+                            </li>
+                            <li class="depoimento-card" aria-hidden="true">
+                                <div class="depoimento-stars">★★★★★</div>
+                                <blockquote>
+                                    <p class="depoimento-text" data-i18n="testimonial.2.text">"Excelente trabalho! O jardim vertical ficou incrível e trouxe vida ao nosso escritório. Recomendo muito!"</p>
+                                    <footer class="depoimento-author">
+                                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=80&h=80" alt="João Santos" loading="lazy" width="48" height="48">
+                                        <div class="author-info">
+                                            <h4>João Santos</h4>
+                                            <p data-i18n="testimonial.2.loc">Empresa TechCorp</p>
+                                        </div>
+                                    </footer>
+                                </blockquote>
+                            </li>
+                            <li class="depoimento-card" aria-hidden="true">
+                                <div class="depoimento-stars">★★★★★</div>
+                                <blockquote>
+                                    <p class="depoimento-text" data-i18n="testimonial.3.text">"Projeto executado com perfeição! A equipe é pontual, organizada e o resultado foi além do esperado. Nosso telhado verde é simplesmente maravilhoso."</p>
+                                    <footer class="depoimento-author">
+                                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=80&h=80" alt="Ana Costa" loading="lazy" width="48" height="48">
+                                        <div class="author-info">
+                                            <h4>Ana Costa</h4>
+                                            <p data-i18n="testimonial.3.loc">Condomínio Solar</p>
+                                        </div>
+                                    </footer>
+                                </blockquote>
+                            </li>
+                        </ul>
                     </div>
 
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+                    <!-- Coluna 2 (visível a partir de 768px) -->
+                    <div class="depoimentos-coluna depoimentos-coluna--md" aria-hidden="true">
+                        <ul class="depoimentos-lista depoimentos-lista--speed-19">
+                            <li class="depoimento-card">
+                                <div class="depoimento-stars">★★★★★</div>
+                                <blockquote>
+                                    <p class="depoimento-text" data-i18n="testimonial.4.text">"O paisagismo da nossa fachada ficou incrível! Recebo elogios dos vizinhos todos os dias. Trabalho impecável do início ao fim."</p>
+                                    <footer class="depoimento-author">
+                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=80&h=80" alt="Carlos Mendes" loading="lazy" width="48" height="48">
+                                        <div class="author-info">
+                                            <h4>Carlos Mendes</h4>
+                                            <p data-i18n="testimonial.4.loc">Residência Jardins</p>
+                                        </div>
+                                    </footer>
+                                </blockquote>
+                            </li>
+                            <li class="depoimento-card">
+                                <div class="depoimento-stars">★★★★★</div>
+                                <blockquote>
+                                    <p class="depoimento-text" data-i18n="testimonial.5.text">"Contratamos a GIDI para o jardim do nosso evento e o resultado foi espetacular. Os convidados ficaram impressionados com a beleza do espaço."</p>
+                                    <footer class="depoimento-author">
+                                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=80&h=80" alt="Fernanda Lima" loading="lazy" width="48" height="48">
+                                        <div class="author-info">
+                                            <h4>Fernanda Lima</h4>
+                                            <p data-i18n="testimonial.5.loc">Eventos & Celebrações</p>
+                                        </div>
+                                    </footer>
+                                </blockquote>
+                            </li>
+                            <li class="depoimento-card">
+                                <div class="depoimento-stars">★★★★★</div>
+                                <blockquote>
+                                    <p class="depoimento-text" data-i18n="testimonial.6.text">"Nosso restaurante ganhou uma área externa linda com plantas e iluminação especial. As avaliações dos clientes melhoraram muito desde a reforma."</p>
+                                    <footer class="depoimento-author">
+                                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=80&h=80" alt="Beatriz Rocha" loading="lazy" width="48" height="48">
+                                        <div class="author-info">
+                                            <h4>Beatriz Rocha</h4>
+                                            <p data-i18n="testimonial.6.loc">Restaurante Verde</p>
+                                        </div>
+                                    </footer>
+                                </blockquote>
+                            </li>
+                            <!-- Duplicados para loop seamless -->
+                            <li class="depoimento-card" aria-hidden="true">
+                                <div class="depoimento-stars">★★★★★</div>
+                                <blockquote>
+                                    <p class="depoimento-text" data-i18n="testimonial.4.text">"O paisagismo da nossa fachada ficou incrível! Recebo elogios dos vizinhos todos os dias. Trabalho impecável do início ao fim."</p>
+                                    <footer class="depoimento-author">
+                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=80&h=80" alt="Carlos Mendes" loading="lazy" width="48" height="48">
+                                        <div class="author-info">
+                                            <h4>Carlos Mendes</h4>
+                                            <p data-i18n="testimonial.4.loc">Residência Jardins</p>
+                                        </div>
+                                    </footer>
+                                </blockquote>
+                            </li>
+                            <li class="depoimento-card" aria-hidden="true">
+                                <div class="depoimento-stars">★★★★★</div>
+                                <blockquote>
+                                    <p class="depoimento-text" data-i18n="testimonial.5.text">"Contratamos a GIDI para o jardim do nosso evento e o resultado foi espetacular. Os convidados ficaram impressionados com a beleza do espaço."</p>
+                                    <footer class="depoimento-author">
+                                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=80&h=80" alt="Fernanda Lima" loading="lazy" width="48" height="48">
+                                        <div class="author-info">
+                                            <h4>Fernanda Lima</h4>
+                                            <p data-i18n="testimonial.5.loc">Eventos & Celebrações</p>
+                                        </div>
+                                    </footer>
+                                </blockquote>
+                            </li>
+                            <li class="depoimento-card" aria-hidden="true">
+                                <div class="depoimento-stars">★★★★★</div>
+                                <blockquote>
+                                    <p class="depoimento-text" data-i18n="testimonial.6.text">"Nosso restaurante ganhou uma área externa linda com plantas e iluminação especial. As avaliações dos clientes melhoraram muito desde a reforma."</p>
+                                    <footer class="depoimento-author">
+                                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=80&h=80" alt="Beatriz Rocha" loading="lazy" width="48" height="48">
+                                        <div class="author-info">
+                                            <h4>Beatriz Rocha</h4>
+                                            <p data-i18n="testimonial.6.loc">Restaurante Verde</p>
+                                        </div>
+                                    </footer>
+                                </blockquote>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Coluna 3 (visível a partir de 1024px) -->
+                    <div class="depoimentos-coluna depoimentos-coluna--lg" aria-hidden="true">
+                        <ul class="depoimentos-lista depoimentos-lista--speed-17">
+                            <li class="depoimento-card">
+                                <div class="depoimento-stars">★★★★★</div>
+                                <blockquote>
+                                    <p class="depoimento-text" data-i18n="testimonial.7.text">"A horta vertical que a GIDI instalou no meu apartamento é um sonho! Colho temperos frescos todo dia. Projeto lindo e funcional."</p>
+                                    <footer class="depoimento-author">
+                                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=80&h=80" alt="Ricardo Alves" loading="lazy" width="48" height="48">
+                                        <div class="author-info">
+                                            <h4>Ricardo Alves</h4>
+                                            <p data-i18n="testimonial.7.loc">Apartamento Moderno</p>
+                                        </div>
+                                    </footer>
+                                </blockquote>
+                            </li>
+                            <li class="depoimento-card">
+                                <div class="depoimento-stars">★★★★★</div>
+                                <blockquote>
+                                    <p class="depoimento-text" data-i18n="testimonial.8.text">"Transformaram nosso terraço em um jardim de paraíso. Cada detalhe foi pensado com muito cuidado. Equipe altamente profissional!"</p>
+                                    <footer class="depoimento-author">
+                                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=80&h=80" alt="Camila Ferreira" loading="lazy" width="48" height="48">
+                                        <div class="author-info">
+                                            <h4>Camila Ferreira</h4>
+                                            <p data-i18n="testimonial.8.loc">Cobertura Luxo</p>
+                                        </div>
+                                    </footer>
+                                </blockquote>
+                            </li>
+                            <li class="depoimento-card">
+                                <div class="depoimento-stars">★★★★★</div>
+                                <blockquote>
+                                    <p class="depoimento-text" data-i18n="testimonial.9.text">"O projeto de paisagismo para nossa empresa elevou o ambiente de trabalho a outro nível. Funcionários mais felizes e produtivos. Vale cada centavo!"</p>
+                                    <footer class="depoimento-author">
+                                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=80&h=80" alt="Thiago Barros" loading="lazy" width="48" height="48">
+                                        <div class="author-info">
+                                            <h4>Thiago Barros</h4>
+                                            <p data-i18n="testimonial.9.loc">Startup Inovação</p>
+                                        </div>
+                                    </footer>
+                                </blockquote>
+                            </li>
+                            <!-- Duplicados para loop seamless -->
+                            <li class="depoimento-card" aria-hidden="true">
+                                <div class="depoimento-stars">★★★★★</div>
+                                <blockquote>
+                                    <p class="depoimento-text" data-i18n="testimonial.7.text">"A horta vertical que a GIDI instalou no meu apartamento é um sonho! Colho temperos frescos todo dia. Projeto lindo e funcional."</p>
+                                    <footer class="depoimento-author">
+                                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=80&h=80" alt="Ricardo Alves" loading="lazy" width="48" height="48">
+                                        <div class="author-info">
+                                            <h4>Ricardo Alves</h4>
+                                            <p data-i18n="testimonial.7.loc">Apartamento Moderno</p>
+                                        </div>
+                                    </footer>
+                                </blockquote>
+                            </li>
+                            <li class="depoimento-card" aria-hidden="true">
+                                <div class="depoimento-stars">★★★★★</div>
+                                <blockquote>
+                                    <p class="depoimento-text" data-i18n="testimonial.8.text">"Transformaram nosso terraço em um jardim de paraíso. Cada detalhe foi pensado com muito cuidado. Equipe altamente profissional!"</p>
+                                    <footer class="depoimento-author">
+                                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=80&h=80" alt="Camila Ferreira" loading="lazy" width="48" height="48">
+                                        <div class="author-info">
+                                            <h4>Camila Ferreira</h4>
+                                            <p data-i18n="testimonial.8.loc">Cobertura Luxo</p>
+                                        </div>
+                                    </footer>
+                                </blockquote>
+                            </li>
+                            <li class="depoimento-card" aria-hidden="true">
+                                <div class="depoimento-stars">★★★★★</div>
+                                <blockquote>
+                                    <p class="depoimento-text" data-i18n="testimonial.9.text">"O projeto de paisagismo para nossa empresa elevou o ambiente de trabalho a outro nível. Funcionários mais felizes e produtivos. Vale cada centavo!"</p>
+                                    <footer class="depoimento-author">
+                                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=80&h=80" alt="Thiago Barros" loading="lazy" width="48" height="48">
+                                        <div class="author-info">
+                                            <h4>Thiago Barros</h4>
+                                            <p data-i18n="testimonial.9.loc">Startup Inovação</p>
+                                        </div>
+                                    </footer>
+                                </blockquote>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- CTA pós-depoimentos -->
+                <div class="depoimentos-cta" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="depoimentos-cta__title" data-i18n="depoimentos.cta.title">Junte-se a centenas de clientes satisfeitos</h3>
+                    <div class="cta-group">
+                        <a href="#contato" class="btn-primary depoimentos-cta__btn" data-i18n="depoimentos.cta.btn_visit">Agende sua visita</a>
+                        <a href="#contato" class="btn-outline depoimentos-cta__btn" data-i18n="depoimentos.cta.btn_quote">Faça seu orçamento</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-
-        <!-- Galeria Instagram -->
-        <section id="instagram" class="section-instagram">
+        <!-- FAQ -->
+        <section id="faq" class="section-faq">
             <div class="container">
-                <div class="section-header" data-aos="fade-up">
-                    <h2 class="section-title">Siga Nossos Projetos</h2>
-                    <p class="section-subtitle">Acompanhe nosso dia a dia no Instagram</p>
+                <div class="section-header">
+                    <span class="section-eyebrow" data-aos="fade-up" data-aos-delay="0" data-i18n="faq.eyebrow">Dúvidas Comuns</span>
+                    <h2 class="section-title" data-aos="fade-up" data-aos-delay="150" data-i18n="faq.title">Perguntas Frequentes</h2>
                 </div>
-
-                <div class="instagram-grid" id="instagram-feed" data-aos="fade-up" data-aos-delay="200">
-                    <!-- Instagram feed will be populated by JavaScript -->
-                    <div class="instagram-item">
-                        <a href="https://instagram.com/gidipaisagismo" target="_blank" rel="noopener noreferrer">
-                            <img src="images/instagram/post-1.jpg" alt="Instagram Post 1" loading="lazy">
-                            <div class="instagram-overlay">
-                                <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-instagram"></use></svg>
-                                <div class="instagram-stats">
-                                    <span><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-heart"></use></svg> 234</span>
-                                    <span><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-comment"></use></svg> 12</span>
-                                </div>
-                            </div>
-                        </a>
+                <div class="faq-list" data-aos="fade-up" data-aos-delay="300">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span data-i18n="faq.q2">Qual o prazo médio para execução de um jardim residencial?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p data-i18n="faq.a2">O prazo varia conforme a complexidade e tamanho do projeto. Jardins residenciais de médio porte costumam ser executados em 2 a 4 semanas. Projetos maiores ou com elementos especiais podem levar até 8 semanas. O cronograma detalhado é definido na fase de projeto.</p>
+                        </div>
                     </div>
-
-                    <div class="instagram-item">
-                        <a href="https://instagram.com/gidipaisagismo" target="_blank" rel="noopener noreferrer">
-                            <img src="images/instagram/post-2.jpg" alt="Instagram Post 2" loading="lazy">
-                            <div class="instagram-overlay">
-                                <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-instagram"></use></svg>
-                                <div class="instagram-stats">
-                                    <span><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-heart"></use></svg> 189</span>
-                                    <span><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-comment"></use></svg> 8</span>
-                                </div>
-                            </div>
-                        </a>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span data-i18n="faq.q4">Trabalham com projetos comerciais e corporativos?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p data-i18n="faq.a4">Sim, atendemos empresas, escritórios, restaurantes, hotéis e condomínios. Temos experiência em paisagismo corporativo, jardins de fachada, áreas comuns e espaços de convivência. Entre em contato para uma proposta específica.</p>
+                        </div>
                     </div>
-
-                    <div class="instagram-item">
-                        <a href="https://instagram.com/gidipaisagismo" target="_blank" rel="noopener noreferrer">
-                            <img src="images/instagram/post-3.jpg" alt="Instagram Post 3" loading="lazy">
-                            <div class="instagram-overlay">
-                                <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-instagram"></use></svg>
-                                <div class="instagram-stats">
-                                    <span><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-heart"></use></svg> 312</span>
-                                    <span><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-comment"></use></svg> 15</span>
-                                </div>
-                            </div>
-                        </a>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span data-i18n="faq.q5">É possível instalar irrigação em apartamento ou cobertura?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p data-i18n="faq.a5">Sim, temos soluções de irrigação adaptadas para apartamentos, coberturas e terraços. Utilizamos sistemas automatizados com temporizador e sensores de umidade, respeitando as limitações de cada espaço e a estrutura do imóvel.</p>
+                        </div>
                     </div>
-
-                    <div class="instagram-item">
-                        <a href="https://instagram.com/gidipaisagismo" target="_blank" rel="noopener noreferrer">
-                            <img src="images/instagram/post-4.jpg" alt="Instagram Post 4" loading="lazy">
-                            <div class="instagram-overlay">
-                                <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-instagram"></use></svg>
-                                <div class="instagram-stats">
-                                    <span><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-heart"></use></svg> 267</span>
-                                    <span><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-comment"></use></svg> 10</span>
-                                </div>
-                            </div>
-                        </a>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span data-i18n="faq.q6">Quais formas de pagamento são aceitas?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p data-i18n="faq.a6">Aceitamos pagamento via PIX, transferência bancária, cartão de crédito (parcelado em até 12x) e boleto bancário. As condições específicas de cada projeto são definidas em contrato.</p>
+                        </div>
                     </div>
-
-                    <div class="instagram-item">
-                        <a href="https://instagram.com/gidipaisagismo" target="_blank" rel="noopener noreferrer">
-                            <img src="images/instagram/post-5.jpg" alt="Instagram Post 5" loading="lazy">
-                            <div class="instagram-overlay">
-                                <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-instagram"></use></svg>
-                                <div class="instagram-stats">
-                                    <span><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-heart"></use></svg> 198</span>
-                                    <span><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-comment"></use></svg> 7</span>
-                                </div>
-                            </div>
-                        </a>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span data-i18n="faq.q7">O projeto inclui lista de plantas e materiais?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p data-i18n="faq.a7">Sim, o projeto executivo completo inclui lista detalhada de espécies vegetais com especificações técnicas, quantidades, lista de materiais, memorial descritivo e cronograma de execução. Você recebe toda a documentação necessária.</p>
+                        </div>
                     </div>
-
-                    <div class="instagram-item">
-                        <a href="https://instagram.com/gidipaisagismo" target="_blank" rel="noopener noreferrer">
-                            <img src="images/instagram/post-6.jpg" alt="Instagram Post 6" loading="lazy">
-                            <div class="instagram-overlay">
-                                <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-instagram"></use></svg>
-                                <div class="instagram-stats">
-                                    <span><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-heart"></use></svg> 345</span>
-                                    <span><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-comment"></use></svg> 18</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="instagram-item">
-                        <a href="https://instagram.com/gidipaisagismo" target="_blank" rel="noopener noreferrer">
-                            <img src="images/instagram/post-7.jpg" alt="Instagram Post 7" loading="lazy">
-                            <div class="instagram-overlay">
-                                <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-instagram"></use></svg>
-                                <div class="instagram-stats">
-                                    <span><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-heart"></use></svg> 223</span>
-                                    <span><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-comment"></use></svg> 11</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="instagram-item">
-                        <a href="https://instagram.com/gidipaisagismo" target="_blank" rel="noopener noreferrer">
-                            <img src="images/instagram/post-8.jpg" alt="Instagram Post 8" loading="lazy">
-                            <div class="instagram-overlay">
-                                <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-instagram"></use></svg>
-                                <div class="instagram-stats">
-                                    <span><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-heart"></use></svg> 289</span>
-                                    <span><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-comment"></use></svg> 14</span>
-                                </div>
-                            </div>
-                        </a>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span data-i18n="faq.q8">Como funciona a garantia nos serviços?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p data-i18n="faq.a8">Oferecemos garantia de 12 meses em mão de obra para todos os projetos executados. As plantas possuem garantia de adaptação de 30 dias após o plantio. Em caso de qualquer problema, nossa equipe retorna sem custo adicional para avaliação e correção.</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="instagram-cta" data-aos="fade-up" data-aos-delay="300">
-                    <a href="https://instagram.com/gidipaisagismo" target="_blank" rel="noopener noreferrer" class="btn-instagram">
-                        <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-instagram"></use></svg> Siga @gidipaisagismo
+                <!-- CTA pós-FAQ -->
+                <div class="faq-cta" data-aos="fade-up" data-aos-delay="200">
+                    <p class="faq-cta__text" data-i18n="faq.cta.text">Ainda tem dúvidas? Fale com um especialista</p>
+                    <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Tenho%20d%C3%BAvidas%20sobre%20um%20projeto%20de%20paisagismo%20e%20gostaria%20de%20falar%20com%20um%20especialista" class="faq-cta__btn" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        <span data-i18n="faq.cta.btn">Falar com Especialista</span>
                     </a>
                 </div>
             </div>
@@ -736,19 +770,34 @@
         <!-- Contato -->
         <section id="contato" class="section-contato">
             <div class="container">
-                <div class="section-header" data-aos="fade-up">
-                    <h2 class="section-title">Entre em Contato</h2>
-                    <p class="section-subtitle">Vamos transformar seu projeto em realidade</p>
+                <div class="section-header">
+                    <span class="section-eyebrow" data-aos="fade-up" data-aos-delay="0" data-i18n="contact.eyebrow">Fale Conosco</span>
+                    <h2 class="section-title" data-aos="fade-up" data-aos-delay="150" data-i18n="contact.title">Entre em Contato</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="300" data-i18n="contact.subtitle">Vamos transformar seu projeto em realidade</p>
                 </div>
 
-                <div class="contato-wrapper">
-                    <div class="contato-info" data-aos="fade-right">
+                <!-- Linha 1: Mapa + Infos lado a lado -->
+                <div class="contato-top" data-aos="fade-up">
+                    <div class="contato-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1975!2d-46.6577!3d-23.5475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMyJzUxLjAiUyA0NsKwMzknMjcuNyJX!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+                            width="100%"
+                            height="100%"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Localização GIDI Paisagismo">
+                        </iframe>
+                    </div>
+
+                    <div class="contato-info" data-aos="fade-left" data-aos-delay="100">
                         <div class="info-item">
                             <div class="info-icon">
                                 <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-map-marker-alt"></use></svg>
                             </div>
                             <div class="info-content">
-                                <h3>Endereço</h3>
+                                <h3 data-i18n="contact.address_label">Endereço</h3>
                                 <p>Rua Exemplo, 123<br>Bairro - Cidade/Estado<br>CEP 00000-000</p>
                             </div>
                         </div>
@@ -758,7 +807,7 @@
                                 <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-phone"></use></svg>
                             </div>
                             <div class="info-content">
-                                <h3>Telefone</h3>
+                                <h3 data-i18n="contact.phone_label">Telefone</h3>
                                 <p>(XX) XXXXX-XXXX<br>(XX) XXXXX-XXXX</p>
                             </div>
                         </div>
@@ -768,7 +817,7 @@
                                 <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-envelope"></use></svg>
                             </div>
                             <div class="info-content">
-                                <h3>Email</h3>
+                                <h3 data-i18n="contact.email_label">Email</h3>
                                 <p>contato@gidipaisagismo.com.br<br>orcamento@gidipaisagismo.com.br</p>
                             </div>
                         </div>
@@ -778,103 +827,78 @@
                                 <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-clock"></use></svg>
                             </div>
                             <div class="info-content">
-                                <h3>Horário de Atendimento</h3>
-                                <p>Segunda a Sexta: 08h - 18h<br>Sábado: 08h - 12h</p>
+                                <h3 data-i18n="contact.hours_label">Horário de Atendimento</h3>
+                                <p data-i18n-html="contact.hours_detail">Segunda a Sexta: 08h - 18h<br>Sábado: 08h - 12h</p>
                             </div>
                         </div>
 
                         <div class="social-links">
-                            <a href="https://facebook.com/gidipaisagismo" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                                <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-facebook-f"></use></svg>
-                            </a>
-                            <a href="https://instagram.com/gidipaisagismo" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                                <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-instagram"></use></svg>
-                            </a>
                             <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                                 <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-whatsapp"></use></svg>
                             </a>
-                            <a href="https://linkedin.com/company/gidipaisagismo" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                                <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-linkedin-in"></use></svg>
-                            </a>
                         </div>
-
                     </div>
+                </div>
 
-                    <div class="contato-form-wrapper" data-aos="fade-left">
+                <!-- Linha 2: Formulário centralizado abaixo -->
+                <div class="contato-bottom" data-aos="fade-up" data-aos-delay="150">
+                    <div class="contato-form-wrapper">
+                        <div class="contato-form-header">
+                            <h3 data-i18n="contact.form_title">Solicite seu Orçamento Grátis</h3>
+                            <p data-i18n="contact.form_subtitle">Preencha os campos abaixo e retornamos em até 2 horas</p>
+                        </div>
                         <form id="contato-form" class="contato-form" novalidate>
                             <div class="form-group">
-                                <label for="nome">Nome Completo *</label>
+                                <label for="nome" data-i18n="contact.label_name">Nome Completo *</label>
                                 <input type="text" id="nome" name="nome" class="form-control" required>
                                 <span class="error-message"></span>
                             </div>
 
                             <div class="form-group">
-                                <label for="email">Email *</label>
-                                <input type="email" id="email" name="email" class="form-control" required>
-                                <span class="error-message"></span>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="telefone">Telefone *</label>
+                                <label for="telefone" data-i18n="contact.label_phone">Telefone / WhatsApp *</label>
                                 <input type="tel" id="telefone" name="telefone" class="form-control" required>
                                 <span class="error-message"></span>
                             </div>
 
                             <div class="form-group">
-                                <label for="tipo-projeto">Tipo de Projeto *</label>
+                                <label for="tipo-projeto" data-i18n="contact.label_type">Tipo de Projeto *</label>
                                 <select id="tipo-projeto" name="tipo-projeto" class="form-control" required>
-                                    <option value="">Selecione um tipo</option>
-                                    <option value="jardim">Projeto de Jardim</option>
-                                    <option value="manutencao">Manutenção Paisagística</option>
-                                    <option value="irrigacao">Irrigação Automatizada</option>
-                                    <option value="vertical">Jardim Vertical</option>
-                                    <option value="telhado">Telhado Verde</option>
-                                    <option value="consultoria">Consultoria Ambiental</option>
-                                    <option value="outro">Outro</option>
+                                    <option value="" data-i18n="contact.select_default">Selecione um tipo</option>
+                                    <option value="jardim" data-i18n="contact.select_garden">Projeto de Jardim</option>
+                                    <option value="manutencao" data-i18n="contact.select_maintenance">Manutenção Paisagística</option>
+                                    <option value="irrigacao" data-i18n="contact.select_irrigation">Irrigação Automatizada</option>
+                                    <option value="vertical" data-i18n="contact.select_vertical">Jardim Vertical</option>
+                                    <option value="telhado" data-i18n="contact.select_green_roof">Telhado Verde</option>
+                                    <option value="consultoria" data-i18n="contact.select_consulting">Consultoria Ambiental</option>
+                                    <option value="outro" data-i18n="contact.select_other">Outro</option>
                                 </select>
                                 <span class="error-message"></span>
                             </div>
 
                             <div class="form-group">
-                                <label for="mensagem">Mensagem *</label>
-                                <textarea id="mensagem" name="mensagem" class="form-control" rows="5" required></textarea>
+                                <label for="email" data-i18n="contact.label_email">Email <span class="form-optional">(opcional)</span></label>
+                                <input type="email" id="email" name="email" class="form-control">
+                                <span class="error-message"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mensagem" data-i18n="contact.label_message">Mensagem <span class="form-optional">(opcional)</span></label>
+                                <textarea id="mensagem" name="mensagem" class="form-control" rows="4" placeholder="Descreva brevemente seu espaço (opcional)"></textarea>
                                 <span class="error-message"></span>
                             </div>
 
                             <button type="submit" class="btn-primary btn-submit">
-                                <span class="btn-text">Enviar Mensagem</span>
-                                <span class="btn-loading"><svg class="icon icon-spin" aria-hidden="true"><use href="icons/sprite.svg#icon-spinner"></use></svg> Enviando...</span>
+                                <span class="btn-text" data-i18n="contact.btn_send">Quero Meu Orçamento Grátis</span>
+                                <span class="btn-loading"><svg class="icon icon-spin" aria-hidden="true"><use href="icons/sprite.svg#icon-spinner"></use></svg> <span data-i18n="contact.btn_sending">Enviando...</span></span>
                             </button>
+                            <p class="form-microcopy" data-i18n="form.microcopy">Respondemos em até 2 horas no horário comercial</p>
 
                             <div class="form-success-message">
                                 <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-check-circle"></use></svg>
-                                <p>Mensagem enviada com sucesso! Entraremos em contato em breve.</p>
+                                <p data-i18n="contact.success_msg">Mensagem enviada com sucesso! Entraremos em contato em breve.</p>
                             </div>
                         </form>
                     </div>
-                </div>
-
-                <div class="contato-diferenciais" data-aos="fade-up">
-                    <h4>Por que nos escolher?</h4>
-                    <ul>
-                        <li><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-check-circle"></use></svg> Projetos 100% personalizados</li>
-                        <li><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-check-circle"></use></svg> Mais de 10 anos de experiência</li>
-                        <li><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-check-circle"></use></svg> Equipe técnica especializada</li>
-                        <li><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-check-circle"></use></svg> Acompanhamento do início ao fim</li>
-                    </ul>
-                </div>
-
-                <div class="contato-map" data-aos="fade-up" data-aos-delay="200">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1975!2d-46.6577!3d-23.5475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMyJzUxLjAiUyA0NsKwMzknMjcuNyJX!5e0!3m2!1spt-BR!2sbr!4v1234567890"
-                        width="100%"
-                        height="300"
-                        style="border:0;"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Localização GIDI Paisagismo">
-                    </iframe>
                 </div>
             </div>
         </section>
@@ -886,70 +910,94 @@
             <div class="footer-content">
                 <div class="footer-col">
                     <h3>GIDI Paisagismo</h3>
-                    <p>Transformando espaços verdes e conectando você com a natureza há mais de 15 anos.</p>
+                    <p data-i18n="footer.brand_desc">Transformando espaços verdes e conectando você com a natureza há mais de 15 anos.</p>
                     <div class="footer-social">
-<a href="https://instagram.com/gidipaisagismo" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                            <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-instagram"></use></svg>
-                        </a>
                         <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                             <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-whatsapp"></use></svg>
                         </a>
-                        <a href="https://linkedin.com/company/gidipaisagismo" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                            <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-linkedin-in"></use></svg>
+                        <a href="https://instagram.com/gidipaisagismo" target="_blank" rel="noopener noreferrer" class="footer-social-handle">
+                            @gidipaisagismo
                         </a>
                     </div>
                 </div>
 
                 <div class="footer-col">
-                    <h3>Links Rápidos</h3>
+                    <h3 data-i18n="footer.quick_links">Links Rápidos</h3>
                     <ul class="footer-links">
-                        <li><a href="#sobre">Sobre</a></li>
-                        <li><a href="#servicos">Serviços</a></li>
-                        <li><a href="#portfolio">Portfólio</a></li>
-                        <li><a href="#depoimentos">Depoimentos</a></li>
-                        <li><a href="#contato">Contato</a></li>
+                        <li><a href="#sobre" data-i18n="footer.link_about">Sobre</a></li>
+                        <li><a href="#servicos" data-i18n="footer.link_services">Serviços</a></li>
+                        <li><a href="#depoimentos" data-i18n="footer.link_testimonials">Depoimentos</a></li>
+                        <li><a href="#contato" data-i18n="footer.link_contact">Contato</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h3>Serviços</h3>
+                    <h3 data-i18n="footer.services_title">Serviços</h3>
                     <ul class="footer-links">
-                        <li><a href="#servicos">Projetos de Jardins</a></li>
-                        <li><a href="#servicos">Manutenção Paisagística</a></li>
-                        <li><a href="#servicos">Irrigação Automatizada</a></li>
-                        <li><a href="#servicos">Jardins Verticais</a></li>
-                        <li><a href="#servicos">Telhados Verdes</a></li>
-                        <li><a href="#servicos">Consultoria Ambiental</a></li>
+                        <li><a href="jardins.html" data-i18n="footer.link_gardens">Projetos de Jardins</a></li>
+                        <li><a href="manutencao.html" data-i18n="footer.link_maintenance">Manutenção Paisagística</a></li>
+                        <li><a href="irrigacao.html" data-i18n="footer.link_irrigation">Irrigação Automatizada</a></li>
+                        <li><a href="jardins-verticais.html" data-i18n="footer.link_vertical">Jardins Verticais</a></li>
+                        <li><a href="telhados-verdes.html" data-i18n="footer.link_green_roof">Telhados Verdes</a></li>
+                        <li><a href="consultoria.html" data-i18n="footer.link_consulting">Consultoria Ambiental</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h3>Contato</h3>
+                    <h3 data-i18n="footer.contact_title">Contato</h3>
                     <ul class="footer-contact">
-                        <li><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-map-marker-alt"></use></svg> Rua Exemplo, 123<br>Cidade/Estado</li>
-                        <li><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-phone"></use></svg> (XX) XXXXX-XXXX</li>
-                        <li><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-envelope"></use></svg> contato@gidipaisagismo.com.br</li>
-                        <li><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-clock"></use></svg> Seg-Sex: 08h-18h</li>
+                        <li><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-map-marker-alt"></use></svg> <span data-i18n-html="footer.address">Rua Exemplo, 123<br>Cidade/Estado</span></li>
+                        <li><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-phone"></use></svg> <span data-i18n="footer.phone">(XX) XXXXX-XXXX</span></li>
+                        <li><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-envelope"></use></svg> <span data-i18n="footer.email">contato@gidipaisagismo.com.br</span></li>
+                        <li><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-clock"></use></svg> <span data-i18n="footer.hours">Seg-Sex: 08h-18h</span></li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2024 GIDI Paisagismo. Todos os direitos reservados.</p>
-                <p>Desenvolvido com <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-heart"></use></svg> para conectar você com a natureza</p>
+                <p data-i18n="footer.copyright">&copy; 2026 GIDI Paisagismo. Todos os direitos reservados.</p>
+                <p data-i18n-html="footer.dev">Desenvolvido com <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-heart"></use></svg> para conectar você com a natureza</p>
             </div>
         </div>
     </footer>
 
     <!-- Scroll to Top Button -->
-    <button id="scroll-top" class="scroll-top-btn" aria-label="Voltar ao topo">
+    <button id="scroll-top" class="scroll-top-btn" aria-label="Voltar ao topo" data-i18n-aria="scroll_top_aria">
         <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-chevron-up"></use></svg>
     </button>
 
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/5511999999999" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp">
+    <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20meu%20projeto" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp" data-i18n-aria="whatsapp_float_aria">
         <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-whatsapp"></use></svg>
     </a>
+
+    <!-- Blog Modal: Ver Todos os Artigos -->
+    <div
+        id="blog-modal"
+        class="blog-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="blog-modal-title"
+        aria-hidden="true"
+    >
+        <div class="blog-modal__backdrop" aria-hidden="true"></div>
+        <div class="blog-modal__container">
+            <div class="blog-modal__header">
+                <div class="blog-modal__title-group">
+                    <h2 class="blog-modal__title" id="blog-modal-title">Todos os Artigos</h2>
+                    <span class="blog-modal__count" id="blog-modal-count"></span>
+                </div>
+                <button class="blog-modal__close" aria-label="Fechar" id="blog-modal-close">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:1.25em;height:1.25em">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="blog-modal__filters" id="blog-modal-filters" role="tablist" aria-label="Filtrar por categoria"></div>
+            <div class="blog-modal__grid" id="blog-modal-grid" role="list"></div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -957,8 +1005,20 @@
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/animations.js"></script>
-    <script src="js/instagram.js"></script>
     <script src="js/form.js"></script>
     <script src="js/scroll-expansion-hero.js"></script>
+    <script src="js/premium.js"></script>
+    <script src="js/i18n.js"></script>
+    <script>
+        document.querySelectorAll('.service-portfolio-toggle').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var panel = btn.nextElementSibling;
+                var isOpen = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', String(!isOpen));
+                panel.classList.toggle('is-open', !isOpen);
+            });
+        });
+
+    </script>
 </body>
 </html>

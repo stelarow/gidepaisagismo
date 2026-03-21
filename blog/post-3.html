@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <script>history.scrollRestoration = 'manual'; window.scrollTo(0, 0);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jardim Vertical: Solução Verde para Pequenos Espaços — GIDI Paisagismo">
+    <title>Jardim Vertical — GIDI Paisagismo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        /* ── Article layout ── */
+        .post-header {
+            background: var(--bg-dark, #1a2d24);
+            padding: 1.25rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .post-header__logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #f5f0e8;
+            text-decoration: none;
+            letter-spacing: 0.03em;
+        }
+        .post-header__back {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #b0cdbf;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: color 0.2s;
+        }
+        .post-header__back:hover { color: #f5f0e8; }
+
+        .post-hero {
+            position: relative;
+            height: 420px;
+            overflow: hidden;
+        }
+        .post-hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .post-hero__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(26,45,36,0.85) 0%, rgba(26,45,36,0.2) 60%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2.5rem 2rem;
+            max-width: 820px;
+            margin: 0 auto;
+            width: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .post-category {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #fff;
+            background: var(--primary, #2a5240);
+            padding: 0.3rem 0.8rem;
+            border-radius: 2px;
+            margin-bottom: 0.9rem;
+            width: fit-content;
+        }
+        .post-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: 700;
+            color: #f5f0e8;
+            line-height: 1.25;
+            margin-bottom: 0.8rem;
+        }
+        .post-meta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82rem;
+            color: #b0cdbf;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .post-body {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+        }
+        .post-body h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.45rem;
+            font-weight: 600;
+            color: var(--primary, #2a5240);
+            margin: 2.2rem 0 0.8rem;
+        }
+        .post-body p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 1.2rem;
+        }
+        .post-body ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.4rem;
+        }
+        .post-body ul li {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #333;
+            padding: 0.35rem 0 0.35rem 1.4rem;
+            position: relative;
+        }
+        .post-body ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.9rem;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--secondary, #7aab8a);
+        }
+
+        .plant-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 0 0 1.8rem;
+        }
+        .plant-list__item {
+            background: #f0f5f2;
+            border-left: 3px solid var(--secondary, #7aab8a);
+            border-radius: 0 4px 4px 0;
+            padding: 0.75rem 1rem;
+        }
+        .plant-list__name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary, #2a5240);
+            margin-bottom: 0.2rem;
+        }
+        .plant-list__note {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82rem;
+            color: #555;
+        }
+
+        .post-cta {
+            background: var(--primary, #2a5240);
+            color: #f5f0e8;
+            border-radius: 8px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            margin: 3rem auto;
+            max-width: 760px;
+        }
+        .post-cta h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.6rem;
+        }
+        .post-cta p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: #b0cdbf;
+            margin-bottom: 1.4rem;
+        }
+        .post-cta .btn-cta {
+            display: inline-block;
+            background: var(--accent, #b5875f);
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.85rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        .post-cta .btn-cta:hover { opacity: 0.88; }
+
+        .post-footer {
+            background: var(--bg-dark, #1a2d24);
+            text-align: center;
+            padding: 1.4rem 1rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: #7aab8a;
+        }
+
+        @media (max-width: 600px) {
+            .post-hero { height: 300px; }
+            .post-hero__overlay { padding: 1.5rem 1rem; }
+            .plant-list { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="post-header">
+        <a href="../index.html" class="post-header__logo">GIDI Paisagismo</a>
+        <a href="../index.html#blog" class="post-header__back">&#8592; Voltar</a>
+    </header>
+
+    <!-- Hero -->
+    <section class="post-hero">
+        <img src="../images/Whisk_38060fbd322acd6a61340a1b1066128deg.png" alt="Jardim vertical exuberante em parede de concreto urbana">
+        <div class="post-hero__overlay">
+            <span class="post-category">Dicas Práticas</span>
+            <h1 class="post-title">Jardim Vertical: Solução Verde para Pequenos Espaços</h1>
+            <div class="post-meta">
+                <time datetime="2026-01-28">28 Jan 2026</time>
+                <span>·</span>
+                <span>3 min de leitura</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Body -->
+    <article class="post-body">
+
+        <p>Metros quadrados são um recurso escasso nas cidades. Apartamentos compactos, sacadas estreitas, pátios internos sem profundidade — são cenários que parecem incompatíveis com a presença de verde. O <strong>jardim vertical</strong> inverte essa lógica: em vez de expandir para os lados, a natureza sobe. O resultado é uma parede viva que transforma qualquer superfície árida em um painel vivo, com benefícios estéticos, térmicos e emocionais comprovados.</p>
+
+        <h2>Tipos de estruturas</h2>
+        <p>A escolha da estrutura define a escala do projeto, o orçamento inicial e a facilidade de manutenção. As principais opções são:</p>
+        <ul>
+            <li><strong>Treliças e aramados:</strong> ideais para trepadeiras naturais como <em>Passiflora</em>, <em>Bougainvillea</em> e <em>Lonicera</em>. Baixo custo, instalação simples, resultado que cresce com o tempo.</li>
+            <li><strong>Paletes de madeira:</strong> solução DIY popular, funciona bem em sacadas. Recebe vasos pequenos encaixados entre as ripas. Exige tratamento preventivo contra umidade e cupins.</li>
+            <li><strong>Módulos hidropônicos:</strong> painéis de polietileno ou feltro geotêxtil fixados diretamente na parede, com sistema de irrigação integrado e reservatório. São a opção mais técnica, com melhor cobertura e autonomia.</li>
+            <li><strong>Telas metálicas e estruturas suspensas:</strong> usadas em fachadas comerciais e jardins de borda de laje. Suportam peso maior e permitem espécies de raiz mais robusta.</li>
+        </ul>
+
+        <h2>Melhores espécies para paredes vivas</h2>
+        <p>A seleção das plantas deve considerar luminosidade disponível, tolerância à umidade e peso da raiz. Espécies de crescimento denso e folhagem rica cobrem falhas rapidamente e dão aparência de painel maduro em poucas semanas.</p>
+
+        <div class="plant-list">
+            <div class="plant-list__item">
+                <div class="plant-list__name">Samambaia (Nephrolepis)</div>
+                <div class="plant-list__note">Tolera meia-sombra; folhagem exuberante e queda cascateante</div>
+            </div>
+            <div class="plant-list__item">
+                <div class="plant-list__name">Pothos (Epipremnum aureum)</div>
+                <div class="plant-list__note">Extremamente resistente; cresce em qualquer luz indireta</div>
+            </div>
+            <div class="plant-list__item">
+                <div class="plant-list__name">Hera (Hedera helix)</div>
+                <div class="plant-list__note">Cobre superfícies rapidamente; suporta variações de temperatura</div>
+            </div>
+            <div class="plant-list__item">
+                <div class="plant-list__name">Mind-your-own-business (Soleirolia)</div>
+                <div class="plant-list__note">Tapete verde compacto; perfeito para módulos hidropônicos</div>
+            </div>
+            <div class="plant-list__item">
+                <div class="plant-list__name">Peperômia spp.</div>
+                <div class="plant-list__note">Variedade de texturas; baixo consumo de água</div>
+            </div>
+            <div class="plant-list__item">
+                <div class="plant-list__name">Bromélias</div>
+                <div class="plant-list__note">Cor e estrutura; absorvem água pela roseta central</div>
+            </div>
+        </div>
+
+        <h2>Substrato e irrigação</h2>
+        <p>O substrato para jardins verticais precisa ser leve e com boa drenagem. Misturas à base de fibra de coco com perlita e vermiculita são as mais indicadas — retêm umidade sem encharcar e pesam cerca de um terço do substrato tradicional.</p>
+        <p>Em sistemas de gotejamento, tubos perfurados percorrem o painel de cima para baixo em intervalos regulares, alimentados por uma bomba com timer programável. Para projetos menores, a irrigação manual com borrifador de pressão — duas a três vezes por semana no verão — é suficiente, desde que o substrato nunca seque completamente entre as regas.</p>
+        <p>O excesso de água é o principal problema em jardins verticais internos. Assegure-se de que a estrutura tenha calha de drenagem na base e que o reservatório seja esvaziado regularmente para evitar proliferação de fungos.</p>
+
+        <h2>Manutenção e renovação</h2>
+        <p>A rotina de manutenção de um jardim vertical é mais simples do que parece. O foco principal está em três pontos:</p>
+        <ul>
+            <li><strong>Poda de controle:</strong> aparar ramos que ultrapassam os limites do painel a cada 30–45 dias, mantendo densidade uniforme.</li>
+            <li><strong>Adubação foliar:</strong> aplicação quinzenal de fertilizante diluído em spray, especialmente em sistemas sem substrato (hidropônico).</li>
+            <li><strong>Substituição de módulos:</strong> espécies que não se adaptaram devem ser trocadas rapidamente para evitar que falhas comprometam a estética do painel inteiro.</li>
+        </ul>
+        <p>Com manutenção adequada, um jardim vertical bem projetado dura anos e melhora com o tempo, à medida que as plantas amadurecem e encobrem a estrutura.</p>
+
+        <h2>Aplicações: do apartamento à fachada comercial</h2>
+        <p>No apartamento, um painel de 1 × 1,5 m atrás do sofá ou na parede da varanda já transforma completamente a percepção do ambiente. Em escritórios, a parede verde em salas de reunião reduz o eco acústico e cria um pano de fundo natural para videochamadas. Em fachadas comerciais, o jardim vertical funciona como elemento de identidade visual, melhora o conforto térmico e pode reduzir em até 5 °C a temperatura superficial da parede.</p>
+        <p>Sacadas e pátios internos ganham privacidade e microclima favorável quando as laterais recebem treliças com trepadeiras. A vegetação filtra vento, retém umidade e cria um ambiente mais confortável do que o simples uso de vidros ou divisórias.</p>
+
+        <p>Na GIDI Paisagismo, o projeto de jardins verticais começa pela análise da orientação solar e das condições de umidade do ambiente — só depois definimos a estrutura, as espécies e o sistema de irrigação mais adequados para cada situação.</p>
+
+    </article>
+
+    <!-- CTA -->
+    <div class="post-cta">
+        <h3>Quer um jardim vertical no seu espaço?</h3>
+        <p>Nossa equipe projeta e instala painéis verdes sob medida para apartamentos, escritórios e fachadas.</p>
+        <a href="https://wa.me/5511999999999?text=Olá!%20Vi%20o%20artigo%20sobre%20Jardim%20Vertical%20e%20gostaria%20de%20saber%20mais." class="btn-cta" target="_blank" rel="noopener">Fale Conosco no WhatsApp</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="post-footer">
+        &copy; 2026 GIDI Paisagismo. Todos os direitos reservados.
+    </footer>
+
+</body>
+</html>

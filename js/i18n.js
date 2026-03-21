@@ -1,0 +1,834 @@
+'use strict';
+
+const translations = {
+  'pt-BR': {
+    'page.title': 'GIDI Paisagismo - Transforme Seus Espaços Verdes',
+    'skip_content': 'Ir para o conteúdo principal',
+    'scroll_top_aria': 'Voltar ao topo',
+    'whatsapp_float_aria': 'Fale conosco pelo WhatsApp',
+
+    'nav.home': 'Início',
+    'nav.services': 'Serviços',
+    'nav.about': 'Sobre',
+    'nav.mobile_open': 'Abrir menu',
+    'nav.whatsapp_aria': 'Fale conosco pelo WhatsApp',
+
+    'hero.subtitle': 'Transformando Espaços Verdes',
+    'hero.scroll': 'Role para explorar',
+
+    'services.eyebrow': 'O Que Fazemos',
+    'services.title': 'Nossos Serviços',
+    'services.subtitle': 'Soluções completas em paisagismo para seu espaço',
+    'services.view_projects': 'Ver projetos',
+    'services.learn_more': 'Saiba Mais',
+    'services.coming_soon': 'Projetos em breve',
+
+    'service.garden.title': 'Projetos de Jardins',
+    'service.garden.desc': 'Criação de jardins personalizados que refletem sua personalidade e harmonizam com o ambiente.',
+    'service.maintenance.title': 'Manutenção Paisagística',
+    'service.maintenance.desc': 'Cuidados regulares para manter seu jardim sempre bonito, saudável e bem cuidado.',
+    'service.irrigation.title': 'Irrigação Automatizada',
+    'service.irrigation.desc': 'Sistemas inteligentes de irrigação que economizam água e mantêm suas plantas saudáveis.',
+    'service.vertical.title': 'Jardins Verticais',
+    'service.vertical.desc': 'Soluções verticais criativas para aproveitar espaços pequenos e criar ambientes únicos.',
+    'service.green_roof.title': 'Telhados Verdes',
+    'service.green_roof.desc': 'Implementação de coberturas vegetais que promovem sustentabilidade e conforto térmico.',
+    'service.consulting.title': 'Consultoria Ambiental',
+    'service.consulting.desc': 'Orientação especializada para projetos sustentáveis e adequação ambiental.',
+
+    'portfolio.residential': 'Jardim Residencial',
+    'portfolio.modern': 'Jardim Moderno',
+    'portfolio.commercial': 'Paisagismo Comercial',
+    'portfolio.outdoor': 'Área Externa',
+    'portfolio.vertical': 'Jardim Vertical',
+    'portfolio.green_roof': 'Telhado Verde',
+
+    'process.eyebrow': 'Nosso Método',
+    'process.title': 'Como Trabalhamos',
+    'process.subtitle': 'Da primeira conversa à entrega final, cada etapa é cuidadosamente planejada',
+    'process.step1.title': 'Consultoria',
+    'process.step1.text': 'Conversamos sobre sua visão e necessidades do espaço',
+    'process.step2.title': 'Projeto Detalhado',
+    'process.step2.text': 'Criamos um projeto personalizado com especificações técnicas completas',
+    'process.step3.title': 'Execução Precisa',
+    'process.step3.text': 'Nossa equipe executa cada detalhe com materiais de primeira linha',
+    'process.step4.title': 'Entrega com Garantia',
+    'process.step4.text': 'Entregamos o projeto com garantia de 12 meses em mão de obra',
+    'process.step5.title': 'Manutenção Contínua',
+    'process.step5.text': 'Planos de manutenção para seu jardim prosperar por anos',
+
+    'about.eyebrow': 'Nossa História',
+    'about.title': 'Sobre a GIDI Paisagismo',
+    'about.p1': 'Com 15 anos de experiência em paisagismo, a GIDI transforma espaços ordinários em ambientes extraordinários — jardins residenciais, coberturas verdes e interiores vivos que elevam a qualidade de vida.',
+    'about.p2': 'Cada projeto começa com escuta ativa: entendemos o espaço, o clima local e o estilo de vida do cliente antes de qualquer traçado. O resultado é um jardim que funciona, cresce e encanta ao longo do tempo.',
+
+    'blog.eyebrow': 'Inspire-se',
+    'blog.title': 'Blog & Inspirações',
+    'blog.subtitle': 'Dicas, tendências e insights sobre paisagismo',
+    'blog.post1.category': 'Tendências',
+    'blog.post1.date': '15 Fev 2026',
+    'blog.post1.readtime': '6 min de leitura',
+    'blog.post1.title': 'Design Biofílico: A Arte de Trazer a Natureza para Dentro de Casa',
+    'blog.post1.excerpt': 'Descubra como o design biofílico transforma espaços comuns em ambientes que promovem bem-estar, produtividade e conexão com a natureza — e como aplicá-lo no seu projeto.',
+    'blog.post2.category': 'Plantas',
+    'blog.post2.date': '08 Fev 2026',
+    'blog.post2.readtime': '4 min de leitura',
+    'blog.post2.title': '10 Plantas Nativas do Brasil que Transformam Qualquer Jardim',
+    'blog.post2.excerpt': 'Espécies adaptadas ao clima brasileiro, com beleza e baixíssima manutenção.',
+    'blog.post3.category': 'Dicas Práticas',
+    'blog.post3.date': '28 Jan 2026',
+    'blog.post3.readtime': '3 min de leitura',
+    'blog.post3.title': 'Jardim Vertical: Solução Verde para Pequenos Espaços',
+    'blog.post3.excerpt': 'Como criar paredes vivas em apartamentos, sacadas e escritórios sem grandes obras.',
+    'blog.read_article': 'Ler Artigo',
+    'blog.view_all': 'Ver Todos os Artigos',
+
+    'testimonials.eyebrow': 'Clientes',
+    'testimonials.title': 'O Que Nossos Clientes Dizem',
+    'testimonials.subtitle': 'Depoimentos de quem confia no nosso trabalho',
+    'testimonial.1.text': '"A GIDI transformou completamente nosso jardim! O resultado superou todas as expectativas. Profissionais competentes e atenciosos."',
+    'testimonial.2.text': '"Excelente trabalho! O jardim vertical ficou incrível e trouxe vida ao nosso escritório. Recomendo muito!"',
+    'testimonial.3.text': '"Projeto executado com perfeição! A equipe é pontual, organizada e o resultado foi além do esperado. Nosso telhado verde é simplesmente maravilhoso."',
+    'testimonial.4.text': '"O paisagismo da nossa fachada ficou incrível! Recebo elogios dos vizinhos todos os dias. Trabalho impecável do início ao fim."',
+    'testimonial.5.text': '"Contratamos a GIDI para o jardim do nosso evento e o resultado foi espetacular. Os convidados ficaram impressionados com a beleza do espaço."',
+    'testimonial.6.text': '"Nosso restaurante ganhou uma área externa linda com plantas e iluminação especial. As avaliações dos clientes melhoraram muito desde a reforma."',
+    'testimonial.7.text': '"A horta vertical que a GIDI instalou no meu apartamento é um sonho! Colho temperos frescos todo dia. Projeto lindo e funcional."',
+    'testimonial.8.text': '"Transformaram nosso terraço em um jardim de paraíso. Cada detalhe foi pensado com muito cuidado. Equipe altamente profissional!"',
+    'testimonial.9.text': '"O projeto de paisagismo para nossa empresa elevou o ambiente de trabalho a outro nível. Funcionários mais felizes e produtivos. Vale cada centavo!"',
+
+    'faq.eyebrow': 'Dúvidas Comuns',
+    'faq.title': 'Perguntas Frequentes',
+    'faq.q1': 'O orçamento é gratuito e sem compromisso?',
+    'faq.a1': 'Sim, a consulta inicial e o orçamento são totalmente gratuitos e sem nenhuma obrigação. Entramos em contato para entender seu projeto e apresentamos uma proposta personalizada sem custo.',
+    'faq.q2': 'Qual o prazo médio para execução de um jardim residencial?',
+    'faq.a2': 'O prazo varia conforme a complexidade e tamanho do projeto. Jardins residenciais de médio porte costumam ser executados em 2 a 4 semanas. Projetos maiores ou com elementos especiais podem levar até 8 semanas. O cronograma detalhado é definido na fase de projeto.',
+    'faq.q3': 'Vocês atendem fora de São Paulo?',
+    'faq.a3': 'Sim, atendemos projetos em todo o estado de São Paulo e na Grande São Paulo. Para projetos em outras regiões do Brasil, avaliamos caso a caso. Entre em contato para verificar a viabilidade do seu projeto.',
+    'faq.q4': 'Trabalham com projetos comerciais e corporativos?',
+    'faq.a4': 'Sim, atendemos empresas, escritórios, restaurantes, hotéis e condomínios. Temos experiência em paisagismo corporativo, jardins de fachada, áreas comuns e espaços de convivência. Entre em contato para uma proposta específica.',
+    'faq.q5': 'É possível instalar irrigação em apartamento ou cobertura?',
+    'faq.a5': 'Sim, temos soluções de irrigação adaptadas para apartamentos, coberturas e terraços. Utilizamos sistemas automatizados com temporizador e sensores de umidade, respeitando as limitações de cada espaço e a estrutura do imóvel.',
+    'faq.q6': 'Quais formas de pagamento são aceitas?',
+    'faq.a6': 'Aceitamos pagamento via PIX, transferência bancária, cartão de crédito (parcelado em até 12x) e boleto bancário. As condições específicas de cada projeto são definidas em contrato.',
+    'faq.q7': 'O projeto inclui lista de plantas e materiais?',
+    'faq.a7': 'Sim, o projeto executivo completo inclui lista detalhada de espécies vegetais com especificações técnicas, quantidades, lista de materiais, memorial descritivo e cronograma de execução. Você recebe toda a documentação necessária.',
+    'faq.q8': 'Como funciona a garantia nos serviços?',
+    'faq.a8': 'Oferecemos garantia de 12 meses em mão de obra para todos os projetos executados. As plantas possuem garantia de adaptação de 30 dias após o plantio. Em caso de qualquer problema, nossa equipe retorna sem custo adicional para avaliação e correção.',
+    'faq.cta.text': 'Ainda tem dúvidas? Fale com um especialista',
+    'faq.cta.btn': 'Falar com Especialista',
+
+    'contact.eyebrow': 'Fale Conosco',
+    'contact.title': 'Entre em Contato',
+    'contact.subtitle': 'Vamos transformar seu projeto em realidade',
+    'contact.address_label': 'Endereço',
+    'contact.phone_label': 'Telefone',
+    'contact.email_label': 'Email',
+    'contact.hours_label': 'Horário de Atendimento',
+    'contact.hours_detail': 'Segunda a Sexta: 08h - 18h<br>Sábado: 08h - 12h',
+    'contact.form_title': 'Envie sua Mensagem',
+    'contact.form_subtitle': 'Preencha os campos abaixo e entraremos em contato em breve',
+    'contact.label_name': 'Nome Completo *',
+    'contact.label_email': 'Email *',
+    'contact.label_phone': 'Telefone *',
+    'contact.label_type': 'Tipo de Projeto *',
+    'contact.label_message': 'Mensagem *',
+    'contact.select_default': 'Selecione um tipo',
+    'contact.select_garden': 'Projeto de Jardim',
+    'contact.select_maintenance': 'Manutenção Paisagística',
+    'contact.select_irrigation': 'Irrigação Automatizada',
+    'contact.select_vertical': 'Jardim Vertical',
+    'contact.select_green_roof': 'Telhado Verde',
+    'contact.select_consulting': 'Consultoria Ambiental',
+    'contact.select_other': 'Outro',
+    'contact.btn_send': 'Enviar Mensagem',
+    'contact.btn_sending': 'Enviando...',
+    'contact.success_msg': 'Mensagem enviada com sucesso! Entraremos em contato em breve.',
+
+    'footer.brand_desc': 'Transformando espaços verdes e conectando você com a natureza há mais de 15 anos.',
+    'footer.quick_links': 'Links Rápidos',
+    'footer.services_title': 'Serviços',
+    'footer.contact_title': 'Contato',
+    'footer.link_about': 'Sobre',
+    'footer.link_services': 'Serviços',
+    'footer.link_testimonials': 'Depoimentos',
+    'footer.link_contact': 'Contato',
+    'footer.link_gardens': 'Projetos de Jardins',
+    'footer.link_maintenance': 'Manutenção Paisagística',
+    'footer.link_irrigation': 'Irrigação Automatizada',
+    'footer.link_vertical': 'Jardins Verticais',
+    'footer.link_green_roof': 'Telhados Verdes',
+    'footer.link_consulting': 'Consultoria Ambiental',
+    'footer.copyright': '© 2026 GIDI Paisagismo. Todos os direitos reservados.',
+    'footer.dev': 'Desenvolvido com <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-heart"></use></svg> para conectar você com a natureza',
+
+    'subpage.eyebrow': 'Serviços',
+    'subpage.what_is': 'O que é',
+    'subpage.what_includes': 'O que inclui',
+    'subpage.request_quote': 'Solicitar Orçamento',
+    'subpage.back_services': '← Voltar aos Serviços',
+
+    'page.garden.title': 'Projetos de Jardins — GIDI Paisagismo',
+    'service.garden.what_is_text': 'Serviço de criação de jardins sob medida, com levantamento do espaço, seleção de espécies adequadas ao clima e solo, e entrega de projeto executivo com plantas e especificações.',
+    'service.garden.includes.1': 'Levantamento e análise do terreno',
+    'service.garden.includes.2': 'Projeto executivo em 2D/3D',
+    'service.garden.includes.3': 'Seleção de espécies nativas e exóticas',
+    'service.garden.includes.4': 'Implantação e acompanhamento',
+    'service.garden.includes.5': 'Residencial, comercial e corporativo',
+
+    'page.maintenance.title': 'Manutenção Paisagística — GIDI Paisagismo',
+    'service.maintenance.what_is_text': 'Programa de visitas regulares para manter o jardim em perfeito estado, com podas, adubações, controle de pragas e replantios conforme necessário.',
+    'service.maintenance.includes.1': 'Plano de manutenção personalizado',
+    'service.maintenance.includes.2': 'Poda e aparação',
+    'service.maintenance.includes.3': 'Adubação e nutrição do solo',
+    'service.maintenance.includes.4': 'Controle fitossanitário',
+    'service.maintenance.includes.5': 'Relatório de visita',
+
+    'page.irrigation.title': 'Irrigação Automatizada — GIDI Paisagismo',
+    'service.irrigation.what_is_text': 'Dimensionamento e instalação de sistemas de irrigação por gotejamento ou aspersão, controlados por temporizadores ou sensores de umidade, reduzindo desperdício de água.',
+    'service.irrigation.includes.1': 'Projeto hidráulico do sistema',
+    'service.irrigation.includes.2': 'Instalação de gotejadores e aspersores',
+    'service.irrigation.includes.3': 'Controlador programável',
+    'service.irrigation.includes.4': 'Sensores de chuva e umidade',
+    'service.irrigation.includes.5': 'Treinamento de operação',
+
+    'page.vertical.title': 'Jardins Verticais — GIDI Paisagismo',
+    'service.vertical.what_is_text': 'Criação de paredes e painéis vivos para ambientes internos ou externos, com estrutura modular e sistema de irrigação integrado.',
+    'service.vertical.includes.1': 'Estrutura e suporte metálico ou PVC',
+    'service.vertical.includes.2': 'Substrato e feltro agrícola',
+    'service.vertical.includes.3': 'Seleção de plantas por luminosidade',
+    'service.vertical.includes.4': 'Irrigação integrada',
+    'service.vertical.includes.5': 'Manutenção periódica',
+
+    'page.green_roof.title': 'Telhados Verdes — GIDI Paisagismo',
+    'service.green_roof.what_is_text': 'Implantação de cobertura vegetal extensiva ou intensiva sobre lajes e telhados, com camadas de impermeabilização, drenagem e substrato leve.',
+    'service.green_roof.includes.1': 'Análise estrutural da cobertura',
+    'service.green_roof.includes.2': 'Impermeabilização e drenagem',
+    'service.green_roof.includes.3': 'Substrato leve e espécies resistentes',
+    'service.green_roof.includes.4': 'Redução térmica e acústica',
+    'service.green_roof.includes.5': 'Certificação ambiental',
+
+    'page.consulting.title': 'Consultoria Ambiental — GIDI Paisagismo',
+    'service.consulting.what_is_text': 'Assessoria técnica para projetos paisagísticos sustentáveis, compensação ambiental, laudos de arborização e adequação à legislação municipal.',
+    'service.consulting.includes.1': 'Diagnóstico ambiental do espaço',
+    'service.consulting.includes.2': 'Inventário de espécies arbóreas',
+    'service.consulting.includes.3': 'Laudos e pareceres técnicos',
+    'service.consulting.includes.4': 'Adequação à legislação local',
+    'service.consulting.includes.5': 'Plano de compensação verde',
+
+    'sustentabilidade.eyebrow': 'Compromisso Verde',
+    'sustentabilidade.title': 'Paisagismo com Propósito',
+    'sustentabilidade.subtitle': 'Cada projeto da GIDI é pensado para coexistir com o meio ambiente — usando recursos com eficiência, respeitando o bioma local e deixando o entorno mais vivo do que encontramos.',
+    'sustentabilidade.card1.title': 'Plantas Nativas',
+    'sustentabilidade.card1.desc': 'Priorizamos espécies do bioma local em todos os projetos — menos consumo hídrico, suporte direto à fauna nativa e maior resiliência às variações climáticas da região.',
+    'sustentabilidade.card2.title': 'Telhados e Paredes Verdes',
+    'sustentabilidade.card2.desc': 'Coberturas vegetais reduzem até 3°C a temperatura interna, gerenciam águas pluviais com eficiência e ampliam a biodiversidade no ambiente urbano construído.',
+    'sustentabilidade.card3.title': 'Irrigação Eficiente',
+    'sustentabilidade.card3.desc': 'Sistemas de gotejamento e captação de água da chuva integrados ao projeto — redução média de 40% no consumo hídrico em relação à irrigação convencional.',
+    'sustentabilidade.card4.title': 'Consultoria Ambiental',
+    'sustentabilidade.card4.desc': 'Diagnóstico completo do espaço, inventário de espécies existentes e planos de compensação vegetal alinhados à legislação ambiental vigente.',
+
+    'testimonial.1.loc': 'Residencial Premium',
+    'testimonial.2.loc': 'Empresa TechCorp',
+    'testimonial.3.loc': 'Condomínio Solar',
+    'testimonial.4.loc': 'Residência Jardins',
+    'testimonial.5.loc': 'Eventos & Celebrações',
+    'testimonial.6.loc': 'Restaurante Verde',
+    'testimonial.7.loc': 'Apartamento Moderno',
+    'testimonial.8.loc': 'Cobertura Luxo',
+    'testimonial.9.loc': 'Startup Inovação',
+
+    'depoimentos.cta.title': 'Junte-se a centenas de clientes satisfeitos',
+    'depoimentos.cta.btn_visit': 'Agende sua visita',
+    'depoimentos.cta.btn_quote': 'Faça seu orçamento',
+
+    'form.microcopy': 'Respondemos em até 2 horas no horário comercial',
+
+    'footer.address': 'Rua Exemplo, 123<br>Cidade/Estado',
+    'footer.phone': '(XX) XXXXX-XXXX',
+    'footer.email': 'contato@gidipaisagismo.com.br',
+    'footer.hours': 'Seg-Sex: 08h-18h',
+  },
+
+  'en-US': {
+    'page.title': 'GIDI Landscaping - Transform Your Green Spaces',
+    'skip_content': 'Skip to main content',
+    'scroll_top_aria': 'Back to top',
+    'whatsapp_float_aria': 'Contact us on WhatsApp',
+
+    'nav.home': 'Home',
+    'nav.services': 'Services',
+    'nav.about': 'About',
+    'nav.mobile_open': 'Open menu',
+    'nav.whatsapp_aria': 'Contact us on WhatsApp',
+
+    'hero.subtitle': 'Transforming Green Spaces',
+    'hero.scroll': 'Scroll to explore',
+
+    'services.eyebrow': 'What We Do',
+    'services.title': 'Our Services',
+    'services.subtitle': 'Complete landscaping solutions for your space',
+    'services.view_projects': 'View projects',
+    'services.learn_more': 'Learn More',
+    'services.coming_soon': 'Projects coming soon',
+
+    'service.garden.title': 'Garden Design',
+    'service.garden.desc': 'Custom garden creation that reflects your personality and harmonizes with the surroundings.',
+    'service.maintenance.title': 'Landscape Maintenance',
+    'service.maintenance.desc': 'Regular care to keep your garden always beautiful, healthy and well-tended.',
+    'service.irrigation.title': 'Automated Irrigation',
+    'service.irrigation.desc': 'Smart irrigation systems that save water and keep your plants healthy.',
+    'service.vertical.title': 'Vertical Gardens',
+    'service.vertical.desc': 'Creative vertical solutions to make the most of small spaces and create unique environments.',
+    'service.green_roof.title': 'Green Roofs',
+    'service.green_roof.desc': 'Implementation of vegetated rooftops that promote sustainability and thermal comfort.',
+    'service.consulting.title': 'Environmental Consulting',
+    'service.consulting.desc': 'Specialized guidance for sustainable projects and environmental compliance.',
+
+    'portfolio.residential': 'Residential Garden',
+    'portfolio.modern': 'Modern Garden',
+    'portfolio.commercial': 'Commercial Landscaping',
+    'portfolio.outdoor': 'Outdoor Area',
+    'portfolio.vertical': 'Vertical Garden',
+    'portfolio.green_roof': 'Green Roof',
+
+    'process.eyebrow': 'Our Method',
+    'process.title': 'How We Work',
+    'process.subtitle': 'From the first conversation to final delivery, every step is carefully planned',
+    'process.step1.title': 'Free Consultation',
+    'process.step1.text': 'We talk about your vision, space and budget with no commitment',
+    'process.step2.title': 'Detailed Design',
+    'process.step2.text': 'We create a custom project with complete technical specifications',
+    'process.step3.title': 'Precise Execution',
+    'process.step3.text': 'Our team executes every detail with premium-grade materials',
+    'process.step4.title': 'Guaranteed Delivery',
+    'process.step4.text': 'We deliver the project with a 12-month labor warranty',
+    'process.step5.title': 'Ongoing Maintenance',
+    'process.step5.text': 'Maintenance plans to keep your garden thriving for years',
+
+    'about.eyebrow': 'Our Story',
+    'about.title': 'About GIDI Landscaping',
+    'about.p1': 'With 15 years of landscaping experience, GIDI transforms ordinary spaces into extraordinary environments — residential gardens, green rooftops and living interiors that elevate quality of life.',
+    'about.p2': "Every project starts with active listening: we understand the space, the local climate and the client's lifestyle before any design begins. The result is a garden that works, grows and delights over time.",
+
+    'blog.eyebrow': 'Get Inspired',
+    'blog.title': 'Blog & Inspiration',
+    'blog.subtitle': 'Tips, trends and insights on landscaping',
+    'blog.post1.category': 'Trends',
+    'blog.post1.date': 'Feb 15, 2026',
+    'blog.post1.readtime': '6 min read',
+    'blog.post1.title': 'Biophilic Design: The Art of Bringing Nature Indoors',
+    'blog.post1.excerpt': 'Discover how biophilic design transforms ordinary spaces into environments that promote well-being, productivity and connection with nature — and how to apply it in your project.',
+    'blog.post2.category': 'Plants',
+    'blog.post2.date': 'Feb 08, 2026',
+    'blog.post2.readtime': '4 min read',
+    'blog.post2.title': '10 Native Brazilian Plants That Transform Any Garden',
+    'blog.post2.excerpt': 'Species adapted to the Brazilian climate, with beauty and ultra-low maintenance.',
+    'blog.post3.category': 'Practical Tips',
+    'blog.post3.date': 'Jan 28, 2026',
+    'blog.post3.readtime': '3 min read',
+    'blog.post3.title': 'Vertical Garden: Green Solution for Small Spaces',
+    'blog.post3.excerpt': 'How to create living walls in apartments, balconies and offices without major renovations.',
+    'blog.read_article': 'Read Article',
+    'blog.view_all': 'View All Articles',
+
+    'testimonials.eyebrow': 'Clients',
+    'testimonials.title': 'What Our Clients Say',
+    'testimonials.subtitle': 'Testimonials from those who trust our work',
+    'testimonial.1.text': '"GIDI completely transformed our garden! The result exceeded all expectations. Skilled and attentive professionals."',
+    'testimonial.2.text': '"Excellent work! The vertical garden turned out amazing and brought life to our office. Highly recommended!"',
+    'testimonial.3.text': '"Project executed to perfection! The team is punctual, organized and the result was beyond expected. Our green roof is simply wonderful."',
+    'testimonial.4.text': '"The landscaping on our façade turned out incredible! I get compliments from neighbors every day. Impeccable work from start to finish."',
+    'testimonial.5.text': '"We hired GIDI for our event garden and the result was spectacular. Guests were impressed by the beauty of the space."',
+    'testimonial.6.text': '"Our restaurant gained a beautiful outdoor area with plants and special lighting. Customer reviews have improved greatly since the renovation."',
+    'testimonial.7.text': '"The vertical herb garden GIDI installed in my apartment is a dream! I pick fresh herbs every day. Beautiful and functional project."',
+    'testimonial.8.text': '"They transformed our rooftop into a garden paradise. Every detail was thoughtfully crafted. Highly professional team!"',
+    'testimonial.9.text': '"The landscaping project for our company elevated the work environment to another level. Happier and more productive employees. Worth every penny!"',
+
+    'faq.eyebrow': 'Common Questions',
+    'faq.title': 'Frequently Asked Questions',
+    'faq.q1': 'Is the quote free and with no obligation?',
+    'faq.a1': 'Yes, the initial consultation and quote are completely free with no obligation. We get in touch to understand your project and present a personalized proposal at no cost.',
+    'faq.q2': 'What is the average timeline for a residential garden?',
+    'faq.a2': 'The timeline varies with the complexity and size of the project. Mid-sized residential gardens are typically completed in 2 to 4 weeks. Larger projects or those with special elements may take up to 8 weeks. A detailed schedule is set during the design phase.',
+    'faq.q3': 'Do you serve areas outside São Paulo?',
+    'faq.a3': 'Yes, we serve projects throughout the state of São Paulo and Greater São Paulo. For projects in other regions of Brazil, we evaluate on a case-by-case basis. Contact us to check the feasibility of your project.',
+    'faq.q4': 'Do you work with commercial and corporate projects?',
+    'faq.a4': 'Yes, we serve businesses, offices, restaurants, hotels and condominiums. We have experience in corporate landscaping, façade gardens, common areas and social spaces. Contact us for a specific proposal.',
+    'faq.q5': 'Is it possible to install irrigation in an apartment or rooftop?',
+    'faq.a5': 'Yes, we have irrigation solutions adapted for apartments, rooftops and terraces. We use automated systems with timers and humidity sensors, respecting the limitations of each space and the building structure.',
+    'faq.q6': 'What payment methods are accepted?',
+    'faq.a6': 'We accept payment via PIX, bank transfer, credit card (up to 12 installments) and bank slip (boleto). The specific conditions for each project are defined by contract.',
+    'faq.q7': 'Does the project include a plant and materials list?',
+    'faq.a7': 'Yes, the complete executive project includes a detailed list of plant species with technical specifications, quantities, materials list, descriptive report and execution schedule. You receive all necessary documentation.',
+    'faq.q8': 'How does the warranty work?',
+    'faq.a8': 'We offer a 12-month labor warranty on all executed projects. Plants have a 30-day adaptation warranty after planting. In case of any issue, our team returns at no extra cost for assessment and correction.',
+    'faq.cta.text': 'Still have questions? Talk to a specialist',
+    'faq.cta.btn': 'Talk to a Specialist',
+
+    'contact.eyebrow': 'Get in Touch',
+    'contact.title': 'Contact Us',
+    'contact.subtitle': "Let's turn your project into reality",
+    'contact.address_label': 'Address',
+    'contact.phone_label': 'Phone',
+    'contact.email_label': 'Email',
+    'contact.hours_label': 'Business Hours',
+    'contact.hours_detail': 'Monday to Friday: 8am - 6pm<br>Saturday: 8am - 12pm',
+    'contact.form_title': 'Send Us a Message',
+    'contact.form_subtitle': 'Fill in the fields below and we will get back to you shortly',
+    'contact.label_name': 'Full Name *',
+    'contact.label_email': 'Email *',
+    'contact.label_phone': 'Phone *',
+    'contact.label_type': 'Project Type *',
+    'contact.label_message': 'Message *',
+    'contact.select_default': 'Select a type',
+    'contact.select_garden': 'Garden Design',
+    'contact.select_maintenance': 'Landscape Maintenance',
+    'contact.select_irrigation': 'Automated Irrigation',
+    'contact.select_vertical': 'Vertical Garden',
+    'contact.select_green_roof': 'Green Roof',
+    'contact.select_consulting': 'Environmental Consulting',
+    'contact.select_other': 'Other',
+    'contact.btn_send': 'Send Message',
+    'contact.btn_sending': 'Sending...',
+    'contact.success_msg': 'Message sent successfully! We will get back to you shortly.',
+
+    'footer.brand_desc': 'Transforming green spaces and connecting you with nature for over 15 years.',
+    'footer.quick_links': 'Quick Links',
+    'footer.services_title': 'Services',
+    'footer.contact_title': 'Contact',
+    'footer.link_about': 'About',
+    'footer.link_services': 'Services',
+    'footer.link_testimonials': 'Testimonials',
+    'footer.link_contact': 'Contact',
+    'footer.link_gardens': 'Garden Design',
+    'footer.link_maintenance': 'Landscape Maintenance',
+    'footer.link_irrigation': 'Automated Irrigation',
+    'footer.link_vertical': 'Vertical Gardens',
+    'footer.link_green_roof': 'Green Roofs',
+    'footer.link_consulting': 'Environmental Consulting',
+    'footer.copyright': '© 2026 GIDI Landscaping. All rights reserved.',
+    'footer.dev': 'Crafted with <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-heart"></use></svg> to connect you with nature',
+
+    'subpage.eyebrow': 'Services',
+    'subpage.what_is': 'What is it',
+    'subpage.what_includes': 'What is included',
+    'subpage.request_quote': 'Request a Quote',
+    'subpage.back_services': '← Back to Services',
+
+    'page.garden.title': 'Garden Design — GIDI Landscaping',
+    'service.garden.what_is_text': 'Custom garden design service with space assessment, selection of species suited to climate and soil, and delivery of executive project with plans and specifications.',
+    'service.garden.includes.1': 'Site survey and analysis',
+    'service.garden.includes.2': '2D/3D executive project',
+    'service.garden.includes.3': 'Native and exotic species selection',
+    'service.garden.includes.4': 'Planting and follow-up',
+    'service.garden.includes.5': 'Residential, commercial and corporate',
+
+    'page.maintenance.title': 'Landscape Maintenance — GIDI Landscaping',
+    'service.maintenance.what_is_text': 'Regular visit program to keep the garden in perfect condition, with pruning, fertilization, pest control and replanting as needed.',
+    'service.maintenance.includes.1': 'Custom maintenance plan',
+    'service.maintenance.includes.2': 'Pruning and trimming',
+    'service.maintenance.includes.3': 'Fertilization and soil nutrition',
+    'service.maintenance.includes.4': 'Phytosanitary control',
+    'service.maintenance.includes.5': 'Visit report',
+
+    'page.irrigation.title': 'Automated Irrigation — GIDI Landscaping',
+    'service.irrigation.what_is_text': 'Sizing and installation of drip or sprinkler irrigation systems, controlled by timers or humidity sensors, reducing water waste.',
+    'service.irrigation.includes.1': 'Hydraulic system design',
+    'service.irrigation.includes.2': 'Installation of drippers and sprinklers',
+    'service.irrigation.includes.3': 'Programmable controller',
+    'service.irrigation.includes.4': 'Rain and humidity sensors',
+    'service.irrigation.includes.5': 'Operation training',
+
+    'page.vertical.title': 'Vertical Gardens — GIDI Landscaping',
+    'service.vertical.what_is_text': 'Creation of living walls and panels for indoor or outdoor environments, with modular structure and integrated irrigation system.',
+    'service.vertical.includes.1': 'Metal or PVC structure and support',
+    'service.vertical.includes.2': 'Substrate and agricultural felt',
+    'service.vertical.includes.3': 'Plant selection by light level',
+    'service.vertical.includes.4': 'Integrated irrigation',
+    'service.vertical.includes.5': 'Periodic maintenance',
+
+    'page.green_roof.title': 'Green Roofs — GIDI Landscaping',
+    'service.green_roof.what_is_text': 'Installation of extensive or intensive green coverage on slabs and roofs, with waterproofing, drainage and lightweight substrate layers.',
+    'service.green_roof.includes.1': 'Structural analysis of the roof',
+    'service.green_roof.includes.2': 'Waterproofing and drainage',
+    'service.green_roof.includes.3': 'Lightweight substrate and hardy species',
+    'service.green_roof.includes.4': 'Thermal and acoustic reduction',
+    'service.green_roof.includes.5': 'Environmental certification',
+
+    'page.consulting.title': 'Environmental Consulting — GIDI Landscaping',
+    'service.consulting.what_is_text': 'Technical consultancy for sustainable landscaping projects, environmental compensation, arborization reports and compliance with municipal legislation.',
+    'service.consulting.includes.1': 'Environmental assessment of the space',
+    'service.consulting.includes.2': 'Tree species inventory',
+    'service.consulting.includes.3': 'Technical reports and opinions',
+    'service.consulting.includes.4': 'Compliance with local legislation',
+    'service.consulting.includes.5': 'Green compensation plan',
+
+    'sustentabilidade.eyebrow': 'Green Commitment',
+    'sustentabilidade.title': 'Landscaping with Purpose',
+    'sustentabilidade.subtitle': 'Every GIDI project is designed to coexist with the environment — using resources efficiently, respecting the local biome and leaving the surroundings more alive than we found them.',
+    'sustentabilidade.card1.title': 'Native Plants',
+    'sustentabilidade.card1.desc': 'We prioritize local biome species in every project — lower water consumption, direct support for native wildlife and greater resilience to regional climate variations.',
+    'sustentabilidade.card2.title': 'Green Roofs and Walls',
+    'sustentabilidade.card2.desc': 'Vegetated rooftops reduce indoor temperature by up to 3°C, manage stormwater efficiently and expand biodiversity in the built urban environment.',
+    'sustentabilidade.card3.title': 'Efficient Irrigation',
+    'sustentabilidade.card3.desc': 'Drip systems and rainwater harvesting integrated into the project — an average 40% reduction in water consumption compared to conventional irrigation.',
+    'sustentabilidade.card4.title': 'Environmental Consulting',
+    'sustentabilidade.card4.desc': 'Complete site assessment, inventory of existing species and plant compensation plans aligned with current environmental legislation.',
+
+    'testimonial.1.loc': 'Premium Residential',
+    'testimonial.2.loc': 'TechCorp Company',
+    'testimonial.3.loc': 'Solar Condominium',
+    'testimonial.4.loc': 'Gardens Residence',
+    'testimonial.5.loc': 'Events & Celebrations',
+    'testimonial.6.loc': 'Verde Restaurant',
+    'testimonial.7.loc': 'Modern Apartment',
+    'testimonial.8.loc': 'Luxury Penthouse',
+    'testimonial.9.loc': 'Innovation Startup',
+
+    'depoimentos.cta.title': 'Join hundreds of satisfied clients',
+    'depoimentos.cta.btn_visit': 'Schedule your visit',
+    'depoimentos.cta.btn_quote': 'Get your quote',
+
+    'form.microcopy': 'We respond within 2 hours during business hours',
+
+    'footer.address': '123 Example St<br>City/State',
+    'footer.phone': '(XX) XXXXX-XXXX',
+    'footer.email': 'contact@gidipaisagismo.com.br',
+    'footer.hours': 'Mon-Fri: 8am-6pm',
+  },
+
+  'es-ES': {
+  'page.title': 'GIDI Paisajismo - Transforma Tus Espacios Verdes',
+  'skip_content': 'Ir al contenido principal',
+  'scroll_top_aria': 'Volver arriba',
+  'whatsapp_float_aria': 'Contáctanos por WhatsApp',
+
+  'nav.home': 'Inicio',
+  'nav.services': 'Servicios',
+  'nav.about': 'Nosotros',
+  'nav.mobile_open': 'Abrir menú',
+  'nav.whatsapp_aria': 'Contáctanos por WhatsApp',
+
+  'hero.subtitle': 'Transformando Espacios Verdes',
+  'hero.scroll': 'Desplázate para explorar',
+
+  'services.eyebrow': 'Lo Que Hacemos',
+  'services.title': 'Nuestros Servicios',
+  'services.subtitle': 'Soluciones completas de paisajismo para tu espacio',
+  'services.view_projects': 'Ver proyectos',
+  'services.learn_more': 'Saber Más',
+  'services.coming_soon': 'Proyectos próximamente',
+
+  'service.garden.title': 'Diseño de Jardines',
+  'service.garden.desc': 'Creación de jardines personalizados que reflejan tu personalidad y armonizan con el entorno.',
+  'service.maintenance.title': 'Mantenimiento Paisajístico',
+  'service.maintenance.desc': 'Cuidados regulares para mantener tu jardín siempre bonito, saludable y bien cuidado.',
+  'service.irrigation.title': 'Riego Automatizado',
+  'service.irrigation.desc': 'Sistemas inteligentes de riego que ahorran agua y mantienen tus plantas saludables.',
+  'service.vertical.title': 'Jardines Verticales',
+  'service.vertical.desc': 'Soluciones verticales creativas para aprovechar espacios pequeños y crear ambientes únicos.',
+  'service.green_roof.title': 'Cubiertas Verdes',
+  'service.green_roof.desc': 'Implementación de cubiertas vegetales que promueven la sostenibilidad y el confort térmico.',
+  'service.consulting.title': 'Consultoría Ambiental',
+  'service.consulting.desc': 'Orientación especializada para proyectos sostenibles y adecuación ambiental.',
+
+  'portfolio.residential': 'Jardín Residencial',
+  'portfolio.modern': 'Jardín Moderno',
+  'portfolio.commercial': 'Paisajismo Comercial',
+  'portfolio.outdoor': 'Área Exterior',
+  'portfolio.vertical': 'Jardín Vertical',
+  'portfolio.green_roof': 'Cubierta Verde',
+
+  'process.eyebrow': 'Nuestro Método',
+  'process.title': 'Cómo Trabajamos',
+  'process.subtitle': 'Desde la primera conversación hasta la entrega final, cada etapa se planifica con cuidado',
+  'process.step1.title': 'Consultoria',
+  'process.step1.text': 'Hablamos sobre tu visión y las necesidades del espacio',
+  'process.step2.title': 'Proyecto Detallado',
+  'process.step2.text': 'Creamos un proyecto personalizado con especificaciones técnicas completas',
+  'process.step3.title': 'Ejecución Precisa',
+  'process.step3.text': 'Nuestro equipo ejecuta cada detalle con materiales de primera calidad',
+  'process.step4.title': 'Entrega con Garantía',
+  'process.step4.text': 'Entregamos el proyecto con garantía de 12 meses en mano de obra',
+  'process.step5.title': 'Mantenimiento Continuo',
+  'process.step5.text': 'Planes de mantenimiento para que tu jardín prospere durante años',
+
+  'about.eyebrow': 'Nuestra Historia',
+  'about.title': 'Sobre GIDI Paisajismo',
+  'about.p1': 'Con 15 años de experiencia en paisajismo, GIDI transforma espacios ordinarios en entornos extraordinarios — jardines residenciales, cubiertas verdes e interiores vivos que elevan la calidad de vida.',
+  'about.p2': 'Cada proyecto comienza con escucha activa: entendemos el espacio, el clima local y el estilo de vida del cliente antes de cualquier diseño. El resultado es un jardín que funciona, crece y deleita con el tiempo.',
+
+  'blog.eyebrow': 'Inspírate',
+  'blog.title': 'Blog e Inspiración',
+  'blog.subtitle': 'Consejos, tendencias e ideas sobre paisajismo',
+  'blog.post1.category': 'Tendencias',
+  'blog.post1.date': '15 Feb 2026',
+  'blog.post1.readtime': '6 min de lectura',
+  'blog.post1.title': 'Diseño Biofílico: El Arte de Traer la Naturaleza al Interior',
+  'blog.post1.excerpt': 'Descubre cómo el diseño biofílico transforma espacios comunes en entornos que promueven el bienestar, la productividad y la conexión con la naturaleza — y cómo aplicarlo en tu proyecto.',
+  'blog.post2.category': 'Plantas',
+  'blog.post2.date': '08 Feb 2026',
+  'blog.post2.readtime': '4 min de lectura',
+  'blog.post2.title': '10 Plantas Nativas de Brasil que Transforman Cualquier Jardín',
+  'blog.post2.excerpt': 'Especies adaptadas al clima brasileño, con belleza y mínimo mantenimiento.',
+  'blog.post3.category': 'Consejos Prácticos',
+  'blog.post3.date': '28 Ene 2026',
+  'blog.post3.readtime': '3 min de lectura',
+  'blog.post3.title': 'Jardín Vertical: Solución Verde para Espacios Pequeños',
+  'blog.post3.excerpt': 'Cómo crear paredes vivas en apartamentos, balcones y oficinas sin grandes obras.',
+  'blog.read_article': 'Leer Artículo',
+  'blog.view_all': 'Ver Todos los Artículos',
+
+  'testimonials.eyebrow': 'Clientes',
+  'testimonials.title': 'Lo Que Dicen Nuestros Clientes',
+  'testimonials.subtitle': 'Testimonios de quienes confían en nuestro trabajo',
+  'testimonial.1.text': '"¡GIDI transformó completamente nuestro jardín! El resultado superó todas las expectativas. Profesionales competentes y atentos."',
+  'testimonial.2.text': '"¡Excelente trabajo! El jardín vertical quedó increíble y dio vida a nuestra oficina. ¡Lo recomiendo mucho!"',
+  'testimonial.3.text': '"¡Proyecto ejecutado a la perfección! El equipo es puntual, organizado y el resultado fue más allá de lo esperado. Nuestra cubierta verde es simplemente maravillosa."',
+  'testimonial.4.text': '"¡El paisajismo de nuestra fachada quedó increíble! Recibo elogios de los vecinos cada día. Trabajo impecable de principio a fin."',
+  'testimonial.5.text': '"Contratamos a GIDI para el jardín de nuestro evento y el resultado fue espectacular. Los invitados quedaron impresionados por la belleza del espacio."',
+  'testimonial.6.text': '"Nuestro restaurante ganó una hermosa área exterior con plantas e iluminación especial. Las reseñas de los clientes mejoraron mucho desde la reforma."',
+  'testimonial.7.text': '"¡El jardín vertical de hierbas que GIDI instaló en mi apartamento es un sueño! Recojo hierbas frescas cada día. ¡Proyecto bonito y funcional!"',
+  'testimonial.8.text': '"Transformaron nuestra terraza en un jardín paradisíaco. Cada detalle fue pensado con mucho cuidado. ¡Equipo altamente profesional!"',
+  'testimonial.9.text': '"El proyecto de paisajismo para nuestra empresa elevó el ambiente de trabajo a otro nivel. Empleados más felices y productivos. ¡Vale cada céntimo!"',
+
+  'faq.eyebrow': 'Preguntas Comunes',
+  'faq.title': 'Preguntas Frecuentes',
+  'faq.q1': '¿El presupuesto es gratuito y sin compromiso?',
+  'faq.a1': 'Sí, la consulta inicial y el presupuesto son totalmente gratuitos y sin ninguna obligación. Nos ponemos en contacto para entender tu proyecto y presentamos una propuesta personalizada sin coste.',
+  'faq.q2': '¿Cuál es el plazo medio para ejecutar un jardín residencial?',
+  'faq.a2': 'El plazo varía según la complejidad y el tamaño del proyecto. Los jardines residenciales de tamaño medio suelen ejecutarse en 2 a 4 semanas. Los proyectos más grandes o con elementos especiales pueden llevar hasta 8 semanas. El cronograma detallado se define en la fase de proyecto.',
+  'faq.q3': '¿Atienden fuera de São Paulo?',
+  'faq.a3': 'Sí, atendemos proyectos en todo el estado de São Paulo y en el Gran São Paulo. Para proyectos en otras regiones de Brasil, evaluamos caso por caso. Contáctanos para verificar la viabilidad de tu proyecto.',
+  'faq.q4': '¿Trabajan con proyectos comerciales y corporativos?',
+  'faq.a4': 'Sí, atendemos empresas, oficinas, restaurantes, hoteles y condominios. Tenemos experiencia en paisajismo corporativo, jardines de fachada, áreas comunes y espacios de convivencia. Contáctanos para una propuesta específica.',
+  'faq.q5': '¿Es posible instalar riego en un apartamento o terraza?',
+  'faq.a5': 'Sí, disponemos de soluciones de riego adaptadas para apartamentos, terrazas y azoteas. Utilizamos sistemas automatizados con temporizador y sensores de humedad, respetando las limitaciones de cada espacio y la estructura del inmueble.',
+  'faq.q6': '¿Qué formas de pago se aceptan?',
+  'faq.a6': 'Aceptamos pago mediante PIX, transferencia bancaria, tarjeta de crédito (hasta 12 cuotas) y boleto bancario. Las condiciones específicas de cada proyecto se definen en el contrato.',
+  'faq.q7': '¿El proyecto incluye lista de plantas y materiales?',
+  'faq.a7': 'Sí, el proyecto ejecutivo completo incluye una lista detallada de especies vegetales con especificaciones técnicas, cantidades, lista de materiales, memoria descriptiva y cronograma de ejecución. Recibes toda la documentación necesaria.',
+  'faq.q8': '¿Cómo funciona la garantía en los servicios?',
+  'faq.a8': 'Ofrecemos garantía de 12 meses en mano de obra para todos los proyectos ejecutados. Las plantas tienen garantía de adaptación de 30 días tras la plantación. En caso de cualquier problema, nuestro equipo regresa sin coste adicional para la evaluación y corrección.',
+  'faq.cta.text': '¿Aún tienes dudas? Habla con un especialista',
+  'faq.cta.btn': 'Hablar con un Especialista',
+
+  'contact.eyebrow': 'Contáctanos',
+  'contact.title': 'Ponte en Contacto',
+  'contact.subtitle': 'Hagamos realidad tu proyecto',
+  'contact.address_label': 'Dirección',
+  'contact.phone_label': 'Teléfono',
+  'contact.email_label': 'Correo Electrónico',
+  'contact.hours_label': 'Horario de Atención',
+  'contact.hours_detail': 'Lunes a Viernes: 08h - 18h<br>Sábado: 08h - 12h',
+  'contact.form_title': 'Envía tu Mensaje',
+  'contact.form_subtitle': 'Rellena los campos a continuación y nos pondremos en contacto pronto',
+  'contact.label_name': 'Nombre Completo *',
+  'contact.label_email': 'Correo Electrónico *',
+  'contact.label_phone': 'Teléfono *',
+  'contact.label_type': 'Tipo de Proyecto *',
+  'contact.label_message': 'Mensaje *',
+  'contact.select_default': 'Selecciona un tipo',
+  'contact.select_garden': 'Diseño de Jardín',
+  'contact.select_maintenance': 'Mantenimiento Paisajístico',
+  'contact.select_irrigation': 'Riego Automatizado',
+  'contact.select_vertical': 'Jardín Vertical',
+  'contact.select_green_roof': 'Cubierta Verde',
+  'contact.select_consulting': 'Consultoría Ambiental',
+  'contact.select_other': 'Otro',
+  'contact.btn_send': 'Enviar Mensaje',
+  'contact.btn_sending': 'Enviando...',
+  'contact.success_msg': '¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.',
+
+  'footer.brand_desc': 'Transformando espacios verdes y conectándote con la naturaleza desde hace más de 15 años.',
+  'footer.quick_links': 'Enlaces Rápidos',
+  'footer.services_title': 'Servicios',
+  'footer.contact_title': 'Contacto',
+  'footer.link_about': 'Nosotros',
+  'footer.link_services': 'Servicios',
+  'footer.link_testimonials': 'Testimonios',
+  'footer.link_contact': 'Contacto',
+  'footer.link_gardens': 'Diseño de Jardines',
+  'footer.link_maintenance': 'Mantenimiento Paisajístico',
+  'footer.link_irrigation': 'Riego Automatizado',
+  'footer.link_vertical': 'Jardines Verticales',
+  'footer.link_green_roof': 'Cubiertas Verdes',
+  'footer.link_consulting': 'Consultoría Ambiental',
+  'footer.copyright': '© 2026 GIDI Paisajismo. Todos los derechos reservados.',
+  'footer.dev': 'Creado con <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-heart"></use></svg> para conectarte con la naturaleza',
+
+  'subpage.eyebrow': 'Servicios',
+  'subpage.what_is': '¿Qué es?',
+  'subpage.what_includes': '¿Qué incluye?',
+  'subpage.request_quote': 'Solicitar Presupuesto',
+  'subpage.back_services': '← Volver a Servicios',
+
+  'page.garden.title': 'Proyectos de Jardines — GIDI Paisajismo',
+  'service.garden.what_is_text': 'Servicio de creación de jardines a medida, con relevamiento del espacio, selección de especies adecuadas al clima y suelo, y entrega de proyecto ejecutivo con planos y especificaciones.',
+  'service.garden.includes.1': 'Relevamiento y análisis del terreno',
+  'service.garden.includes.2': 'Proyecto ejecutivo en 2D/3D',
+  'service.garden.includes.3': 'Selección de especies nativas y exóticas',
+  'service.garden.includes.4': 'Implantación y seguimiento',
+  'service.garden.includes.5': 'Residencial, comercial y corporativo',
+
+  'page.maintenance.title': 'Mantenimiento Paisajístico — GIDI Paisajismo',
+  'service.maintenance.what_is_text': 'Programa de visitas regulares para mantener el jardín en perfectas condiciones, con podas, fertilizaciones, control de plagas y replantaciones según sea necesario.',
+  'service.maintenance.includes.1': 'Plan de mantenimiento personalizado',
+  'service.maintenance.includes.2': 'Poda y recorte',
+  'service.maintenance.includes.3': 'Fertilización y nutrición del suelo',
+  'service.maintenance.includes.4': 'Control fitosanitario',
+  'service.maintenance.includes.5': 'Informe de visita',
+
+  'page.irrigation.title': 'Irrigación Automatizada — GIDI Paisajismo',
+  'service.irrigation.what_is_text': 'Dimensionamiento e instalación de sistemas de riego por goteo o aspersión, controlados por temporizadores o sensores de humedad, reduciendo el desperdicio de agua.',
+  'service.irrigation.includes.1': 'Proyecto hidráulico del sistema',
+  'service.irrigation.includes.2': 'Instalación de goteros y aspersores',
+  'service.irrigation.includes.3': 'Controlador programable',
+  'service.irrigation.includes.4': 'Sensores de lluvia y humedad',
+  'service.irrigation.includes.5': 'Capacitación operativa',
+
+  'page.vertical.title': 'Jardines Verticales — GIDI Paisajismo',
+  'service.vertical.what_is_text': 'Creación de muros y paneles vivos para ambientes interiores o exteriores, con estructura modular y sistema de riego integrado.',
+  'service.vertical.includes.1': 'Estructura y soporte metálico o PVC',
+  'service.vertical.includes.2': 'Sustrato y fieltro agrícola',
+  'service.vertical.includes.3': 'Selección de plantas por luminosidad',
+  'service.vertical.includes.4': 'Riego integrado',
+  'service.vertical.includes.5': 'Mantenimiento periódico',
+
+  'page.green_roof.title': 'Techos Verdes — GIDI Paisajismo',
+  'service.green_roof.what_is_text': 'Implantación de cobertura vegetal extensiva o intensiva sobre losas y techos, con capas de impermeabilización, drenaje y sustrato ligero.',
+  'service.green_roof.includes.1': 'Análisis estructural de la cubierta',
+  'service.green_roof.includes.2': 'Impermeabilización y drenaje',
+  'service.green_roof.includes.3': 'Sustrato ligero y especies resistentes',
+  'service.green_roof.includes.4': 'Reducción térmica y acústica',
+  'service.green_roof.includes.5': 'Certificación ambiental',
+
+  'page.consulting.title': 'Consultoría Ambiental — GIDI Paisajismo',
+  'service.consulting.what_is_text': 'Asesoría técnica para proyectos paisajísticos sostenibles, compensación ambiental, informes de arborización y adecuación a la legislación municipal.',
+  'service.consulting.includes.1': 'Diagnóstico ambiental del espacio',
+  'service.consulting.includes.2': 'Inventario de especies arbóreas',
+  'service.consulting.includes.3': 'Informes y dictámenes técnicos',
+  'service.consulting.includes.4': 'Adecuación a la legislación local',
+  'service.consulting.includes.5': 'Plan de compensación verde',
+
+  'sustentabilidade.eyebrow': 'Compromiso Verde',
+  'sustentabilidade.title': 'Paisajismo con Propósito',
+  'sustentabilidade.subtitle': 'Cada proyecto de GIDI está pensado para coexistir con el medio ambiente — usando recursos con eficiencia, respetando el bioma local y dejando el entorno más vivo de lo que lo encontramos.',
+  'sustentabilidade.card1.title': 'Plantas Nativas',
+  'sustentabilidade.card1.desc': 'Priorizamos especies del bioma local en todos los proyectos — menor consumo hídrico, apoyo directo a la fauna nativa y mayor resiliencia a las variaciones climáticas de la región.',
+  'sustentabilidade.card2.title': 'Techos y Muros Verdes',
+  'sustentabilidade.card2.desc': 'Las cubiertas vegetales reducen hasta 3°C la temperatura interior, gestionan las aguas pluviales con eficiencia y amplían la biodiversidad en el entorno urbano construido.',
+  'sustentabilidade.card3.title': 'Riego Eficiente',
+  'sustentabilidade.card3.desc': 'Sistemas de goteo y captación de agua de lluvia integrados al proyecto — reducción promedio del 40% en el consumo hídrico respecto a la irrigación convencional.',
+  'sustentabilidade.card4.title': 'Consultoría Ambiental',
+  'sustentabilidade.card4.desc': 'Diagnóstico completo del espacio, inventario de especies existentes y planes de compensación vegetal alineados a la legislación ambiental vigente.',
+
+  'testimonial.1.loc': 'Residencial Premium',
+  'testimonial.2.loc': 'Empresa TechCorp',
+  'testimonial.3.loc': 'Condominio Solar',
+  'testimonial.4.loc': 'Residencia Jardines',
+  'testimonial.5.loc': 'Eventos y Celebraciones',
+  'testimonial.6.loc': 'Restaurante Verde',
+  'testimonial.7.loc': 'Apartamento Moderno',
+  'testimonial.8.loc': 'Cobertura de Lujo',
+  'testimonial.9.loc': 'Startup Innovación',
+
+  'depoimentos.cta.title': 'Únete a cientos de clientes satisfechos',
+  'depoimentos.cta.btn_visit': 'Programa tu visita',
+  'depoimentos.cta.btn_quote': 'Solicita tu presupuesto',
+
+  'form.microcopy': 'Respondemos en un plazo de 2 horas en horario comercial',
+
+  'footer.address': 'Calle Ejemplo, 123<br>Ciudad/Estado',
+  'footer.phone': '(XX) XXXXX-XXXX',
+  'footer.email': 'contacto@gidipaisagismo.com.br',
+  'footer.hours': 'Lun-Vie: 08h-18h',
+  }
+};
+
+function applyLanguage(lang) {
+  var t = translations[lang];
+  if (!t) return;
+
+  // textContent updates
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.textContent = t[key];
+  });
+
+  // innerHTML updates (for content with <br> or inline SVG)
+  document.querySelectorAll('[data-i18n-html]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n-html');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+
+  // aria-label updates
+  document.querySelectorAll('[data-i18n-aria]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n-aria');
+    if (t[key] !== undefined) el.setAttribute('aria-label', t[key]);
+  });
+
+  // placeholder updates
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n-placeholder');
+    if (t[key] !== undefined) el.setAttribute('placeholder', t[key]);
+  });
+
+  // <html lang>
+  document.documentElement.lang = lang;
+
+  // <title> — per-page via data-page on <body>, fallback to generic key
+  var pageKey = document.body.getAttribute('data-page');
+  var titleKey = pageKey ? 'page.' + pageKey + '.title' : 'page.title';
+  if (t[titleKey]) document.title = t[titleKey];
+
+  // Save preference
+  try { localStorage.setItem('gidi-lang', lang); } catch(e) {}
+
+  // Update globe button code
+  var currentCode = document.querySelector('.lang-current-code');
+  var codeMap = { 'pt-BR': 'PT', 'en-US': 'EN', 'es-ES': 'ES' };
+  if (currentCode) currentCode.textContent = codeMap[lang] || 'PT';
+
+  // Update aria-selected on dropdown options
+  document.querySelectorAll('.lang-option').forEach(function(opt) {
+    var selected = opt.getAttribute('data-lang') === lang;
+    opt.setAttribute('aria-selected', String(selected));
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  var saved;
+  try { saved = localStorage.getItem('gidi-lang'); } catch(e) {}
+  var validLangs = ['pt-BR', 'en-US', 'es-ES'];
+  var lang = validLangs.indexOf(saved) !== -1 ? saved : 'pt-BR';
+
+  // Dropdown open/close
+  var globeBtn = document.querySelector('.lang-globe-btn');
+  var dropdown = document.querySelector('.lang-dropdown');
+
+  if (globeBtn && dropdown) {
+    globeBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var isOpen = dropdown.classList.contains('open');
+      dropdown.classList.toggle('open', !isOpen);
+      globeBtn.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    document.addEventListener('click', function() {
+      dropdown.classList.remove('open');
+      globeBtn.setAttribute('aria-expanded', 'false');
+    });
+
+    dropdown.querySelectorAll('.lang-option').forEach(function(opt) {
+      opt.addEventListener('click', function(e) {
+        e.stopPropagation();
+        applyLanguage(opt.getAttribute('data-lang'));
+        dropdown.classList.remove('open');
+        globeBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  applyLanguage(lang);
+});

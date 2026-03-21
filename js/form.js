@@ -253,23 +253,6 @@ async function sendViaFormSpree(data) {
 }
 
 /* ===================================
-   Send via Email Service (EmailJS)
-   =================================== */
-async function sendViaEmailJS(data) {
-    // EmailJS configuration
-    const SERVICE_ID = 'YOUR_SERVICE_ID';
-    const TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-    const USER_ID = 'YOUR_USER_ID';
-
-    try {
-        await emailjs.send(SERVICE_ID, TEMPLATE_ID, data, USER_ID);
-        return { success: true };
-    } catch (error) {
-        return { success: false, message: error.text };
-    }
-}
-
-/* ===================================
    Simulate Form Submission (Demo)
    =================================== */
 function simulateFormSubmission(data) {
@@ -410,32 +393,6 @@ function addHoneypot() {
 }
 
 addHoneypot();
-
-/* ===================================
-   reCAPTCHA Integration (Optional)
-   =================================== */
-function loadRecaptcha() {
-    // Add reCAPTCHA script
-    const script = document.createElement('script');
-    script.src = 'https://www.google.com/recaptcha/api.js';
-    script.async = true;
-    script.defer = true;
-    document.head.appendChild(script);
-}
-
-function verifyRecaptcha() {
-    const recaptchaResponse = grecaptcha.getResponse();
-
-    if (!recaptchaResponse) {
-        showFormMessage('Por favor, complete a verificação reCAPTCHA', 'error');
-        return false;
-    }
-
-    return true;
-}
-
-// Uncomment to enable reCAPTCHA
-// loadRecaptcha();
 
 /* ===================================
    Export Form Functions

@@ -5,7 +5,6 @@
 // Initialize AOS (Animate On Scroll)
 document.addEventListener('DOMContentLoaded', function() {
     initializeAOS();
-    initializeSwiperCarousel();
     initializeParallax();
 });
 
@@ -15,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function initializeAOS() {
     if (typeof AOS !== 'undefined') {
         AOS.init({
-            duration: 1000,
+            duration: 700,
             easing: 'ease-out',
             once: true,
             offset: 100,
@@ -35,52 +34,9 @@ function initializeAOS() {
 
 /* ===================================
    Swiper Carousel for Depoimentos
+   (removido — seção usa scroll infinito CSS)
    =================================== */
-function initializeSwiperCarousel() {
-    if (typeof Swiper !== 'undefined') {
-        const depoimentosSwiper = new Swiper('.depoimentos-carousel', {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            loop: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-                dynamicBullets: true
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev'
-            },
-            breakpoints: {
-                768: {
-                    slidesPerView: 1
-                },
-                1024: {
-                    slidesPerView: 1
-                }
-            },
-            effect: 'fade',
-            fadeEffect: {
-                crossFade: true
-            },
-            keyboard: {
-                enabled: true,
-                onlyInViewport: true
-            },
-            a11y: {
-                enabled: true,
-                prevSlideMessage: 'Depoimento anterior',
-                nextSlideMessage: 'Próximo depoimento',
-                paginationBulletMessage: 'Ir para depoimento {{index}}'
-            }
-        });
-    }
-}
+// function initializeSwiperCarousel() { ... }
 
 /* ===================================
    Parallax Effect
@@ -189,7 +145,6 @@ function staggerAnimation(selector, delay = 100) {
 document.addEventListener('DOMContentLoaded', function() {
     staggerAnimation('.service-card', 100);
     staggerAnimation('.portfolio-item', 80);
-    staggerAnimation('.instagram-item', 60);
 });
 
 /* ===================================

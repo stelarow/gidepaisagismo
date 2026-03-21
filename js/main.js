@@ -2,12 +2,53 @@
    GIDI Paisagismo - Main JavaScript
    =================================== */
 
+/* ===================================
+   Blog Articles Data
+   =================================== */
+var BLOG_ARTICLES = [
+    {
+        category: 'Tendências',
+        date: '15 Fev 2026',
+        datetime: '2026-02-15',
+        readtime: '6 min de leitura',
+        image: 'images/blog/post-1.jpg',
+        imageAlt: 'Design Biofílico',
+        url: 'blog/post-1.html',
+        title: 'Design Biofílico: A Arte de Trazer a Natureza para Dentro de Casa',
+        excerpt: 'Descubra como o design biofílico transforma espaços comuns em ambientes que promovem bem-estar, produtividade e conexão com a natureza — e como aplicá-lo no seu projeto.'
+    },
+    {
+        category: 'Plantas',
+        date: '08 Fev 2026',
+        datetime: '2026-02-08',
+        readtime: '4 min de leitura',
+        image: 'images/blog/post-2.jpg',
+        imageAlt: 'Plantas Nativas',
+        url: 'blog/post-2.html',
+        title: '10 Plantas Nativas do Brasil que Transformam Qualquer Jardim',
+        excerpt: 'Espécies adaptadas ao clima brasileiro, com beleza e baixíssima manutenção.'
+    },
+    {
+        category: 'Dicas Práticas',
+        date: '28 Jan 2026',
+        datetime: '2026-01-28',
+        readtime: '3 min de leitura',
+        image: 'images/blog/post-3.jpg',
+        imageAlt: 'Jardim Vertical',
+        url: 'blog/post-3.html',
+        title: 'Jardim Vertical: Solução Verde para Pequenos Espaços',
+        excerpt: 'Como criar paredes vivas em apartamentos, sacadas e escritórios sem grandes obras.'
+    }
+];
+
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     initializeNavigation();
     initializeScrollTop();
     initializeLazyLoading();
     initializePortfolio();
+    initializeBlogModal();
+    initializeUrgencyBar();
 });
 
 /* ===================================
@@ -20,11 +61,6 @@ function initializeNavigation() {
     const navLinks = document.querySelectorAll('.nav-link');
     let lastScroll = 0;
 
-    // Força repaint do hamburger no mobile (fix iOS Safari / mobile render bug)
-    if (mobileToggle && window.innerWidth <= 1024) {
-        void mobileToggle.offsetHeight; // Lê offsetHeight para forçar reflow
-    }
-
     // Sticky navbar on scroll
     window.addEventListener('scroll', function() {
         const currentScroll = window.pageYOffset;
@@ -36,14 +72,19 @@ function initializeNavigation() {
             navbar.classList.remove('scrolled');
         }
 
-        // Hide/show navbar on scroll
-        if (currentScroll > lastScroll && currentScroll > 500) {
-            navbar.classList.add('hide');
-        } else {
-            navbar.classList.remove('hide');
-        }
-
         lastScroll = currentScroll;
+    });
+
+    // Força repaint do hamburger no mobile após todos os scripts carregarem (fix iOS Safari)
+    window.addEventListener('load', function() {
+        const toggle = document.querySelector('.mobile-menu-toggle');
+        if (toggle && window.innerWidth <= 1024) {
+            requestAnimationFrame(function() {
+                requestAnimationFrame(function() {
+                    void toggle.getBoundingClientRect();
+                });
+            });
+        }
     });
 
     // Mobile menu toggle
@@ -69,24 +110,30 @@ function initializeNavigation() {
         });
     });
 
-    // Active link on scroll
-    const sections = document.querySelectorAll('section[id]');
+    // Active nav link tracking via getBoundingClientRect (respeita ordem DOM)
+    var linkedSections = ['hero', 'servicos', 'sobre'];
 
-    window.addEventListener('scroll', function() {
-        const scrollY = window.pageYOffset;
-
-        sections.forEach(section => {
-            const sectionHeight = section.offsetHeight;
-            const sectionTop = section.offsetTop - 100;
-            const sectionId = section.getAttribute('id');
-            const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-
-            if (navLink && scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                navLinks.forEach(link => link.classList.remove('active'));
-                navLink.classList.add('active');
+    function updateActiveNav() {
+        var navHeight = 80;
+        var activeId = null;
+        linkedSections.forEach(function(id) {
+            var section = document.getElementById(id);
+            if (!section) return;
+            var rect = section.getBoundingClientRect();
+            if (rect.top <= window.innerHeight / 2 && rect.bottom > navHeight) {
+                activeId = id;
             }
         });
-    });
+        navLinks.forEach(function(link) { link.classList.remove('active'); });
+        if (activeId) {
+            var link = document.querySelector('.nav-link[href="#' + activeId + '"]');
+            if (link) link.classList.add('active');
+        }
+    }
+
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    window.addEventListener('resize', updateActiveNav);
+    updateActiveNav();
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -207,52 +254,6 @@ function initializePortfolio() {
         });
     }
 }
-
-/* ===================================
-   Counter Animation
-   =================================== */
-function animateCounter(element, target, duration = 1200) {
-    const startTime = performance.now();
-
-    function easeOutExpo(t) {
-        return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
-    }
-
-    function update(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        element.textContent = Math.round(easeOutExpo(progress) * target);
-        if (progress < 1) {
-            requestAnimationFrame(update);
-        }
-    }
-
-    requestAnimationFrame(update);
-}
-
-// Initialize counters when in viewport
-const statNumbers = document.querySelectorAll('.stat-number');
-let countersAnimated = false;
-
-window.addEventListener('scroll', function() {
-    if (countersAnimated) return;
-
-    const anyVisible = Array.from(statNumbers).some(stat => {
-        const rect = stat.getBoundingClientRect();
-        return rect.top < window.innerHeight && rect.bottom >= 0;
-    });
-
-    if (anyVisible) {
-        countersAnimated = true;
-        // Delay para deixar a animação AOS fade-right (1100ms) terminar antes de contar
-        setTimeout(() => {
-            statNumbers.forEach(stat => {
-                const target = parseInt(stat.getAttribute('data-count'));
-                animateCounter(stat, target);
-            });
-        }, 400);
-    }
-});
 
 /* ===================================
    Scroll Indicator Animation
@@ -387,6 +388,150 @@ function trapFocus(element) {
         }
     });
 }
+
+/* ===================================
+   Blog Modal
+   =================================== */
+function initializeBlogModal() {
+    var modal     = document.getElementById('blog-modal');
+    var openBtn   = document.getElementById('blog-view-all-btn');
+    var closeBtn  = document.getElementById('blog-modal-close');
+    var backdrop  = modal ? modal.querySelector('.blog-modal__backdrop') : null;
+    var filtersEl = document.getElementById('blog-modal-filters');
+    var gridEl    = document.getElementById('blog-modal-grid');
+    var countEl   = document.getElementById('blog-modal-count');
+
+    if (!modal || !openBtn) return;
+
+    var activeFilter = 'Todos';
+
+    function getCategories() {
+        var cats = ['Todos'];
+        BLOG_ARTICLES.forEach(function(a) {
+            if (cats.indexOf(a.category) === -1) cats.push(a.category);
+        });
+        return cats;
+    }
+
+    function renderFilters() {
+        filtersEl.innerHTML = '';
+        getCategories().forEach(function(cat) {
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'blog-modal__filter-btn' + (cat === activeFilter ? ' is-active' : '');
+            btn.setAttribute('role', 'tab');
+            btn.setAttribute('aria-selected', cat === activeFilter ? 'true' : 'false');
+            btn.textContent = cat;
+            btn.addEventListener('click', function() {
+                activeFilter = cat;
+                renderFilters();
+                filterCards();
+            });
+            filtersEl.appendChild(btn);
+        });
+    }
+
+    function renderCards() {
+        gridEl.innerHTML = '';
+        BLOG_ARTICLES.forEach(function(a) {
+            var card = document.createElement('article');
+            card.className = 'blog-card';
+            card.setAttribute('role', 'listitem');
+            card.setAttribute('data-category', a.category);
+            card.innerHTML =
+                '<div class="blog-card__image">' +
+                    '<img src="' + a.image + '" alt="' + a.imageAlt + '" loading="lazy">' +
+                    '<span class="blog-card__category">' + a.category + '</span>' +
+                '</div>' +
+                '<div class="blog-card__content">' +
+                    '<div class="blog-card__meta">' +
+                        '<time datetime="' + a.datetime + '">' + a.date + '</time>' +
+                        '<span class="blog-card__dot">·</span>' +
+                        '<span>' + a.readtime + '</span>' +
+                    '</div>' +
+                    '<h3 class="blog-card__title">' + a.title + '</h3>' +
+                    '<p class="blog-card__excerpt">' + a.excerpt + '</p>' +
+                    '<a href="' + a.url + '" class="blog-card__link">' +
+                        '<span>Ler Artigo</span> ' +
+                        '<svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-arrow-right"></use></svg>' +
+                    '</a>' +
+                '</div>';
+            gridEl.appendChild(card);
+        });
+    }
+
+    function filterCards() {
+        var cards = gridEl.querySelectorAll('.blog-card');
+        var visible = 0;
+        cards.forEach(function(card) {
+            var match = activeFilter === 'Todos' || card.getAttribute('data-category') === activeFilter;
+            if (match) { card.removeAttribute('hidden'); visible++; }
+            else { card.setAttribute('hidden', ''); }
+        });
+        countEl.textContent = visible + (visible === 1 ? ' artigo' : ' artigos');
+        var empty = gridEl.querySelector('.blog-modal__empty');
+        if (visible === 0 && !empty) {
+            var msg = document.createElement('p');
+            msg.className = 'blog-modal__empty';
+            msg.textContent = 'Nenhum artigo nesta categoria.';
+            gridEl.appendChild(msg);
+        } else if (visible > 0 && empty) {
+            empty.remove();
+        }
+    }
+
+    function openModal() {
+        renderFilters();
+        renderCards();
+        filterCards();
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        document.documentElement.style.scrollSnapType = 'none';
+        modal.scrollTop = 0;
+        closeBtn.focus();
+        trapFocus(modal);
+    }
+
+    function closeModal() {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        document.documentElement.style.scrollSnapType = '';
+        openBtn.focus();
+    }
+
+    openBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        openModal();
+    });
+    closeBtn.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', closeModal);
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+    });
+}
+
+/* ===================================
+   Urgency Bar Dismiss
+   =================================== */
+function initializeUrgencyBar() {
+    var bar = document.getElementById('urgency-bar');
+    var closeBtn = document.getElementById('urgency-bar-close');
+    if (!bar || !closeBtn) return;
+
+    // Restore dismissed state from session
+    if (sessionStorage.getItem('urgencyBarDismissed')) {
+        bar.classList.add('dismissed');
+        return;
+    }
+
+    closeBtn.addEventListener('click', function() {
+        bar.classList.add('dismissed');
+        sessionStorage.setItem('urgencyBarDismissed', '1');
+    });
+}
+
 
 /* ===================================
    Console Credits

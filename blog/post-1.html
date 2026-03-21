@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <script>history.scrollRestoration = 'manual'; window.scrollTo(0, 0);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Design Biofílico: A Arte de Trazer a Natureza para Dentro de Casa — GIDI Paisagismo">
+    <title>Design Biofílico — GIDI Paisagismo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        /* ── Article layout ── */
+        .post-header {
+            background: var(--bg-dark, #1a2d24);
+            padding: 1.25rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .post-header__logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #f5f0e8;
+            text-decoration: none;
+            letter-spacing: 0.03em;
+        }
+        .post-header__back {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #b0cdbf;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: color 0.2s;
+        }
+        .post-header__back:hover { color: #f5f0e8; }
+
+        .post-hero {
+            position: relative;
+            height: 420px;
+            overflow: hidden;
+        }
+        .post-hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .post-hero__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(26,45,36,0.85) 0%, rgba(26,45,36,0.2) 60%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2.5rem 2rem;
+            max-width: 820px;
+            margin: 0 auto;
+            width: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .post-category {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #fff;
+            background: var(--primary, #2a5240);
+            padding: 0.3rem 0.8rem;
+            border-radius: 2px;
+            margin-bottom: 0.9rem;
+            width: fit-content;
+        }
+        .post-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: 700;
+            color: #f5f0e8;
+            line-height: 1.25;
+            margin-bottom: 0.8rem;
+        }
+        .post-meta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82rem;
+            color: #b0cdbf;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .post-body {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+        }
+        .post-body h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.45rem;
+            font-weight: 600;
+            color: var(--primary, #2a5240);
+            margin: 2.2rem 0 0.8rem;
+        }
+        .post-body p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 1.2rem;
+        }
+        .post-body ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.4rem;
+        }
+        .post-body ul li {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #333;
+            padding: 0.35rem 0 0.35rem 1.4rem;
+            position: relative;
+        }
+        .post-body ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.9rem;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--secondary, #7aab8a);
+        }
+
+        .post-cta {
+            background: var(--primary, #2a5240);
+            color: #f5f0e8;
+            border-radius: 8px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            margin: 3rem auto;
+            max-width: 760px;
+        }
+        .post-cta h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.6rem;
+        }
+        .post-cta p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: #b0cdbf;
+            margin-bottom: 1.4rem;
+        }
+        .post-cta .btn-cta {
+            display: inline-block;
+            background: var(--accent, #b5875f);
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.85rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        .post-cta .btn-cta:hover { opacity: 0.88; }
+
+        .post-footer {
+            background: var(--bg-dark, #1a2d24);
+            text-align: center;
+            padding: 1.4rem 1rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: #7aab8a;
+        }
+
+        @media (max-width: 600px) {
+            .post-hero { height: 300px; }
+            .post-hero__overlay { padding: 1.5rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="post-header">
+        <a href="../index.html" class="post-header__logo">GIDI Paisagismo</a>
+        <a href="../index.html#blog" class="post-header__back">&#8592; Voltar</a>
+    </header>
+
+    <!-- Hero -->
+    <section class="post-hero">
+        <img src="../images/Whisk_e18a178117b8b83a0bb4c7d44400d80cdr.jpeg" alt="Design Biofílico — sala com plantas e luz natural">
+        <div class="post-hero__overlay">
+            <span class="post-category">Design</span>
+            <h1 class="post-title">Design Biofílico: A Arte de Trazer a Natureza para Dentro de Casa</h1>
+            <div class="post-meta">
+                <time datetime="2026-02-15">15 Fev 2026</time>
+                <span>·</span>
+                <span>6 min de leitura</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Body -->
+    <article class="post-body">
+
+        <p>Você já entrou em um ambiente e sentiu imediatamente que algo estava certo — o ar mais leve, a mente mais tranquila, uma sensação quase instintiva de conforto? Provavelmente havia natureza presente naquele espaço. É exatamente disso que trata o <strong>design biofílico</strong>: a prática consciente de incorporar elementos naturais à arquitetura e à decoração de interiores.</p>
+
+        <h2>O que é design biofílico?</h2>
+        <p>O termo "biofilia" foi popularizado pelo biólogo E.O. Wilson nos anos 1980 e descreve a conexão inata que os seres humanos têm com a natureza. O design biofílico traduz esse conceito em decisões projetuais concretas: escolha de materiais, uso de luz, circulação de ar, presença de vegetação e água.</p>
+        <p>Mais do que uma tendência estética, trata-se de uma abordagem baseada em evidências. Pesquisas publicadas em revistas como <em>Building and Environment</em> e <em>Journal of Environmental Psychology</em> demonstram que ambientes biofílicos reduzem os níveis de cortisol, melhoram a concentração e aumentam a satisfação geral dos ocupantes.</p>
+
+        <h2>Os cinco princípios fundamentais</h2>
+        <ul>
+            <li><strong>Luz natural:</strong> maximizar a entrada de luz solar direta e indireta, respeitando as orientações da fachada. Janelas maiores, claraboias e brises bem posicionados são recursos clássicos.</li>
+            <li><strong>Vegetação viva:</strong> plantas em vasos, jardins internos, paredes verdes e trepadeiras integradas à estrutura. A variedade de espécies, texturas e alturas cria profundidade visual.</li>
+            <li><strong>Materiais orgânicos:</strong> madeira, pedra, bambu, rattan e linho criam referências táteis e visuais ao mundo natural — mesmo sem a presença de plantas.</li>
+            <li><strong>Presença de água:</strong> fontes, espelhos d'água, tanques e cascatas introduzem sons e movimentos que acalmam o sistema nervoso.</li>
+            <li><strong>Ventilação cruzada e aromas:</strong> o ar em circulação, eventualmente perfumado por flores ou ervas aromáticas, completa a experiência sensorial.</li>
+        </ul>
+
+        <h2>Como aplicar em projetos residenciais</h2>
+        <p>Em residências, o ponto de partida é integrar a planta baixa ao exterior. Terraços, jardins internos (o chamado <em>jardim de inverno</em>) e fachadas com vegetação reduzem a fronteira entre dentro e fora. Internamente, o uso de vasos grandes estrategicamente posicionados — perto de janelas, em cantos mortos, ao longo de corredores — cria pontos de foco verde sem exigir reformas.</p>
+        <p>A escolha das espécies importa tanto quanto a disposição. Plantas de folhagem densa como <em>Monstera deliciosa</em>, <em>Ficus lyrata</em> e <em>Strelitzia reginae</em> entregam impacto visual com manutenção moderada. Para quem tem pouca luminosidade, <em>Zamioculca</em> e <em>Sansevieria</em> são aliadas.</p>
+
+        <h2>Aplicações em ambientes comerciais</h2>
+        <p>Escritórios, clínicas e hotéis adotam o design biofílico como estratégia de diferenciação e bem-estar corporativo. Paredes verdes no lobby, jardins suspensos em áreas de coworking e hortas em restaurantes corporativos são exemplos recorrentes. Os resultados vão além do apelo estético: estudos da Universidade de Exeter apontam aumento de 15% na produtividade de colaboradores em escritórios com elementos naturais.</p>
+
+        <h2>Por onde começar?</h2>
+        <p>O design biofílico não precisa ser radical. Pequenas intervenções — uma prateleira com suculentas próxima à janela, uma bancada de madeira maciça, um quadro com padrões botânicos — já deslocam a percepção do espaço. O mais importante é a consistência: cada detalhe deve reforçar a mesma narrativa de conexão com o natural.</p>
+        <p>Na GIDI Paisagismo, trabalhamos a integração entre paisagismo externo e design interno desde o início do projeto, garantindo que a linguagem verde atravesse todos os ambientes de forma coesa.</p>
+
+    </article>
+
+    <!-- CTA -->
+    <div class="post-cta">
+        <h3>Quer um jardim assim?</h3>
+        <p>Fale com nossa equipe e descubra como podemos transformar seu espaço com design biofílico.</p>
+        <a href="https://wa.me/5511999999999?text=Olá!%20Vi%20o%20artigo%20sobre%20Design%20Biofílico%20e%20gostaria%20de%20saber%20mais." class="btn-cta" target="_blank" rel="noopener">Fale Conosco no WhatsApp</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="post-footer">
+        &copy; 2026 GIDI Paisagismo. Todos os direitos reservados.
+    </footer>
+
+</body>
+</html>

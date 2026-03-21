@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <script>history.scrollRestoration = 'manual'; window.scrollTo(0, 0);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="10 Plantas Nativas do Brasil que Transformam Qualquer Jardim — GIDI Paisagismo">
+    <title>10 Plantas Nativas do Brasil — GIDI Paisagismo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        .post-header {
+            background: var(--bg-dark, #1a2d24);
+            padding: 1.25rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .post-header__logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #f5f0e8;
+            text-decoration: none;
+            letter-spacing: 0.03em;
+        }
+        .post-header__back {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #b0cdbf;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: color 0.2s;
+        }
+        .post-header__back:hover { color: #f5f0e8; }
+
+        .post-hero {
+            position: relative;
+            height: 420px;
+            overflow: hidden;
+        }
+        .post-hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .post-hero__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(26,45,36,0.85) 0%, rgba(26,45,36,0.2) 60%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2.5rem 2rem;
+            max-width: 820px;
+            margin: 0 auto;
+            width: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .post-category {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #fff;
+            background: var(--primary, #2a5240);
+            padding: 0.3rem 0.8rem;
+            border-radius: 2px;
+            margin-bottom: 0.9rem;
+            width: fit-content;
+        }
+        .post-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: 700;
+            color: #f5f0e8;
+            line-height: 1.25;
+            margin-bottom: 0.8rem;
+        }
+        .post-meta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82rem;
+            color: #b0cdbf;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .post-body {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+        }
+        .post-body h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.45rem;
+            font-weight: 600;
+            color: var(--primary, #2a5240);
+            margin: 2.2rem 0 0.8rem;
+        }
+        .post-body p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 1.2rem;
+        }
+
+        /* Plant cards */
+        .plant-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.2rem;
+            margin: 0 0 2rem;
+            padding: 0;
+            list-style: none;
+        }
+        .plant-item {
+            background: #f5f0e8;
+            border-left: 4px solid var(--secondary, #7aab8a);
+            border-radius: 4px;
+            padding: 1.1rem 1.3rem;
+        }
+        .plant-item__name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--primary, #2a5240);
+            margin-bottom: 0.3rem;
+        }
+        .plant-item__sci {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-style: italic;
+            color: #7aab8a;
+            margin-bottom: 0.5rem;
+        }
+        .plant-item__desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.92rem;
+            line-height: 1.65;
+            color: #444;
+            margin: 0;
+        }
+
+        .post-cta {
+            background: var(--primary, #2a5240);
+            color: #f5f0e8;
+            border-radius: 8px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            margin: 3rem auto;
+            max-width: 760px;
+        }
+        .post-cta h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.6rem;
+        }
+        .post-cta p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: #b0cdbf;
+            margin-bottom: 1.4rem;
+        }
+        .post-cta .btn-cta {
+            display: inline-block;
+            background: var(--accent, #b5875f);
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.85rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        .post-cta .btn-cta:hover { opacity: 0.88; }
+
+        .post-footer {
+            background: var(--bg-dark, #1a2d24);
+            text-align: center;
+            padding: 1.4rem 1rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: #7aab8a;
+        }
+
+        @media (max-width: 600px) {
+            .post-hero { height: 300px; }
+            .post-hero__overlay { padding: 1.5rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="post-header">
+        <a href="../index.html" class="post-header__logo">GIDI Paisagismo</a>
+        <a href="../index.html#blog" class="post-header__back">&#8592; Voltar</a>
+    </header>
+
+    <!-- Hero -->
+    <section class="post-hero">
+        <img src="../images/Whisk_757ba4aaa0263eeab7c41240de07ed10dr.jpeg" alt="Plantas Nativas do Brasil em jardim">
+        <div class="post-hero__overlay">
+            <span class="post-category">Plantas</span>
+            <h1 class="post-title">10 Plantas Nativas do Brasil que Transformam Qualquer Jardim</h1>
+            <div class="post-meta">
+                <time datetime="2026-02-08">08 Fev 2026</time>
+                <span>·</span>
+                <span>4 min de leitura</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Body -->
+    <article class="post-body">
+
+        <p>O Brasil é o país com maior biodiversidade vegetal do planeta — são mais de 46 mil espécies de plantas catalogadas. Mesmo assim, a maioria dos projetos paisagísticos ainda recorre a espécies exóticas para compor jardins. Isso muda quando você conhece o que a flora nativa tem a oferecer: beleza extraordinária, adaptação ao clima local e altíssima resistência a pragas e variações de temperatura.</p>
+
+        <p>Selecionamos 10 plantas nativas que se destacam tanto pela ornamentação quanto pela facilidade de cultivo:</p>
+
+        <ul class="plant-list">
+            <li class="plant-item">
+                <div class="plant-item__name">1. Ipê-Amarelo</div>
+                <div class="plant-item__sci">Handroanthus albus</div>
+                <p class="plant-item__desc">A árvore símbolo do Brasil. Floresce entre julho e setembro, transformando o jardim em um espetáculo de amarelo intenso. Ideal para jardins médios e grandes, com crescimento médio de 8 a 12 metros. Tolera seca e solo argiloso.</p>
+            </li>
+            <li class="plant-item">
+                <div class="plant-item__name">2. Bromélia-Imperadora</div>
+                <div class="plant-item__sci">Alcantarea imperialis</div>
+                <p class="plant-item__desc">Gigante entre as bromélias, com roseta que pode atingir 1,5 m de diâmetro. As folhas verdes com reverso avermelhado criam contraste dramático. Exige sol pleno e irrigação moderada. Perfeita como ponto focal em jardins rochosos.</p>
+            </li>
+            <li class="plant-item">
+                <div class="plant-item__name">3. Helicônia</div>
+                <div class="plant-item__sci">Heliconia psittacorum</div>
+                <p class="plant-item__desc">Flores exuberantes em laranja, vermelho e amarelo que atraem beija-flores. Cresce bem em pleno sol ou meia-sombra, com irrigação regular. Uma das espécies mais populares no paisagismo tropical.</p>
+            </li>
+            <li class="plant-item">
+                <div class="plant-item__name">4. Quaresmeira</div>
+                <div class="plant-item__sci">Tibouchina granulosa</div>
+                <p class="plant-item__desc">Floração roxa intensa entre março e maio, coincidindo com a Quaresma (daí o nome). Arbusto de porte médio, ideal para cercas-vivas e bordaduras. Tolera solos pobres e adapta-se bem ao clima de São Paulo e Minas Gerais.</p>
+            </li>
+            <li class="plant-item">
+                <div class="plant-item__name">5. Costela-de-Adão Nativa</div>
+                <div class="plant-item__sci">Monstera adansonii</div>
+                <p class="plant-item__desc">Trepadeira de interior e exterior com folhas perfuradas inconfundíveis. Adapta-se bem à meia-sombra, sendo excelente para varandas e muros. Pouca manutenção e alta resistência à falta de rega esporádica.</p>
+            </li>
+            <li class="plant-item">
+                <div class="plant-item__name">6. Pau-Brasil</div>
+                <div class="plant-item__sci">Paubrasilia echinata</div>
+                <p class="plant-item__desc">Espécie-símbolo nacional, hoje ameaçada de extinção. Plantar um pau-brasil é um ato de preservação. Crescimento lento, mas o tronco avermelhado e a copa densa compensam. Floração amarela discreta entre agosto e outubro.</p>
+            </li>
+            <li class="plant-item">
+                <div class="plant-item__name">7. Chuva-de-Ouro</div>
+                <div class="plant-item__sci">Cassia fistula</div>
+                <p class="plant-item__desc">Cachos pendentes de flores amarelas que cobrem toda a árvore antes da brotação das folhas — um dos espetáculos mais dramáticos do paisagismo brasileiro. Adapta-se ao clima semiárido e tropical. Porte médio, entre 6 e 10 metros.</p>
+            </li>
+            <li class="plant-item">
+                <div class="plant-item__name">8. Xaxim</div>
+                <div class="plant-item__sci">Dicksonia sellowiana</div>
+                <p class="plant-item__desc">Samambaia arborescente com tronco fibroso e copa em leque. Perfeita para jardins sombreados e úmidos, como áreas de piscina com cobertura parcial. Espécie protegida por lei — adquira apenas de fornecedores certificados.</p>
+            </li>
+            <li class="plant-item">
+                <div class="plant-item__name">9. Aroeira-Salsa</div>
+                <div class="plant-item__sci">Schinus molle</div>
+                <p class="plant-item__desc">Árvore de folhagem fina e elegante, com galhos pendentes e frutinhos rosados usados como pimenta-rosa. Extremamente resistente à seca e ao calor. Uma escolha excelente para calçadas e jardins de baixa manutenção.</p>
+            </li>
+            <li class="plant-item">
+                <div class="plant-item__name">10. Pata-de-Vaca</div>
+                <div class="plant-item__sci">Bauhinia variegata</div>
+                <p class="plant-item__desc">Flores rosas e brancas em abundância entre julho e setembro. As folhas bilobadas em formato de pata são a marca registrada da espécie. Crescimento rápido, porte médio e copa bem formada fazem dela um coringa no paisagismo.</p>
+            </li>
+        </ul>
+
+        <h2>Como integrar plantas nativas ao seu projeto</h2>
+        <p>A escolha das espécies deve considerar o clima da região, a disponibilidade de luz e água, e o porte final de cada planta. Misturar diferentes alturas — árvores, arbustos, herbáceas e trepadeiras — cria estratificação visual e replica a lógica da mata nativa. Quanto mais diverso o jardim, mais robusto e resiliente ele será ao longo do tempo.</p>
+        <p>Na GIDI Paisagismo, priorizamos espécies nativas em todos os nossos projetos, garantindo jardins bonitos, sustentáveis e em harmonia com o ecossistema local.</p>
+
+    </article>
+
+    <!-- CTA -->
+    <div class="post-cta">
+        <h3>Quer um jardim assim?</h3>
+        <p>Nossa equipe seleciona as espécies certas para o seu espaço e clima. Solicite um projeto.</p>
+        <a href="https://wa.me/5511999999999?text=Olá!%20Vi%20o%20artigo%20sobre%20plantas%20nativas%20e%20gostaria%20de%20um%20orçamento." class="btn-cta" target="_blank" rel="noopener">Fale Conosco no WhatsApp</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="post-footer">
+        &copy; 2026 GIDI Paisagismo. Todos os direitos reservados.
+    </footer>
+
+</body>
+</html>

@@ -1,20 +1,23 @@
 /* ===================================
-   GIDI Paisagismo - Scroll Expansion Hero
-   Adaptado de React para Vanilla JS
+   GIDI Paisagismo - Scroll Expansion Section
+   Seção genérica com comportamento de expansão por scroll
+   (para seções no meio da página — não força scrollY=0)
    =================================== */
 
-class ScrollExpansionHero {
+class ScrollExpansionSection {
     constructor(options = {}) {
         this.options = {
-            mediaType: options.mediaType || 'image', // 'image' or 'video'
-            mediaSrc: options.mediaSrc || 'images/hero-bg.jpg',
-            bgImageSrc: options.bgImageSrc || 'images/hero-bg.jpg',
+            sectionId: options.sectionId || 'eventos',
+            mediaType: options.mediaType || 'video',
+            mediaSrc: options.mediaSrc || 'heroGidi.mp4',
+            bgImageSrc: options.bgImageSrc || 'plantasgidi.jpeg',
             bgVideoSrc: options.bgVideoSrc || '',
             posterSrc: options.posterSrc || '',
-            title: options.title || 'GIDI Paisagismo',
-            subtitle: options.subtitle || 'Transforme Seus Espaços Verdes',
-            scrollToExpand: options.scrollToExpand || 'Role para expandir',
+            title: options.title || 'Eventos',
+            subtitle: options.subtitle || 'Transforme seus Eventos',
+            scrollToExpand: options.scrollToExpand || 'Role para explorar',
             textBlend: options.textBlend || false,
+            nextSectionId: options.nextSectionId || 'processo',
             ...options
         };
 
@@ -24,23 +27,20 @@ class ScrollExpansionHero {
         this.showContent = false;
         this.mediaFullyExpanded = false;
         this.touchStartY = 0;
+        this.touchStartTarget = null;
         this.navigationOverride = false;
-        this._navOverrideTimer  = null;
+        this._navOverrideTimer = null;
         this.expansionCooldown = false;
         this._expansionCooldownTimer = null;
-        this.heroVisible = true;
+        this.sectionVisible = false;
         this._visibilityObserver = null;
         this.isMobile = window.innerWidth < 768;
+        this.elements = {};
 
         this.init();
     }
 
     init() {
-        document.documentElement.style.scrollSnapType = 'none';
-        window.scrollTo({ top: 0, behavior: 'instant' });
-        requestAnimationFrame(() => {
-            document.documentElement.style.scrollSnapType = '';
-        });
         this.createElements();
         this.setupEventListeners();
         this.checkIfMobile();
@@ -48,12 +48,13 @@ class ScrollExpansionHero {
     }
 
     createElements() {
-        const hero = document.getElementById('hero');
-        if (!hero) return;
+        const section = document.getElementById(this.options.sectionId);
+        if (!section) return;
 
-        // Limpar conteúdo existente
-        hero.innerHTML = '';
-        hero.classList.add('scroll-expansion-hero');
+        const id = this.options.sectionId;
+
+        section.innerHTML = '';
+        section.classList.add('scroll-expansion-hero');
 
         // Background layer
         const bgLayer = document.createElement('div');
@@ -73,7 +74,7 @@ class ScrollExpansionHero {
         // Media container
         const mediaContainer = document.createElement('div');
         mediaContainer.className = 'hero-media-container';
-        mediaContainer.id = 'heroMediaContainer';
+        mediaContainer.id = `${id}MediaContainer`;
 
         if (this.options.mediaType === 'video') {
             mediaContainer.innerHTML = `
@@ -98,152 +99,152 @@ class ScrollExpansionHero {
         // Text container
         const textContainer = document.createElement('div');
         textContainer.className = 'hero-text-container';
-        textContainer.id = 'heroTextContainer';
+        textContainer.id = `${id}TextContainer`;
 
         const firstWord = this.options.title.split(' ')[0];
         const restOfTitle = this.options.title.split(' ').slice(1).join(' ');
 
         textContainer.innerHTML = `
             <div class="hero-title-wrapper ${this.options.textBlend ? 'text-blend' : ''}">
-                <h1 class="hero-title-first" id="heroTitleFirst">${firstWord}</h1>
-                <h1 class="hero-title-rest" id="heroTitleRest">${restOfTitle}</h1>
+                <h2 class="hero-title-first" id="${id}TitleFirst">${firstWord}</h2>
+                <h2 class="hero-title-rest" id="${id}TitleRest">${restOfTitle}</h2>
             </div>
-            <p class="hero-subtitle" id="heroSubtitle" data-i18n="hero.subtitle">${this.options.subtitle}</p>
+            <p class="hero-subtitle" id="${id}Subtitle">${this.options.subtitle}</p>
         `;
 
         // Scroll indicator
         const scrollIndicator = document.createElement('div');
         scrollIndicator.className = 'hero-scroll-indicator';
-        scrollIndicator.id = 'heroScrollIndicator';
+        scrollIndicator.id = `${id}ScrollIndicator`;
         scrollIndicator.innerHTML = `
-            <p data-i18n="hero.scroll">${this.options.scrollToExpand}</p>
+            <p>${this.options.scrollToExpand}</p>
             <i class="fas fa-chevron-down"></i>
         `;
 
-        // Content section (appears after expansion)
+        // Content section (placeholder — not used for mid-page sections)
         const contentSection = document.createElement('div');
         contentSection.className = 'hero-content-section';
-        contentSection.id = 'heroContentSection';
-        contentSection.innerHTML = `
-            <div class="container">
-                <div class="hero-content-wrapper">
-                    <!-- O conteúdo existente do site virá aqui -->
-                </div>
-            </div>
-        `;
+        contentSection.id = `${id}ContentSection`;
 
-        // Append all elements
-        hero.appendChild(bgLayer);
-        hero.appendChild(mediaContainer);
-        hero.appendChild(textContainer);
-        hero.appendChild(scrollIndicator);
-        hero.appendChild(contentSection);
+        section.appendChild(bgLayer);
+        section.appendChild(mediaContainer);
+        section.appendChild(textContainer);
+        section.appendChild(scrollIndicator);
+        section.appendChild(contentSection);
 
-        // Store references
         this.elements = {
-            hero,
+            section,
             bgLayer,
             mediaContainer,
             textContainer,
             scrollIndicator,
             contentSection,
-            titleFirst: document.getElementById('heroTitleFirst'),
-            titleRest: document.getElementById('heroTitleRest'),
-            subtitle: document.getElementById('heroSubtitle')
+            titleFirst: document.getElementById(`${id}TitleFirst`),
+            titleRest: document.getElementById(`${id}TitleRest`),
+            subtitle: document.getElementById(`${id}Subtitle`)
         };
 
-        // Aplicar dimensões iniciais (retrato) imediatamente
         this.updateProgress(0);
     }
 
     setupEventListeners() {
-        // Wheel event
-        window.addEventListener('wheel', this.handleWheel.bind(this), { passive: false });
+        this._handleWheel = this.handleWheel.bind(this);
+        this._handleTouchStart = this.handleTouchStart.bind(this);
+        this._handleTouchMove = this.handleTouchMove.bind(this);
+        this._handleTouchEnd = this.handleTouchEnd.bind(this);
+        this._handleScroll = this.handleScroll.bind(this);
+        this._checkIfMobile = this.checkIfMobile.bind(this);
 
-        // Touch events
-        window.addEventListener('touchstart', this.handleTouchStart.bind(this), { passive: false });
-        window.addEventListener('touchmove', this.handleTouchMove.bind(this), { passive: false });
-        window.addEventListener('touchend', this.handleTouchEnd.bind(this));
+        window.addEventListener('wheel', this._handleWheel, { passive: false });
+        window.addEventListener('touchstart', this._handleTouchStart, { passive: false });
+        window.addEventListener('touchmove', this._handleTouchMove, { passive: false });
+        window.addEventListener('touchend', this._handleTouchEnd);
+        window.addEventListener('scroll', this._handleScroll);
+        window.addEventListener('resize', this._checkIfMobile);
+    }
 
-        // Scroll event
-        window.addEventListener('scroll', this.handleScroll.bind(this));
-
-        // Resize event
-        window.addEventListener('resize', this.checkIfMobile.bind(this));
+    _isAtSectionTop() {
+        if (!this.elements.section) return false;
+        const rect = this.elements.section.getBoundingClientRect();
+        return rect.top > -5 && rect.top < 10;
     }
 
     handleWheel(e) {
-        if (!this.heroVisible) return;
-        if (this.mediaFullyExpanded && e.deltaY < 0 && window.scrollY <= 5) {
-            // Scroll para cima no topo → colapso
+        if (!this.sectionVisible) return;
+        if (!this._isAtSectionTop()) return;
+
+        if (this.mediaFullyExpanded && e.deltaY < 0) {
+            // Scroll para cima expandido → colapsar
             this.mediaFullyExpanded = false;
             this.showContent = false;
             e.preventDefault();
             this.targetProgress = 0;
             this.startAnimationLoop();
-        } else if (this.mediaFullyExpanded && !this.expansionCooldown && e.deltaY > 0 && window.scrollY <= 100) {
-            // Segundo scroll para baixo → descer para a página
+        } else if (this.mediaFullyExpanded && !this.expansionCooldown && e.deltaY > 0) {
+            // Segundo scroll para baixo → navegar para próxima seção
             e.preventDefault();
-            const servicos = document.getElementById('servicos');
-            if (servicos) servicos.scrollIntoView({ behavior: 'smooth' });
-        } else if (this.mediaFullyExpanded && this.expansionCooldown && e.deltaY > 0 && window.scrollY <= 100) {
-            // Durante cooldown: drenar inércia sem navegar e sem deixar browser scrollar
+            const next = document.getElementById(this.options.nextSectionId);
+            if (next) {
+                this.allowNavigation();
+                next.scrollIntoView({ behavior: 'smooth' });
+            }
+        } else if (this.mediaFullyExpanded && this.expansionCooldown && e.deltaY > 0) {
+            // Cooldown: drenar inércia sem navegar
             e.preventDefault();
-        } else if (!this.mediaFullyExpanded && e.deltaY > 0 && window.scrollY <= 5) {
-            // Primeiro scroll para baixo → expandir (só quando já no topo)
+        } else if (!this.mediaFullyExpanded && e.deltaY > 0) {
+            // Primeiro scroll para baixo → expandir
             e.preventDefault();
             this.targetProgress = 1;
             this.startAnimationLoop();
-        } else if (!this.mediaFullyExpanded && window.scrollY <= 5) {
-            // Bloquear scroll acima do topo apenas quando já no topo
-            e.preventDefault();
         }
-        // Se scrollY > 5 e hero não expandido, permite scroll livre (usuário voltando ao topo)
+        // Scroll para cima não expandido → deixa o browser rolar normalmente (volta para serviços)
     }
 
     handleTouchStart(e) {
-        if (!this.heroVisible) return;
+        if (!this.sectionVisible) return;
         this.touchStartY = e.touches[0].clientY;
         this.touchStartTarget = e.target;
     }
 
     handleTouchMove(e) {
-        if (!this.heroVisible) return;
+        if (!this.sectionVisible) return;
         if (!this.touchStartY) return;
         if (this.touchStartTarget && this.touchStartTarget.closest('.navbar')) return;
+        if (!this._isAtSectionTop()) return;
 
         const touchY = e.touches[0].clientY;
         const deltaY = this.touchStartY - touchY;
 
-        if (this.mediaFullyExpanded && deltaY < -20 && window.scrollY <= 5) {
-            // Swipe para cima no topo → colapso
+        if (this.mediaFullyExpanded && deltaY < -20) {
+            // Swipe para cima expandido → colapsar
             this.mediaFullyExpanded = false;
             this.showContent = false;
             e.preventDefault();
             this.targetProgress = 0;
             this.startAnimationLoop();
-        } else if (this.mediaFullyExpanded && !this.expansionCooldown && deltaY > 20 && window.scrollY <= 100) {
-            // Segundo swipe para baixo → descer para a página
+        } else if (this.mediaFullyExpanded && !this.expansionCooldown && deltaY > 20) {
+            // Segundo swipe para baixo → próxima seção
             e.preventDefault();
-            const servicos = document.getElementById('servicos');
-            if (servicos) servicos.scrollIntoView({ behavior: 'smooth' });
-        } else if (this.mediaFullyExpanded && this.expansionCooldown && deltaY > 0 && window.scrollY <= 100) {
-            // Durante cooldown: drenar inércia sem navegar
+            const next = document.getElementById(this.options.nextSectionId);
+            if (next) {
+                this.allowNavigation();
+                next.scrollIntoView({ behavior: 'smooth' });
+            }
+        } else if (this.mediaFullyExpanded && this.expansionCooldown && deltaY > 0) {
             e.preventDefault();
-        } else if (!this.mediaFullyExpanded && deltaY > 10 && window.scrollY <= 5) {
-            // Primeiro swipe para baixo → expandir (só quando já no topo)
+        } else if (!this.mediaFullyExpanded && deltaY > 10) {
+            // Primeiro swipe para baixo → expandir
             e.preventDefault();
             this.targetProgress = 1;
             this.startAnimationLoop();
             this.touchStartY = touchY;
-        } else if (!this.mediaFullyExpanded && window.scrollY <= 5) {
-            // Bloquear scroll acima do topo apenas quando já no topo
-            e.preventDefault();
         }
+        // Swipe para cima não expandido → scroll normal para serviços
     }
 
     handleTouchEnd() {
         this.touchStartY = 0;
+        this.touchStartTarget = null;
     }
 
     allowNavigation() {
@@ -255,8 +256,11 @@ class ScrollExpansionHero {
     }
 
     handleScroll() {
-        if (!this.mediaFullyExpanded && !this.navigationOverride && this.heroVisible && window.scrollY <= 5) {
-            window.scrollTo(0, 0);
+        if (!this.sectionVisible || this.mediaFullyExpanded || this.navigationOverride) return;
+        const rect = this.elements.section.getBoundingClientRect();
+        // Se a seção passou levemente do topo da viewport (até 15px), traz de volta
+        if (rect.top < 0 && rect.top > -15) {
+            window.scrollTo({ top: window.scrollY + rect.top, behavior: 'instant' });
         }
     }
 
@@ -265,20 +269,14 @@ class ScrollExpansionHero {
     }
 
     _setupVisibilityObserver() {
-        const hero = this.elements && this.elements.hero;
-        if (!hero || !('IntersectionObserver' in window)) return;
+        const section = this.elements && this.elements.section;
+        if (!section || !('IntersectionObserver' in window)) return;
 
         this._visibilityObserver = new IntersectionObserver((entries) => {
-            const entry = entries[0];
-            this.heroVisible = entry.isIntersecting;
-
-            // Ao retornar ao hero não expandido, garantir posição 0
-            if (this.heroVisible && !this.mediaFullyExpanded && window.scrollY <= 5) {
-                window.scrollTo(0, 0);
-            }
+            this.sectionVisible = entries[0].isIntersecting;
         }, { threshold: 0.1 });
 
-        this._visibilityObserver.observe(hero);
+        this._visibilityObserver.observe(section);
     }
 
     startAnimationLoop() {
@@ -286,9 +284,9 @@ class ScrollExpansionHero {
         this.animationRunning = true;
 
         const startProgress = this.scrollProgress;
-        const endProgress   = this.targetProgress;
-        const duration      = 700; // ms — rápido e fluido
-        const startTime     = performance.now();
+        const endProgress = this.targetProgress;
+        const duration = 700;
+        const startTime = performance.now();
 
         const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
 
@@ -311,12 +309,11 @@ class ScrollExpansionHero {
                 if (endProgress >= 1) {
                     this.mediaFullyExpanded = true;
                     this.showContent = true;
-                    // Cooldown: bloqueia navegação imediata por inércia do trackpad
                     this.expansionCooldown = true;
                     clearTimeout(this._expansionCooldownTimer);
                     this._expansionCooldownTimer = setTimeout(() => {
                         this.expansionCooldown = false;
-                        window.scrollTo(0, 0); // Garantir scrollY=0 para o 2º scroll
+                        // Não altera scrollY (diferente do hero que reseta para 0)
                     }, 200);
                 }
 
@@ -336,7 +333,6 @@ class ScrollExpansionHero {
         const vw = window.innerWidth;
         const vh = window.innerHeight;
 
-        // Paisagem (minimizado) → Paisagem larga (expandido)
         const startW = this.isMobile ? Math.round(vw * 0.65) : 480;
         const startH = this.isMobile ? Math.round(vw * 0.37) : 270;
         const endW   = this.isMobile ? vw * 0.88 : Math.min(vw * 0.95, 1600);
@@ -351,15 +347,12 @@ class ScrollExpansionHero {
         const mediaOverlayOpacity = 0.5 - this.scrollProgress * 0.3;
         const contentOpacity      = this.showContent ? 1 : 0;
 
-        // Actualizar media container
         this.elements.mediaContainer.style.width        = `${Math.min(mediaWidth,  vw * 0.98)}px`;
         this.elements.mediaContainer.style.height       = `${Math.min(mediaHeight, vh * 0.92)}px`;
         this.elements.mediaContainer.style.borderRadius = `${borderRadius}px`;
 
-        // Actualizar background
         this.elements.bgLayer.style.opacity = bgOpacity;
 
-        // Actualizar texto
         if (this.elements.titleFirst) {
             this.elements.titleFirst.style.transform = `translateX(-${textTranslateX}vw)`;
         }
@@ -367,37 +360,25 @@ class ScrollExpansionHero {
             this.elements.titleRest.style.transform = `translateX(${textTranslateX}vw)`;
         }
 
-        // Actualizar scroll indicator
         this.elements.scrollIndicator.style.opacity   = 1 - this.scrollProgress * 2;
         this.elements.scrollIndicator.style.transform = `translateY(${this.scrollProgress * 50}px)`;
 
-        // Actualizar media overlay
         const mediaOverlay = this.elements.mediaContainer.querySelector('.hero-media-overlay');
         if (mediaOverlay) {
             mediaOverlay.style.opacity = mediaOverlayOpacity;
         }
 
-        // Actualizar content section
-        this.elements.contentSection.style.opacity      = contentOpacity;
+        this.elements.contentSection.style.opacity       = contentOpacity;
         this.elements.contentSection.style.pointerEvents = this.showContent ? 'auto' : 'none';
     }
 
-    reset() {
-        this.scrollProgress = 0;
-        this.targetProgress = 0;
-        this.showContent = false;
-        this.mediaFullyExpanded = false;
-        this.updateProgress(0);
-        window.scrollTo(0, 0);
-    }
-
     destroy() {
-        window.removeEventListener('wheel', this.handleWheel.bind(this));
-        window.removeEventListener('touchstart', this.handleTouchStart.bind(this));
-        window.removeEventListener('touchmove', this.handleTouchMove.bind(this));
-        window.removeEventListener('touchend', this.handleTouchEnd.bind(this));
-        window.removeEventListener('scroll', this.handleScroll.bind(this));
-        window.removeEventListener('resize', this.checkIfMobile.bind(this));
+        window.removeEventListener('wheel', this._handleWheel);
+        window.removeEventListener('touchstart', this._handleTouchStart);
+        window.removeEventListener('touchmove', this._handleTouchMove);
+        window.removeEventListener('touchend', this._handleTouchEnd);
+        window.removeEventListener('scroll', this._handleScroll);
+        window.removeEventListener('resize', this._checkIfMobile);
 
         if (this._visibilityObserver) {
             this._visibilityObserver.disconnect();
@@ -406,26 +387,6 @@ class ScrollExpansionHero {
     }
 }
 
-// Initialize quando DOM estiver pronto
-document.addEventListener('DOMContentLoaded', function() {
-    // Verificar se existe o elemento hero
-    if (document.getElementById('hero')) {
-        // Inicializar com as configurações do GIDI Paisagismo
-        window.scrollExpansionHero = new ScrollExpansionHero({
-            mediaType: 'video',
-            mediaSrc: 'heroGidi.mp4',
-            bgImageSrc: 'plantasgidi.jpeg',
-            bgVideoSrc: 'images/Whisk_gdz4edn3qtywetnk1so2cjytudzkrtlhdto20cn.mp4',
-            posterSrc: 'plantasgidi.jpeg',
-            title: 'GIDI Paisagismo',
-            subtitle: 'Transformando Espaços Verdes',
-            scrollToExpand: 'Role para explorar',
-            textBlend: true
-        });
-    }
-});
-
-// Export para uso externo
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = ScrollExpansionHero;
+    module.exports = ScrollExpansionSection;
 }

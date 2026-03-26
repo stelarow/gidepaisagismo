@@ -403,10 +403,10 @@ function initializeBlogModal() {
 
     if (!modal || !openBtn) return;
 
-    var activeFilter = 'Todos';
+    var activeFilter = 'all';
 
     function getCategories() {
-        var cats = ['Todos'];
+        var cats = ['all'];
         BLOG_ARTICLES.forEach(function(a) {
             if (cats.indexOf(a.category) === -1) cats.push(a.category);
         });
@@ -421,11 +421,21 @@ function initializeBlogModal() {
             btn.className = 'blog-modal__filter-btn' + (cat === activeFilter ? ' is-active' : '');
             btn.setAttribute('role', 'tab');
             btn.setAttribute('aria-selected', cat === activeFilter ? 'true' : 'false');
-            btn.textContent = cat;
+            btn.setAttribute('data-filter', cat);
+            if (cat === 'all') {
+                btn.setAttribute('data-i18n', 'blog.modal.all');
+                btn.textContent = 'Todos';
+            } else {
+                btn.textContent = cat;
+            }
             btn.addEventListener('click', function() {
                 activeFilter = cat;
                 renderFilters();
                 filterCards();
+                if (typeof applyLanguage === 'function') {
+                    var lang = (function() { try { return localStorage.getItem('gide-lang') || 'pt-BR'; } catch(e) { return 'pt-BR'; } })();
+                    applyLanguage(lang);
+                }
             });
             filtersEl.appendChild(btn);
         });
@@ -452,7 +462,7 @@ function initializeBlogModal() {
                     '<h3 class="blog-card__title">' + a.title + '</h3>' +
                     '<p class="blog-card__excerpt">' + a.excerpt + '</p>' +
                     '<a href="' + a.url + '" class="blog-card__link">' +
-                        '<span>Ler Artigo</span> ' +
+                        '<span data-i18n="blog.read_article">Ler Artigo</span> ' +
                         '<svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-arrow-right"></use></svg>' +
                     '</a>' +
                 '</div>';
@@ -464,16 +474,20 @@ function initializeBlogModal() {
         var cards = gridEl.querySelectorAll('.blog-card');
         var visible = 0;
         cards.forEach(function(card) {
-            var match = activeFilter === 'Todos' || card.getAttribute('data-category') === activeFilter;
+            var match = activeFilter === 'all' || card.getAttribute('data-category') === activeFilter;
             if (match) { card.removeAttribute('hidden'); visible++; }
             else { card.setAttribute('hidden', ''); }
         });
-        countEl.textContent = visible + (visible === 1 ? ' artigo' : ' artigos');
+        var t = (typeof translations !== 'undefined') ? (translations[localStorage.getItem('gide-lang') || 'pt-BR'] || translations['pt-BR']) : null;
+        var one = t ? t['blog.modal.count_one'] : 'artigo';
+        var other = t ? t['blog.modal.count_other'] : 'artigos';
+        countEl.textContent = visible + ' ' + (visible === 1 ? one : other);
         var empty = gridEl.querySelector('.blog-modal__empty');
         if (visible === 0 && !empty) {
             var msg = document.createElement('p');
             msg.className = 'blog-modal__empty';
-            msg.textContent = 'Nenhum artigo nesta categoria.';
+            var emptyMsg = t ? t['blog.modal.empty'] : 'Nenhum artigo nesta categoria.';
+            msg.textContent = emptyMsg;
             gridEl.appendChild(msg);
         } else if (visible > 0 && empty) {
             empty.remove();
@@ -484,6 +498,10 @@ function initializeBlogModal() {
         renderFilters();
         renderCards();
         filterCards();
+        if (typeof applyLanguage === 'function') {
+            var lang = (function() { try { return localStorage.getItem('gide-lang') || 'pt-BR'; } catch(e) { return 'pt-BR'; } })();
+            applyLanguage(lang);
+        }
         modal.classList.add('is-open');
         modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';

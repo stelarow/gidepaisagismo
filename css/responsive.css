@@ -57,6 +57,7 @@
     /* ---- NAVEGAÇÃO MOBILE (hamburger a partir de 1024px) ---- */
     .mobile-menu-toggle {
         display: flex;
+        margin-left: auto;
         z-index: 1001;
         padding: 8px;
         transform: translateZ(0);                /* Força GPU compositing — fix para iOS Safari */

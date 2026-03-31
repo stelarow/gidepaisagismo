@@ -13,8 +13,13 @@
     }
 
     .nav-brand {
-        font-size: 1.8rem;
-        letter-spacing: 0.25em;
+        font-size: 1.4rem;
+        letter-spacing: 0.2em;
+        position: absolute;
+        left: 0;
+        right: 0;
+        transform: none;
+        text-align: center;
     }
 
     .container {
@@ -129,6 +134,11 @@
     }
 
     /* ---- NAVEGAÇÃO ---- */
+
+    .nav-brand {
+        font-size: 1.05rem;
+        letter-spacing: 0.08em;
+    }
 
     .nav-link {
         padding: 0.75rem 0.5rem;

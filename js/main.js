@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeScrollTop();
     initializeLazyLoading();
     initializePortfolio();
-    initializeBlogModal();
     initializeUrgencyBar();
 });
 

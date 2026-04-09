@@ -27,7 +27,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Playfair+Display:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
 
     <!-- AOS - Animate On Scroll -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
@@ -383,68 +383,69 @@
                     <p class="section-subtitle" data-aos="fade-up" data-aos-delay="300" data-i18n="blog.subtitle">Dicas, tendências e insights sobre paisagismo</p>
                 </div>
 
-                <div class="blog-grid" data-aos="fade-up" data-aos-delay="450">
-
-                    <!-- Post Destaque -->
-                    <article class="blog-card blog-card--featured">
-                        <div class="blog-card__image">
+                <!-- Post Destaque — 16:9 com texto sobreposto (estilo stylodecore) -->
+                <article class="blog-featured" data-aos="fade-up" data-aos-delay="450">
+                    <a href="blog/post-1.html" class="blog-featured__inner">
+                        <div class="blog-featured__image">
                             <img src="images/Whisk_e18a178117b8b83a0bb4c7d44400d80cdr.jpeg" alt="Design Biofílico" loading="lazy">
-                            <span class="blog-card__category" data-i18n="blog.post1.category">Tendências</span>
                         </div>
+                        <div class="blog-featured__overlay">
+                            <span class="blog-card__category" data-i18n="blog.post1.category">Tendências</span>
+                            <div class="blog-featured__body">
+                                <div class="blog-card__meta">
+                                    <time datetime="2026-02-15" data-i18n="blog.post1.date">15 Fev 2026</time>
+                                    <span class="blog-card__dot">·</span>
+                                    <span data-i18n="blog.post1.readtime">6 min de leitura</span>
+                                </div>
+                                <h3 class="blog-featured__title" data-i18n="blog.post1.title">Design Biofílico: A Arte de Trazer a Natureza para Dentro de Casa</h3>
+                                <p class="blog-featured__excerpt" data-i18n="blog.post1.excerpt">Descubra como o design biofílico transforma espaços comuns em ambientes que promovem bem-estar, produtividade e conexão com a natureza.</p>
+                                <span class="blog-card__link"><span data-i18n="blog.read_article">Ler Artigo</span> <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-arrow-right"></use></svg></span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Grid 2-col — cards verticais (estilo stylodecore) -->
+                <div class="blog-grid" data-aos="fade-up" data-aos-delay="200">
+
+                    <article class="blog-card">
+                        <a href="blog/post-2.html" class="blog-card__image">
+                            <img src="images/Whisk_757ba4aaa0263eeab7c41240de07ed10dr.jpeg" alt="Plantas Nativas" loading="lazy">
+                            <span class="blog-card__category" data-i18n="blog.post2.category">Plantas</span>
+                        </a>
                         <div class="blog-card__content">
                             <div class="blog-card__meta">
-                                <time datetime="2026-02-15" data-i18n="blog.post1.date">15 Fev 2026</time>
+                                <time datetime="2026-02-08" data-i18n="blog.post2.date">08 Fev 2026</time>
                                 <span class="blog-card__dot">·</span>
-                                <span data-i18n="blog.post1.readtime">6 min de leitura</span>
+                                <span data-i18n="blog.post2.readtime">4 min de leitura</span>
                             </div>
-                            <h3 class="blog-card__title" data-i18n="blog.post1.title">Design Biofílico: A Arte de Trazer a Natureza para Dentro de Casa</h3>
-                            <p class="blog-card__excerpt" data-i18n="blog.post1.excerpt">Descubra como o design biofílico transforma espaços comuns em ambientes que promovem bem-estar, produtividade e conexão com a natureza — e como aplicá-lo no seu projeto.</p>
-                            <a href="blog/post-1.html" class="blog-card__link"><span data-i18n="blog.read_article">Ler Artigo</span> <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-arrow-right"></use></svg></a>
+                            <h3 class="blog-card__title" data-i18n="blog.post2.title">10 Plantas Nativas do Brasil que Transformam Qualquer Jardim</h3>
+                            <p class="blog-card__excerpt" data-i18n="blog.post2.excerpt">Espécies adaptadas ao clima brasileiro, com beleza e baixíssima manutenção.</p>
+                            <a href="blog/post-2.html" class="blog-card__link"><span data-i18n="blog.read_article">Ler Artigo</span> <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-arrow-right"></use></svg></a>
                         </div>
                     </article>
 
-                    <!-- Posts Secundários -->
-                    <div class="blog-secondary">
+                    <article class="blog-card">
+                        <a href="blog/post-3.html" class="blog-card__image">
+                            <img src="images/Whisk_38060fbd322acd6a61340a1b1066128deg.png" alt="Jardim Vertical" loading="lazy">
+                            <span class="blog-card__category" data-i18n="blog.post3.category">Dicas Práticas</span>
+                        </a>
+                        <div class="blog-card__content">
+                            <div class="blog-card__meta">
+                                <time datetime="2026-01-28" data-i18n="blog.post3.date">28 Jan 2026</time>
+                                <span class="blog-card__dot">·</span>
+                                <span data-i18n="blog.post3.readtime">3 min de leitura</span>
+                            </div>
+                            <h3 class="blog-card__title" data-i18n="blog.post3.title">Jardim Vertical: Solução Verde para Pequenos Espaços</h3>
+                            <p class="blog-card__excerpt" data-i18n="blog.post3.excerpt">Como criar paredes vivas em apartamentos, sacadas e escritórios sem grandes obras.</p>
+                            <a href="blog/post-3.html" class="blog-card__link"><span data-i18n="blog.read_article">Ler Artigo</span> <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-arrow-right"></use></svg></a>
+                        </div>
+                    </article>
 
-                        <article class="blog-card blog-card--compact" data-aos="fade-left" data-aos-delay="550">
-                            <div class="blog-card__image">
-                                <img src="images/Whisk_757ba4aaa0263eeab7c41240de07ed10dr.jpeg" alt="Plantas Nativas" loading="lazy">
-                                <span class="blog-card__category" data-i18n="blog.post2.category">Plantas</span>
-                            </div>
-                            <div class="blog-card__content">
-                                <div class="blog-card__meta">
-                                    <time datetime="2026-02-08" data-i18n="blog.post2.date">08 Fev 2026</time>
-                                    <span class="blog-card__dot">·</span>
-                                    <span data-i18n="blog.post2.readtime">4 min de leitura</span>
-                                </div>
-                                <h3 class="blog-card__title" data-i18n="blog.post2.title">10 Plantas Nativas do Brasil que Transformam Qualquer Jardim</h3>
-                                <p class="blog-card__excerpt" data-i18n="blog.post2.excerpt">Espécies adaptadas ao clima brasileiro, com beleza e baixíssima manutenção.</p>
-                                <a href="blog/post-2.html" class="blog-card__link"><span data-i18n="blog.read_article">Ler Artigo</span> <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-arrow-right"></use></svg></a>
-                            </div>
-                        </article>
-
-                        <article class="blog-card blog-card--compact" data-aos="fade-left" data-aos-delay="650">
-                            <div class="blog-card__image">
-                                <img src="images/Whisk_38060fbd322acd6a61340a1b1066128deg.png" alt="Jardim Vertical" loading="lazy">
-                                <span class="blog-card__category" data-i18n="blog.post3.category">Dicas Práticas</span>
-                            </div>
-                            <div class="blog-card__content">
-                                <div class="blog-card__meta">
-                                    <time datetime="2026-01-28" data-i18n="blog.post3.date">28 Jan 2026</time>
-                                    <span class="blog-card__dot">·</span>
-                                    <span data-i18n="blog.post3.readtime">3 min de leitura</span>
-                                </div>
-                                <h3 class="blog-card__title" data-i18n="blog.post3.title">Jardim Vertical: Solução Verde para Pequenos Espaços</h3>
-                                <p class="blog-card__excerpt" data-i18n="blog.post3.excerpt">Como criar paredes vivas em apartamentos, sacadas e escritórios sem grandes obras.</p>
-                                <a href="blog/post-3.html" class="blog-card__link"><span data-i18n="blog.read_article">Ler Artigo</span> <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-arrow-right"></use></svg></a>
-                            </div>
-                        </article>
-
-                    </div>
                 </div>
 
                 <div class="blog-cta" data-aos="fade-up">
-                    <a href="#" class="btn btn-outline" id="blog-view-all-btn" data-i18n="blog.view_all">Ver Todos os Artigos</a>
+                    <a href="blog/index.html" class="btn btn-outline" data-i18n="blog.view_all">Ver Todos os Artigos</a>
                 </div>
             </div>
         </section>
@@ -1009,34 +1010,6 @@
     <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20meu%20projeto" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp" data-i18n-aria="whatsapp_float_aria">
         <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-whatsapp"></use></svg>
     </a>
-
-    <!-- Blog Modal: Ver Todos os Artigos -->
-    <div
-        id="blog-modal"
-        class="blog-modal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="blog-modal-title"
-        aria-hidden="true"
-    >
-        <div class="blog-modal__backdrop" aria-hidden="true"></div>
-        <div class="blog-modal__container">
-            <div class="blog-modal__header">
-                <div class="blog-modal__title-group">
-                    <h2 class="blog-modal__title" id="blog-modal-title">Todos os Artigos</h2>
-                    <span class="blog-modal__count" id="blog-modal-count"></span>
-                </div>
-                <button class="blog-modal__close" aria-label="Fechar" id="blog-modal-close">
-                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:1.25em;height:1.25em">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                </button>
-            </div>
-            <div class="blog-modal__filters" id="blog-modal-filters" role="tablist" aria-label="Filtrar por categoria"></div>
-            <div class="blog-modal__grid" id="blog-modal-grid" role="list"></div>
-        </div>
-    </div>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

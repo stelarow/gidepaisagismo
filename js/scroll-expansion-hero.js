@@ -290,7 +290,10 @@ class ScrollExpansionHero {
                     clearTimeout(this._expansionCooldownTimer);
                     this._expansionCooldownTimer = setTimeout(() => {
                         this.expansionCooldown = false;
-                        window.scrollTo(0, 0); // Garantir scrollY=0 para o 2º scroll
+                        setTimeout(() => {
+                            const servicos = document.getElementById('servicos');
+                            if (servicos) servicos.scrollIntoView({ behavior: 'smooth' });
+                        }, 500);
                     }, 200);
                 }
 

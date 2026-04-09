@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
 
     <style>
         .post-header {
@@ -43,6 +44,13 @@
             transition: color 0.2s;
         }
         .post-header__back:hover { color: #f5f0e8; }
+
+        /* Lang switcher no header escuro */
+        .post-header .nav-lang-switcher { position: relative; display: flex; align-items: center; }
+        .post-header .lang-globe-btn { color: #f5f0e8; }
+        .post-header .lang-globe-btn:hover,
+        .post-header .lang-globe-btn[aria-expanded="true"] { color: #fff; background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); }
+        .post-header .lang-dropdown { top: calc(100% + 8px); right: 0; }
 
         .post-hero {
             position: relative;
@@ -207,7 +215,19 @@
     <!-- Header -->
     <header class="post-header">
         <a href="../index.html" class="post-header__logo">GIDE Paisagismo</a>
-        <a href="../index.html#blog" class="post-header__back">&#8592; Voltar</a>
+        <div class="nav-lang-switcher">
+            <button class="lang-globe-btn" aria-label="Selecionar idioma" aria-expanded="false" aria-haspopup="listbox">
+                <svg class="lang-globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                <span class="lang-current-code">PT</span>
+                <svg class="lang-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="lang-dropdown" role="listbox" aria-label="Idiomas disponíveis">
+                <button class="lang-option" data-lang="pt-BR" role="option" aria-selected="true"><span class="lang-option-code">PT</span><svg class="lang-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+                <button class="lang-option" data-lang="en-US" role="option" aria-selected="false"><span class="lang-option-code">EN</span><svg class="lang-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+                <button class="lang-option" data-lang="es-ES" role="option" aria-selected="false"><span class="lang-option-code">ES</span><svg class="lang-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+            </div>
+        </div>
+        <a href="../blog/index.html" class="post-header__back" data-i18n="blog.post.back">&#8592; Voltar</a>
     </header>
 
     <!-- Hero -->
@@ -286,7 +306,7 @@
 
         <h2>Como integrar plantas nativas ao seu projeto</h2>
         <p>A escolha das espécies deve considerar o clima da região, a disponibilidade de luz e água, e o porte final de cada planta. Misturar diferentes alturas — árvores, arbustos, herbáceas e trepadeiras — cria estratificação visual e replica a lógica da mata nativa. Quanto mais diverso o jardim, mais robusto e resiliente ele será ao longo do tempo.</p>
-        <p>Na GIDE Paisagismo, priorizamos espécies nativas em todos os nossos projetos, garantindo jardins bonitos, sustentáveis e em harmonia com o ecossistema local.</p>
+        <p>No GIDE Paisagismo, priorizamos espécies nativas em todos os nossos projetos, garantindo jardins bonitos, sustentáveis e em harmonia com o ecossistema local.</p>
 
     </article>
 
@@ -359,5 +379,6 @@
         </div>
     </footer>
 
+    <script src="../js/i18n.js"></script>
 </body>
 </html>

@@ -148,6 +148,8 @@ class ScrollExpansionHero {
 
     handleWheel(e) {
         if (!this.heroVisible) return;
+        const navMenu = document.querySelector('.nav-menu');
+        if (navMenu && navMenu.classList.contains('active')) return;
         if (this.mediaFullyExpanded && e.deltaY < 0 && window.scrollY <= 5) {
             // Scroll para cima no topo → colapso
             this.mediaFullyExpanded = false;
@@ -177,6 +179,8 @@ class ScrollExpansionHero {
 
     handleTouchStart(e) {
         if (!this.heroVisible) return;
+        const navMenu = document.querySelector('.nav-menu');
+        if (navMenu && navMenu.classList.contains('active')) return;
         this.touchStartY = e.touches[0].clientY;
         this.touchStartTarget = e.target;
     }
@@ -184,6 +188,8 @@ class ScrollExpansionHero {
     handleTouchMove(e) {
         if (!this.heroVisible) return;
         if (!this.touchStartY) return;
+        const navMenu = document.querySelector('.nav-menu');
+        if (navMenu && navMenu.classList.contains('active')) return;
         if (this.touchStartTarget && this.touchStartTarget.closest('.navbar')) return;
 
         const touchY = e.touches[0].clientY;
@@ -229,6 +235,8 @@ class ScrollExpansionHero {
     }
 
     handleScroll() {
+        const navMenu = document.querySelector('.nav-menu');
+        if (navMenu && navMenu.classList.contains('active')) return;
         if (!this.mediaFullyExpanded && !this.navigationOverride && this.heroVisible && window.scrollY <= 5) {
             window.scrollTo(0, 0);
         }

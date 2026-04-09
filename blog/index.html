@@ -192,7 +192,7 @@
         }
     </style>
 </head>
-<body>
+<body data-page="blog">
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar" role="navigation" aria-label="Menu principal">
@@ -200,19 +200,31 @@
             <div class="nav-wrapper">
                 <a class="nav-brand" href="../index.html" aria-label="GIDE IGNASZEVSKI — Início">GIDE IGNASZEVSKI</a>
 
-                <button class="mobile-menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <button class="mobile-menu-toggle" aria-label="Abrir menu" aria-expanded="false" data-i18n-aria="nav.mobile_open">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
 
                 <ul class="nav-menu">
-                    <li><a href="../index.html" class="nav-link">Início</a></li>
-                    <li><a href="../index.html#servicos" class="nav-link">Serviços</a></li>
-                    <li><a href="../index.html#sobre" class="nav-link">Sobre</a></li>
-                    <li><a href="https://wa.me/5511999999999" class="nav-link btn-nav-contact" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp">
+                    <li><a href="../index.html" class="nav-link" data-i18n="nav.home">Início</a></li>
+                    <li><a href="../index.html#servicos" class="nav-link" data-i18n="nav.services">Serviços</a></li>
+                    <li><a href="../index.html#sobre" class="nav-link" data-i18n="nav.about">Sobre</a></li>
+                    <li><a href="https://wa.me/5511999999999" class="nav-link btn-nav-contact" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp" data-i18n-aria="nav.whatsapp_aria">
                         <svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-whatsapp"></use></svg>
                     </a></li>
+                    <li class="nav-lang-switcher">
+                        <button class="lang-globe-btn" aria-label="Selecionar idioma" aria-expanded="false" aria-haspopup="listbox">
+                            <svg class="lang-globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                            <span class="lang-current-code">PT</span>
+                            <svg class="lang-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="lang-dropdown" role="listbox" aria-label="Idiomas disponíveis">
+                            <button class="lang-option" data-lang="pt-BR" role="option" aria-selected="true"><span class="lang-option-code">PT</span><svg class="lang-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+                            <button class="lang-option" data-lang="en-US" role="option" aria-selected="false"><span class="lang-option-code">EN</span><svg class="lang-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+                            <button class="lang-option" data-lang="es-ES" role="option" aria-selected="false"><span class="lang-option-code">ES</span><svg class="lang-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -221,9 +233,9 @@
     <!-- Hero sem imagem -->
     <header class="blog-listing-hero">
         <div class="blog-listing-hero__content container">
-            <span class="blog-listing-hero__eyebrow">Inspire-se</span>
-            <h1 class="blog-listing-hero__title">Blog & Inspirações</h1>
-            <p class="blog-listing-hero__subtitle">Dicas, tendências e insights sobre paisagismo, jardins e design biofílico</p>
+            <span class="blog-listing-hero__eyebrow" data-i18n="blog.eyebrow">Inspire-se</span>
+            <h1 class="blog-listing-hero__title" data-i18n="blog.title">Blog & Inspirações</h1>
+            <p class="blog-listing-hero__subtitle" data-i18n="blog.subtitle">Dicas, tendências e insights sobre paisagismo, jardins e design biofílico</p>
         </div>
     </header>
 
@@ -239,16 +251,16 @@
                             <img src="../images/Whisk_e18a178117b8b83a0bb4c7d44400d80cdr.jpeg" alt="Design Biofílico" loading="lazy">
                         </div>
                         <div class="blog-featured__overlay">
-                            <span class="blog-card__category">Tendências</span>
+                            <span class="blog-card__category" data-i18n="blog.post1.category">Tendências</span>
                             <div class="blog-featured__body">
                                 <div class="blog-card__meta">
-                                    <time datetime="2026-02-15">15 Fev 2026</time>
+                                    <time datetime="2026-02-15" data-i18n="blog.post1.date">15 Fev 2026</time>
                                     <span class="blog-card__dot">·</span>
-                                    <span>6 min de leitura</span>
+                                    <span data-i18n="blog.post1.readtime">6 min de leitura</span>
                                 </div>
-                                <h2 class="blog-featured__title">Design Biofílico: A Arte de Trazer a Natureza para Dentro de Casa</h2>
-                                <p class="blog-featured__excerpt">Descubra como o design biofílico transforma espaços comuns em ambientes que promovem bem-estar, produtividade e conexão com a natureza — e como aplicá-lo no seu projeto.</p>
-                                <span class="blog-card__link">Ler Artigo <svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-arrow-right"></use></svg></span>
+                                <h2 class="blog-featured__title" data-i18n="blog.post1.title">Design Biofílico: A Arte de Trazer a Natureza para Dentro de Casa</h2>
+                                <p class="blog-featured__excerpt" data-i18n="blog.post1.excerpt">Descubra como o design biofílico transforma espaços comuns em ambientes que promovem bem-estar, produtividade e conexão com a natureza — e como aplicá-lo no seu projeto.</p>
+                                <span class="blog-card__link"><span data-i18n="blog.read_article">Ler Artigo</span> <svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-arrow-right"></use></svg></span>
                             </div>
                         </div>
                     </a>
@@ -261,34 +273,34 @@
                 <article class="blog-card">
                     <a href="post-2.html" class="blog-card__image">
                         <img src="../images/Whisk_757ba4aaa0263eeab7c41240de07ed10dr.jpeg" alt="Plantas Nativas" loading="lazy">
-                        <span class="blog-card__category">Plantas</span>
+                        <span class="blog-card__category" data-i18n="blog.post2.category">Plantas</span>
                     </a>
                     <div class="blog-card__content">
                         <div class="blog-card__meta">
-                            <time datetime="2026-02-08">08 Fev 2026</time>
+                            <time datetime="2026-02-08" data-i18n="blog.post2.date">08 Fev 2026</time>
                             <span class="blog-card__dot">·</span>
-                            <span>4 min de leitura</span>
+                            <span data-i18n="blog.post2.readtime">4 min de leitura</span>
                         </div>
-                        <h2 class="blog-card__title">10 Plantas Nativas do Brasil que Transformam Qualquer Jardim</h2>
-                        <p class="blog-card__excerpt">Espécies adaptadas ao clima brasileiro, com beleza e baixíssima manutenção. Saiba como escolher e combinar as plantas certas para o seu espaço.</p>
-                        <a href="post-2.html" class="blog-card__link">Ler Artigo <svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-arrow-right"></use></svg></a>
+                        <h2 class="blog-card__title" data-i18n="blog.post2.title">10 Plantas Nativas do Brasil que Transformam Qualquer Jardim</h2>
+                        <p class="blog-card__excerpt" data-i18n="blog.post2.excerpt">Espécies adaptadas ao clima brasileiro, com beleza e baixíssima manutenção.</p>
+                        <a href="post-2.html" class="blog-card__link"><span data-i18n="blog.read_article">Ler Artigo</span> <svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-arrow-right"></use></svg></a>
                     </div>
                 </article>
 
                 <article class="blog-card">
                     <a href="post-3.html" class="blog-card__image">
                         <img src="../images/Whisk_38060fbd322acd6a61340a1b1066128deg.png" alt="Jardim Vertical" loading="lazy">
-                        <span class="blog-card__category">Dicas Práticas</span>
+                        <span class="blog-card__category" data-i18n="blog.post3.category">Dicas Práticas</span>
                     </a>
                     <div class="blog-card__content">
                         <div class="blog-card__meta">
-                            <time datetime="2026-01-28">28 Jan 2026</time>
+                            <time datetime="2026-01-28" data-i18n="blog.post3.date">28 Jan 2026</time>
                             <span class="blog-card__dot">·</span>
-                            <span>3 min de leitura</span>
+                            <span data-i18n="blog.post3.readtime">3 min de leitura</span>
                         </div>
-                        <h2 class="blog-card__title">Jardim Vertical: Solução Verde para Pequenos Espaços</h2>
-                        <p class="blog-card__excerpt">Como criar paredes vivas em apartamentos, sacadas e escritórios sem grandes obras. Guia completo com materiais, plantas e manutenção.</p>
-                        <a href="post-3.html" class="blog-card__link">Ler Artigo <svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-arrow-right"></use></svg></a>
+                        <h2 class="blog-card__title" data-i18n="blog.post3.title">Jardim Vertical: Solução Verde para Pequenos Espaços</h2>
+                        <p class="blog-card__excerpt" data-i18n="blog.post3.excerpt">Como criar paredes vivas em apartamentos, sacadas e escritórios sem grandes obras.</p>
+                        <a href="post-3.html" class="blog-card__link"><span data-i18n="blog.read_article">Ler Artigo</span> <svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-arrow-right"></use></svg></a>
                     </div>
                 </article>
 
@@ -300,11 +312,11 @@
     <!-- CTA -->
     <section class="blog-listing-cta">
         <div class="container">
-            <h2 class="blog-listing-cta__title">Pronto para transformar seu espaço?</h2>
-            <p class="blog-listing-cta__subtitle">Fale com a Gide e receba um projeto de paisagismo personalizado para o seu jardim.</p>
+            <h2 class="blog-listing-cta__title" data-i18n="blog.cta.title">Pronto para transformar seu espaço?</h2>
+            <p class="blog-listing-cta__subtitle" data-i18n="blog.cta.subtitle">Fale com o Gide e receba um projeto de paisagismo personalizado para o seu jardim.</p>
             <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Vi%20o%20blog%20e%20gostaria%20de%20um%20or%C3%A7amento" class="blog-listing-cta__btn" target="_blank" rel="noopener noreferrer">
                 <svg style="width:1.1em;height:1.1em" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Fale pelo WhatsApp
+                <span data-i18n="blog.cta.btn">Fale pelo WhatsApp</span>
             </a>
         </div>
     </section>
@@ -315,7 +327,7 @@
             <div class="footer-content">
                 <div class="footer-col">
                     <h3>GIDE Paisagismo</h3>
-                    <p>Transformando espaços verdes e conectando você com a natureza há mais de 15 anos.</p>
+                    <p data-i18n="footer.brand_desc">Transformando espaços verdes e conectando você com a natureza há mais de 15 anos.</p>
                     <div class="footer-social">
                         <div class="footer-social-icons">
                             <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
@@ -332,55 +344,56 @@
                 </div>
 
                 <div class="footer-col">
-                    <h3>Links Rápidos</h3>
+                    <h3 data-i18n="footer.quick_links">Links Rápidos</h3>
                     <ul class="footer-links">
-                        <li><a href="../index.html#sobre">Sobre</a></li>
-                        <li><a href="../index.html#servicos">Serviços</a></li>
-                        <li><a href="../index.html#depoimentos">Depoimentos</a></li>
-                        <li><a href="../index.html#contato">Contato</a></li>
+                        <li><a href="../index.html#sobre" data-i18n="footer.link_about">Sobre</a></li>
+                        <li><a href="../index.html#servicos" data-i18n="footer.link_services">Serviços</a></li>
+                        <li><a href="../index.html#depoimentos" data-i18n="footer.link_testimonials">Depoimentos</a></li>
+                        <li><a href="../index.html#contato" data-i18n="footer.link_contact">Contato</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h3>Serviços</h3>
+                    <h3 data-i18n="footer.services_title">Serviços</h3>
                     <ul class="footer-links">
-                        <li><a href="../jardins.html">Projetos de Jardins</a></li>
-                        <li><a href="../manutencao.html">Manutenção Paisagística</a></li>
-                        <li><a href="../irrigacao.html">Irrigação Automatizada</a></li>
-                        <li><a href="../jardins-verticais.html">Jardins Verticais</a></li>
-                        <li><a href="../telhados-verdes.html">Telhados Verdes</a></li>
-                        <li><a href="../consultoria.html">Consultoria Ambiental</a></li>
+                        <li><a href="../jardins.html" data-i18n="footer.link_gardens">Projetos de Jardins</a></li>
+                        <li><a href="../manutencao.html" data-i18n="footer.link_maintenance">Manutenção Paisagística</a></li>
+                        <li><a href="../irrigacao.html" data-i18n="footer.link_irrigation">Irrigação Automatizada</a></li>
+                        <li><a href="../jardins-verticais.html" data-i18n="footer.link_vertical">Jardins Verticais</a></li>
+                        <li><a href="../telhados-verdes.html" data-i18n="footer.link_green_roof">Telhados Verdes</a></li>
+                        <li><a href="../consultoria.html" data-i18n="footer.link_consulting">Consultoria Ambiental</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h3>Contato</h3>
+                    <h3 data-i18n="footer.contact_title">Contato</h3>
                     <ul class="footer-contact">
-                        <li><svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-map-marker-alt"></use></svg> <span>Rua Exemplo, 123<br>Cidade/Estado</span></li>
-                        <li><svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-phone"></use></svg> <span>(XX) XXXXX-XXXX</span></li>
-                        <li><svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-envelope"></use></svg> <span>contato@gidepaisagismo.com.br</span></li>
-                        <li><svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-clock"></use></svg> <span>Seg-Sex: 08h-18h</span></li>
+                        <li><svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-map-marker-alt"></use></svg> <span data-i18n-html="footer.address">Rua Exemplo, 123<br>Cidade/Estado</span></li>
+                        <li><svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-phone"></use></svg> <span data-i18n="footer.phone">(XX) XXXXX-XXXX</span></li>
+                        <li><svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-envelope"></use></svg> <span data-i18n="footer.email">contato@gidepaisagismo.com.br</span></li>
+                        <li><svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-clock"></use></svg> <span data-i18n="footer.hours">Seg-Sex: 08h-18h</span></li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 GIDE Paisagismo. Todos os direitos reservados.</p>
+                <p data-i18n="footer.copyright">&copy; 2026 GIDE Paisagismo. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
     <!-- Scroll to Top -->
-    <button id="scroll-top" class="scroll-top-btn" aria-label="Voltar ao topo">
+    <button id="scroll-top" class="scroll-top-btn" aria-label="Voltar ao topo" data-i18n-aria="scroll_top_aria">
         <svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-chevron-up"></use></svg>
     </button>
 
     <!-- WhatsApp Float -->
-    <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20meu%20projeto" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp">
+    <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20meu%20projeto" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp" data-i18n-aria="whatsapp_float_aria">
         <svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-whatsapp"></use></svg>
     </a>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/i18n.js"></script>
     <script>
         AOS.init({ duration: 700, easing: 'ease-out-cubic', once: true, offset: 60 });
 
@@ -394,6 +407,7 @@
         if (toggle && navMenu) {
             toggle.addEventListener('click', function() {
                 const isOpen = navMenu.classList.toggle('active');
+                toggle.classList.toggle('active', isOpen);
                 toggle.setAttribute('aria-expanded', isOpen);
             });
         }

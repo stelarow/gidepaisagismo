@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body data-page="maintenance">
 
@@ -222,7 +223,8 @@
             var menu = document.querySelector('.nav-menu');
             var expanded = this.getAttribute('aria-expanded') === 'true';
             this.setAttribute('aria-expanded', String(!expanded));
-            menu.classList.toggle('is-open', !expanded);
+            this.classList.toggle('active', !expanded);
+            menu.classList.toggle('active', !expanded);
         });
     </script>
 </body>

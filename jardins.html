@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body data-page="garden">
 
@@ -129,7 +130,7 @@
                         <div class="sp-includes-item__content">
                             <span class="sp-includes-num">05</span>
                             <h3 class="sp-includes-title" data-i18n="service.garden.includes.5">Residencial, comercial e corporativo</h3>
-                            <p class="sp-includes-desc">Da varanda de um apartamento ao jardim de um condomínio de luxo, do pátio de um escritório ao campus corporativo — a GIDE Paisagismo assina projetos que elevam o valor e a experiência de qualquer escala.</p>
+                            <p class="sp-includes-desc">Da varanda de um apartamento ao jardim de um condomínio de luxo, do pátio de um escritório ao campus corporativo — o GIDE Paisagismo assina projetos que elevam o valor e a experiência de qualquer escala.</p>
                         </div>
                     </div>
             </div>
@@ -222,7 +223,8 @@
             var menu = document.querySelector('.nav-menu');
             var expanded = this.getAttribute('aria-expanded') === 'true';
             this.setAttribute('aria-expanded', String(!expanded));
-            menu.classList.toggle('is-open', !expanded);
+            this.classList.toggle('active', !expanded);
+            menu.classList.toggle('active', !expanded);
         });
     </script>
 </body>

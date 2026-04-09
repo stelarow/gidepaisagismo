@@ -58,8 +58,8 @@ const translations = {
     'process.step5.text': 'Planos de manutenção para seu jardim prosperar por anos',
 
     'about.eyebrow': 'Nossa História',
-    'about.title': 'Sobre a GIDE Paisagismo',
-    'about.p1': 'Com 15 anos de experiência em paisagismo, a GIDE transforma espaços ordinários em ambientes extraordinários — jardins residenciais, coberturas verdes e interiores vivos que elevam a qualidade de vida.',
+    'about.title': 'Sobre o GIDE Paisagismo',
+    'about.p1': 'Com 15 anos de experiência em paisagismo, o GIDE transforma espaços ordinários em ambientes extraordinários — jardins residenciais, coberturas verdes e interiores vivos que elevam a qualidade de vida.',
     'about.p2': 'Cada projeto começa com escuta ativa: entendemos o espaço, o clima local e o estilo de vida do cliente antes de qualquer traçado. O resultado é um jardim que funciona, cresce e encanta ao longo do tempo.',
 
     'blog.eyebrow': 'Inspire-se',
@@ -91,7 +91,7 @@ const translations = {
     'eventos.title': 'Eventos',
     'eventos.subtitle': 'Decoração verde para casamentos, festas e eventos corporativos — locação e venda de plantas sob medida',
     'eventos.featured_title': 'Transforme seu evento com a natureza',
-    'eventos.featured_desc': 'A GIDE fornece plantas e arranjos paisagísticos para tornar qualquer evento mais bonito e memorável. Do casamento íntimo à grande festa corporativa, entregamos soluções verdes personalizadas para cada ocasião.',
+    'eventos.featured_desc': 'O GIDE fornece plantas e arranjos paisagísticos para tornar qualquer evento mais bonito e memorável. Do casamento íntimo à grande festa corporativa, entregamos soluções verdes personalizadas para cada ocasião.',
     'eventos.li1': 'Locação de plantas ornamentais para decoração',
     'eventos.li2': 'Arranjos e composições paisagísticas exclusivas',
     'eventos.li3': 'Entrega, montagem e retirada no local do evento',
@@ -106,9 +106,9 @@ const translations = {
     'testimonial.2.text': '"Excelente trabalho! O jardim vertical ficou incrível e trouxe vida ao nosso escritório. Recomendo muito!"',
     'testimonial.3.text': '"Projeto executado com perfeição! A equipe é pontual, organizada e o resultado foi além do esperado. Nosso telhado verde é simplesmente maravilhoso."',
     'testimonial.4.text': '"O paisagismo da nossa fachada ficou incrível! Recebo elogios dos vizinhos todos os dias. Trabalho impecável do início ao fim."',
-    'testimonial.5.text': '"Contratamos a GIDE para o jardim do nosso evento e o resultado foi espetacular. Os convidados ficaram impressionados com a beleza do espaço."',
+    'testimonial.5.text': '"Contratamos o GIDE para o jardim do nosso evento e o resultado foi espetacular. Os convidados ficaram impressionados com a beleza do espaço."',
     'testimonial.6.text': '"Nosso restaurante ganhou uma área externa linda com plantas e iluminação especial. As avaliações dos clientes melhoraram muito desde a reforma."',
-    'testimonial.7.text': '"A horta vertical que a GIDE instalou no meu apartamento é um sonho! Colho temperos frescos todo dia. Projeto lindo e funcional."',
+    'testimonial.7.text': '"A horta vertical que o GIDE instalou no meu apartamento é um sonho! Colho temperos frescos todo dia. Projeto lindo e funcional."',
     'testimonial.8.text': '"Transformaram nosso terraço em um jardim de paraíso. Cada detalhe foi pensado com muito cuidado. Equipe altamente profissional!"',
     'testimonial.9.text': '"O projeto de paisagismo para nossa empresa elevou o ambiente de trabalho a outro nível. Funcionários mais felizes e produtivos. Vale cada centavo!"',
 
@@ -233,7 +233,7 @@ const translations = {
 
     'sustentabilidade.eyebrow': 'Compromisso Verde',
     'sustentabilidade.title': 'Paisagismo com Propósito',
-    'sustentabilidade.subtitle': 'Cada projeto da GIDE é pensado para coexistir com o meio ambiente — usando recursos com eficiência, respeitando o bioma local e deixando o entorno mais vivo do que encontramos.',
+    'sustentabilidade.subtitle': 'Cada projeto do GIDE é pensado para coexistir com o meio ambiente — usando recursos com eficiência, respeitando o bioma local e deixando o entorno mais vivo do que encontramos.',
     'sustentabilidade.card1.title': 'Plantas Nativas',
     'sustentabilidade.card1.desc': 'Priorizamos espécies do bioma local em todos os projetos — menos consumo hídrico, suporte direto à fauna nativa e maior resiliência às variações climáticas da região.',
     'sustentabilidade.card2.title': 'Telhados e Paredes Verdes',
@@ -263,6 +263,12 @@ const translations = {
     'footer.phone': '(XX) XXXXX-XXXX',
     'footer.email': 'contato@gidepaisagismo.com.br',
     'footer.hours': 'Seg-Sex: 08h-18h',
+
+    'page.blog.title': 'Blog & Inspirações — GIDE Paisagismo',
+    'blog.cta.title': 'Pronto para transformar seu espaço?',
+    'blog.cta.subtitle': 'Fale com o Gide e receba um projeto de paisagismo personalizado para o seu jardim.',
+    'blog.cta.btn': 'Fale pelo WhatsApp',
+    'blog.post.back': '← Voltar ao Blog',
   },
 
   'en-US': {
@@ -527,6 +533,12 @@ const translations = {
     'footer.phone': '(XX) XXXXX-XXXX',
     'footer.email': 'contact@gidepaisagismo.com.br',
     'footer.hours': 'Mon-Fri: 8am-6pm',
+
+    'page.blog.title': 'Blog & Inspiration — GIDE Landscaping',
+    'blog.cta.title': 'Ready to transform your space?',
+    'blog.cta.subtitle': 'Talk to Gide and receive a personalized landscaping project for your garden.',
+    'blog.cta.btn': 'Chat on WhatsApp',
+    'blog.post.back': '← Back to Blog',
   },
 
   'es-ES': {
@@ -791,6 +803,12 @@ const translations = {
   'footer.phone': '(XX) XXXXX-XXXX',
   'footer.email': 'contacto@gidepaisagismo.com.br',
   'footer.hours': 'Lun-Vie: 08h-18h',
+
+  'page.blog.title': 'Blog e Inspiración — GIDE Paisajismo',
+  'blog.cta.title': '¿Listo para transformar tu espacio?',
+  'blog.cta.subtitle': 'Habla con Gide y recibe un proyecto de paisajismo personalizado para tu jardín.',
+  'blog.cta.btn': 'Hablar por WhatsApp',
+  'blog.post.back': '← Volver al Blog',
   }
 };
 

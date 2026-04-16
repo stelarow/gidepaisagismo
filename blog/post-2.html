@@ -15,7 +15,9 @@
 
     <style>
         .post-header {
-            background: var(--bg-dark, #1a2d24);
+            background:
+                linear-gradient(rgba(26, 45, 36, 0.65), rgba(26, 45, 36, 0.65)),
+                url('../images/uma_imagem_patterne_202604110927.png') center / cover no-repeat;
             padding: 1.25rem 2rem;
             display: flex;
             align-items: center;
@@ -160,7 +162,9 @@
         }
 
         .post-cta {
-            background: var(--primary, #2a5240);
+            background:
+                linear-gradient(rgba(26, 45, 36, 0.55), rgba(26, 45, 36, 0.55)),
+                url('../images/uma_imagem_patterne_202604110927.png') center / cover no-repeat;
             color: #f5f0e8;
             border-radius: 8px;
             padding: 2.5rem 2rem;
@@ -196,7 +200,9 @@
         .post-cta .btn-cta:hover { opacity: 0.88; }
 
         .post-footer {
-            background: var(--bg-dark, #1a2d24);
+            background:
+                linear-gradient(rgba(26, 45, 36, 0.55), rgba(26, 45, 36, 0.55)),
+                url('../images/uma_imagem_patterne_202604110927.png') center / cover no-repeat;
             text-align: center;
             padding: 1.4rem 1rem;
             font-family: 'Inter', sans-serif;
@@ -234,12 +240,12 @@
     <section class="post-hero">
         <img src="../images/Whisk_757ba4aaa0263eeab7c41240de07ed10dr.jpeg" alt="Plantas Nativas do Brasil em jardim">
         <div class="post-hero__overlay">
-            <span class="post-category">Plantas</span>
-            <h1 class="post-title">10 Plantas Nativas do Brasil que Transformam Qualquer Jardim</h1>
+            <span class="post-category" data-i18n="blog.post2.category">Plantas</span>
+            <h1 class="post-title" data-i18n="blog.post2.title">10 Plantas Nativas do Brasil que Transformam Qualquer Jardim</h1>
             <div class="post-meta">
-                <time datetime="2026-02-08">08 Fev 2026</time>
+                <time datetime="2026-02-08" data-i18n="blog.post2.date">08 Fev 2026</time>
                 <span>·</span>
-                <span>4 min de leitura</span>
+                <span data-i18n="blog.post2.readtime">4 min de leitura</span>
             </div>
         </div>
     </section>
@@ -247,74 +253,74 @@
     <!-- Body -->
     <article class="post-body">
 
-        <p>O Brasil é o país com maior biodiversidade vegetal do planeta — são mais de 46 mil espécies de plantas catalogadas. Mesmo assim, a maioria dos projetos paisagísticos ainda recorre a espécies exóticas para compor jardins. Isso muda quando você conhece o que a flora nativa tem a oferecer: beleza extraordinária, adaptação ao clima local e altíssima resistência a pragas e variações de temperatura.</p>
+        <p data-i18n="blog.post2.body.intro">O Brasil é o país com maior biodiversidade vegetal do planeta — são mais de 46 mil espécies de plantas catalogadas. Mesmo assim, a maioria dos projetos paisagísticos ainda recorre a espécies exóticas para compor jardins. Isso muda quando você conhece o que a flora nativa tem a oferecer: beleza extraordinária, adaptação ao clima local e altíssima resistência a pragas e variações de temperatura.</p>
 
-        <p>Selecionamos 10 plantas nativas que se destacam tanto pela ornamentação quanto pela facilidade de cultivo:</p>
+        <p data-i18n="blog.post2.body.p1">Selecionamos 10 plantas nativas que se destacam tanto pela ornamentação quanto pela facilidade de cultivo:</p>
 
         <ul class="plant-list">
             <li class="plant-item">
-                <div class="plant-item__name">1. Ipê-Amarelo</div>
+                <div class="plant-item__name" data-i18n="blog.post2.plant.1.name">1. Ipê-Amarelo</div>
                 <div class="plant-item__sci">Handroanthus albus</div>
-                <p class="plant-item__desc">A árvore símbolo do Brasil. Floresce entre julho e setembro, transformando o jardim em um espetáculo de amarelo intenso. Ideal para jardins médios e grandes, com crescimento médio de 8 a 12 metros. Tolera seca e solo argiloso.</p>
+                <p class="plant-item__desc" data-i18n="blog.post2.plant.1.desc">A árvore símbolo do Brasil. Floresce entre julho e setembro, transformando o jardim em um espetáculo de amarelo intenso. Ideal para jardins médios e grandes, com crescimento médio de 8 a 12 metros. Tolera seca e solo argiloso.</p>
             </li>
             <li class="plant-item">
-                <div class="plant-item__name">2. Bromélia-Imperadora</div>
+                <div class="plant-item__name" data-i18n="blog.post2.plant.2.name">2. Bromélia-Imperadora</div>
                 <div class="plant-item__sci">Alcantarea imperialis</div>
-                <p class="plant-item__desc">Gigante entre as bromélias, com roseta que pode atingir 1,5 m de diâmetro. As folhas verdes com reverso avermelhado criam contraste dramático. Exige sol pleno e irrigação moderada. Perfeita como ponto focal em jardins rochosos.</p>
+                <p class="plant-item__desc" data-i18n="blog.post2.plant.2.desc">Gigante entre as bromélias, com roseta que pode atingir 1,5 m de diâmetro. As folhas verdes com reverso avermelhado criam contraste dramático. Exige sol pleno e irrigação moderada. Perfeita como ponto focal em jardins rochosos.</p>
             </li>
             <li class="plant-item">
-                <div class="plant-item__name">3. Helicônia</div>
+                <div class="plant-item__name" data-i18n="blog.post2.plant.3.name">3. Helicônia</div>
                 <div class="plant-item__sci">Heliconia psittacorum</div>
-                <p class="plant-item__desc">Flores exuberantes em laranja, vermelho e amarelo que atraem beija-flores. Cresce bem em pleno sol ou meia-sombra, com irrigação regular. Uma das espécies mais populares no paisagismo tropical.</p>
+                <p class="plant-item__desc" data-i18n="blog.post2.plant.3.desc">Flores exuberantes em laranja, vermelho e amarelo que atraem beija-flores. Cresce bem em pleno sol ou meia-sombra, com irrigação regular. Uma das espécies mais populares no paisagismo tropical.</p>
             </li>
             <li class="plant-item">
-                <div class="plant-item__name">4. Quaresmeira</div>
+                <div class="plant-item__name" data-i18n="blog.post2.plant.4.name">4. Quaresmeira</div>
                 <div class="plant-item__sci">Tibouchina granulosa</div>
-                <p class="plant-item__desc">Floração roxa intensa entre março e maio, coincidindo com a Quaresma (daí o nome). Arbusto de porte médio, ideal para cercas-vivas e bordaduras. Tolera solos pobres e adapta-se bem ao clima de São Paulo e Minas Gerais.</p>
+                <p class="plant-item__desc" data-i18n="blog.post2.plant.4.desc">Floração roxa intensa entre março e maio, coincidindo com a Quaresma (daí o nome). Arbusto de porte médio, ideal para cercas-vivas e bordaduras. Tolera solos pobres e adapta-se bem ao clima de São Paulo e Minas Gerais.</p>
             </li>
             <li class="plant-item">
-                <div class="plant-item__name">5. Costela-de-Adão Nativa</div>
+                <div class="plant-item__name" data-i18n="blog.post2.plant.5.name">5. Costela-de-Adão Nativa</div>
                 <div class="plant-item__sci">Monstera adansonii</div>
-                <p class="plant-item__desc">Trepadeira de interior e exterior com folhas perfuradas inconfundíveis. Adapta-se bem à meia-sombra, sendo excelente para varandas e muros. Pouca manutenção e alta resistência à falta de rega esporádica.</p>
+                <p class="plant-item__desc" data-i18n="blog.post2.plant.5.desc">Trepadeira de interior e exterior com folhas perfuradas inconfundíveis. Adapta-se bem à meia-sombra, sendo excelente para varandas e muros. Pouca manutenção e alta resistência à falta de rega esporádica.</p>
             </li>
             <li class="plant-item">
-                <div class="plant-item__name">6. Pau-Brasil</div>
+                <div class="plant-item__name" data-i18n="blog.post2.plant.6.name">6. Pau-Brasil</div>
                 <div class="plant-item__sci">Paubrasilia echinata</div>
-                <p class="plant-item__desc">Espécie-símbolo nacional, hoje ameaçada de extinção. Plantar um pau-brasil é um ato de preservação. Crescimento lento, mas o tronco avermelhado e a copa densa compensam. Floração amarela discreta entre agosto e outubro.</p>
+                <p class="plant-item__desc" data-i18n="blog.post2.plant.6.desc">Espécie-símbolo nacional, hoje ameaçada de extinção. Plantar um pau-brasil é um ato de preservação. Crescimento lento, mas o tronco avermelhado e a copa densa compensam. Floração amarela discreta entre agosto e outubro.</p>
             </li>
             <li class="plant-item">
-                <div class="plant-item__name">7. Chuva-de-Ouro</div>
+                <div class="plant-item__name" data-i18n="blog.post2.plant.7.name">7. Chuva-de-Ouro</div>
                 <div class="plant-item__sci">Cassia fistula</div>
-                <p class="plant-item__desc">Cachos pendentes de flores amarelas que cobrem toda a árvore antes da brotação das folhas — um dos espetáculos mais dramáticos do paisagismo brasileiro. Adapta-se ao clima semiárido e tropical. Porte médio, entre 6 e 10 metros.</p>
+                <p class="plant-item__desc" data-i18n="blog.post2.plant.7.desc">Cachos pendentes de flores amarelas que cobrem toda a árvore antes da brotação das folhas — um dos espetáculos mais dramáticos do paisagismo brasileiro. Adapta-se ao clima semiárido e tropical. Porte médio, entre 6 e 10 metros.</p>
             </li>
             <li class="plant-item">
-                <div class="plant-item__name">8. Xaxim</div>
+                <div class="plant-item__name" data-i18n="blog.post2.plant.8.name">8. Xaxim</div>
                 <div class="plant-item__sci">Dicksonia sellowiana</div>
-                <p class="plant-item__desc">Samambaia arborescente com tronco fibroso e copa em leque. Perfeita para jardins sombreados e úmidos, como áreas de piscina com cobertura parcial. Espécie protegida por lei — adquira apenas de fornecedores certificados.</p>
+                <p class="plant-item__desc" data-i18n="blog.post2.plant.8.desc">Samambaia arborescente com tronco fibroso e copa em leque. Perfeita para jardins sombreados e úmidos, como áreas de piscina com cobertura parcial. Espécie protegida por lei — adquira apenas de fornecedores certificados.</p>
             </li>
             <li class="plant-item">
-                <div class="plant-item__name">9. Aroeira-Salsa</div>
+                <div class="plant-item__name" data-i18n="blog.post2.plant.9.name">9. Aroeira-Salsa</div>
                 <div class="plant-item__sci">Schinus molle</div>
-                <p class="plant-item__desc">Árvore de folhagem fina e elegante, com galhos pendentes e frutinhos rosados usados como pimenta-rosa. Extremamente resistente à seca e ao calor. Uma escolha excelente para calçadas e jardins de baixa manutenção.</p>
+                <p class="plant-item__desc" data-i18n="blog.post2.plant.9.desc">Árvore de folhagem fina e elegante, com galhos pendentes e frutinhos rosados usados como pimenta-rosa. Extremamente resistente à seca e ao calor. Uma escolha excelente para calçadas e jardins de baixa manutenção.</p>
             </li>
             <li class="plant-item">
-                <div class="plant-item__name">10. Pata-de-Vaca</div>
+                <div class="plant-item__name" data-i18n="blog.post2.plant.10.name">10. Pata-de-Vaca</div>
                 <div class="plant-item__sci">Bauhinia variegata</div>
-                <p class="plant-item__desc">Flores rosas e brancas em abundância entre julho e setembro. As folhas bilobadas em formato de pata são a marca registrada da espécie. Crescimento rápido, porte médio e copa bem formada fazem dela um coringa no paisagismo.</p>
+                <p class="plant-item__desc" data-i18n="blog.post2.plant.10.desc">Flores rosas e brancas em abundância entre julho e setembro. As folhas bilobadas em formato de pata são a marca registrada da espécie. Crescimento rápido, porte médio e copa bem formada fazem dela um coringa no paisagismo.</p>
             </li>
         </ul>
 
-        <h2>Como integrar plantas nativas ao seu projeto</h2>
-        <p>A escolha das espécies deve considerar o clima da região, a disponibilidade de luz e água, e o porte final de cada planta. Misturar diferentes alturas — árvores, arbustos, herbáceas e trepadeiras — cria estratificação visual e replica a lógica da mata nativa. Quanto mais diverso o jardim, mais robusto e resiliente ele será ao longo do tempo.</p>
-        <p>No GIDE Paisagismo, priorizamos espécies nativas em todos os nossos projetos, garantindo jardins bonitos, sustentáveis e em harmonia com o ecossistema local.</p>
+        <h2 data-i18n="blog.post2.h2.1">Como integrar plantas nativas ao seu projeto</h2>
+        <p data-i18n="blog.post2.body.p2">A escolha das espécies deve considerar o clima da região, a disponibilidade de luz e água, e o porte final de cada planta. Misturar diferentes alturas — árvores, arbustos, herbáceas e trepadeiras — cria estratificação visual e replica a lógica da mata nativa. Quanto mais diverso o jardim, mais robusto e resiliente ele será ao longo do tempo.</p>
+        <p data-i18n="blog.post2.body.p3">No GIDE Paisagismo, priorizamos espécies nativas em todos os nossos projetos, garantindo jardins bonitos, sustentáveis e em harmonia com o ecossistema local.</p>
 
     </article>
 
     <!-- CTA -->
     <div class="post-cta">
-        <h3>Quer um jardim assim?</h3>
-        <p>Nossa equipe seleciona as espécies certas para o seu espaço e clima. Solicite um projeto.</p>
-        <a href="https://wa.me/5511999999999?text=Olá!%20Vi%20o%20artigo%20sobre%20plantas%20nativas%20e%20gostaria%20de%20um%20orçamento." class="btn-cta" target="_blank" rel="noopener">Fale Conosco no WhatsApp</a>
+        <h3 data-i18n="blog.post2.cta.title">Quer um jardim assim?</h3>
+        <p data-i18n="blog.post2.cta.p">Nossa equipe seleciona as espécies certas para o seu espaço e clima. Solicite um projeto.</p>
+        <a href="https://wa.me/5511999999999?text=Olá!%20Vi%20o%20artigo%20sobre%20plantas%20nativas%20e%20gostaria%20de%20um%20orçamento." class="btn-cta" target="_blank" rel="noopener" data-i18n="blog.post2.cta.btn">Fale Conosco no WhatsApp</a>
     </div>
 
     <!-- Footer -->
@@ -323,7 +329,7 @@
             <div class="footer-content">
                 <div class="footer-col">
                     <h3>GIDE Paisagismo</h3>
-                    <p>Transformando espaços verdes e conectando você com a natureza há mais de 15 anos.</p>
+                    <p data-i18n="footer.brand_desc">Transformando espaços verdes e conectando você com a natureza há mais de 15 anos.</p>
                     <div class="footer-social">
                         <div class="footer-social-icons">
                             <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
@@ -340,40 +346,40 @@
                 </div>
 
                 <div class="footer-col">
-                    <h3>Links Rápidos</h3>
+                    <h3 data-i18n="footer.quick_links">Links Rápidos</h3>
                     <ul class="footer-links">
-                        <li><a href="../index.html#sobre">Sobre</a></li>
-                        <li><a href="../index.html#servicos">Serviços</a></li>
-                        <li><a href="../index.html#depoimentos">Depoimentos</a></li>
-                        <li><a href="../index.html#contato">Contato</a></li>
+                        <li><a href="../index.html#sobre" data-i18n="footer.link_about">Sobre</a></li>
+                        <li><a href="../index.html#servicos" data-i18n="footer.link_services">Serviços</a></li>
+                        <li><a href="../index.html#depoimentos" data-i18n="footer.link_testimonials">Depoimentos</a></li>
+                        <li><a href="../index.html#contato" data-i18n="footer.link_contact">Contato</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h3>Serviços</h3>
+                    <h3 data-i18n="footer.services_title">Serviços</h3>
                     <ul class="footer-links">
-                        <li><a href="../jardins.html">Projetos de Jardins</a></li>
-                        <li><a href="../manutencao.html">Manutenção Paisagística</a></li>
-                        <li><a href="../irrigacao.html">Irrigação Automatizada</a></li>
-                        <li><a href="../jardins-verticais.html">Jardins Verticais</a></li>
-                        <li><a href="../telhados-verdes.html">Telhados Verdes</a></li>
-                        <li><a href="../consultoria.html">Consultoria Ambiental</a></li>
+                        <li><a href="../jardins.html" data-i18n="footer.link_gardens">Projetos de Jardins</a></li>
+                        <li><a href="../manutencao.html" data-i18n="footer.link_maintenance">Manutenção Paisagística</a></li>
+                        <li><a href="../irrigacao.html" data-i18n="footer.link_irrigation">Irrigação Automatizada</a></li>
+                        <li><a href="../jardins-verticais.html" data-i18n="footer.link_vertical">Jardins Verticais</a></li>
+                        <li><a href="../telhados-verdes.html" data-i18n="footer.link_green_roof">Telhados Verdes</a></li>
+                        <li><a href="../consultoria.html" data-i18n="footer.link_consulting">Consultoria Ambiental</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h3>Contato</h3>
+                    <h3 data-i18n="footer.contact_title">Contato</h3>
                     <ul class="footer-contact">
-                        <li><svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-map-marker-alt"></use></svg> <span>Rua Exemplo, 123<br>Cidade/Estado</span></li>
-                        <li><svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-phone"></use></svg> <span>(XX) XXXXX-XXXX</span></li>
-                        <li><svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-envelope"></use></svg> <span>contato@gidepaisagismo.com.br</span></li>
-                        <li><svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-clock"></use></svg> <span>Seg-Sex: 08h-18h</span></li>
+                        <li><svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-map-marker-alt"></use></svg> <span data-i18n-html="footer.address">Rua Exemplo, 123<br>Cidade/Estado</span></li>
+                        <li><svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-phone"></use></svg> <span data-i18n="footer.phone">(XX) XXXXX-XXXX</span></li>
+                        <li><svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-envelope"></use></svg> <span data-i18n="footer.email">contato@gidepaisagismo.com.br</span></li>
+                        <li><svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-clock"></use></svg> <span data-i18n="footer.hours">Seg-Sex: 08h-18h</span></li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 GIDE Paisagismo. Todos os direitos reservados.</p>
+                <p data-i18n="footer.copyright">&copy; 2026 GIDE Paisagismo. Todos os direitos reservados.</p>
                 <p>Desenvolvido com <svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-heart"></use></svg> para conectar você com a natureza</p>
             </div>
         </div>

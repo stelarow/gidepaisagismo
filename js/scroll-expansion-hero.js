@@ -81,7 +81,7 @@ class ScrollExpansionHero {
         textContainer.innerHTML = `
             <div class="hero-title-wrapper ${this.options.textBlend ? 'text-blend' : ''}">
                 <h1 class="hero-title-first" id="heroTitleFirst">${firstWord}</h1>
-                <h1 class="hero-title-rest" id="heroTitleRest">${restOfTitle}</h1>
+                <h1 class="hero-title-rest" id="heroTitleRest" data-i18n="hero.title.rest">${restOfTitle}</h1>
             </div>
             <p class="hero-subtitle" id="heroSubtitle" data-i18n="hero.subtitle">${this.options.subtitle}</p>
         `;

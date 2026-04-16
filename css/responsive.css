@@ -83,7 +83,7 @@
 
     .nav-menu {
         position: fixed;
-        top: 70px;
+        top: var(--navbar-h, 44px);
         left: 0;
         right: 0;
         flex-direction: column;
@@ -95,7 +95,7 @@
         visibility: hidden;
         pointer-events: none;
         transition: transform var(--transition-normal), visibility var(--transition-normal);
-        max-height: calc(100vh - 70px);
+        max-height: calc(100vh - var(--navbar-h, 44px));
         overflow-y: auto;
         align-items: flex-start;
         border-top: 2px solid var(--bg-light);
@@ -384,7 +384,17 @@
 
     /* ---- CONTATO ---- */
     .section-contato {
-        padding: 1.5rem 0 !important;
+        padding: var(--spacing-lg) 0 0 !important;
+    }
+
+    .contato-top {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .contato-map {
+        min-height: 280px;
     }
 
     .contato-wrapper {
@@ -393,7 +403,7 @@
     }
 
     .contato-info {
-        padding: 1.25rem;
+        padding: 1.75rem 1.5rem;
         grid-template-columns: 1fr;
         text-align: center;
     }
@@ -416,8 +426,8 @@
         text-align: left;
     }
 
-    .contato-form-wrapper {
-        padding: 1.25rem;
+    .contato-bottom {
+        padding: 2rem 1rem;
     }
 
     .contato-form {

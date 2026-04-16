@@ -74,6 +74,15 @@ function initializeNavigation() {
         lastScroll = currentScroll;
     });
 
+    // Sincroniza o topo do menu com a altura real da navbar (evita gap ou sobreposição)
+    function syncNavMenuTop() {
+        if (!navbar) return;
+        document.documentElement.style.setProperty('--navbar-h', navbar.offsetHeight + 'px');
+    }
+    syncNavMenuTop();
+    window.addEventListener('load', syncNavMenuTop);
+    window.addEventListener('resize', syncNavMenuTop);
+
     // Força repaint do hamburger no mobile após todos os scripts carregarem (fix iOS Safari)
     window.addEventListener('load', function() {
         const toggle = document.querySelector('.mobile-menu-toggle');

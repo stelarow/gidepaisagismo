@@ -139,9 +139,6 @@ body {
     animation: float 3s ease-in-out infinite;
 }
 
-.sustentabilidade-card:hover {
-    animation: float 3s ease-in-out infinite;
-}
 
 .portfolio-item {
     transition: transform 0.3s ease-in-out;

@@ -16,7 +16,9 @@
     <style>
         /* ── Article layout ── */
         .post-header {
-            background: var(--bg-dark, #1a2d24);
+            background:
+                linear-gradient(rgba(26, 45, 36, 0.65), rgba(26, 45, 36, 0.65)),
+                url('../images/uma_imagem_patterne_202604110927.png') center / cover no-repeat;
             padding: 1.25rem 2rem;
             display: flex;
             align-items: center;
@@ -46,6 +48,8 @@
         }
         .post-header__back:hover { color: #f5f0e8; }
 
+        /* Grupo direito do header */
+        .post-header__right { display: flex; align-items: center; gap: 1.25rem; }
         /* Lang switcher no header escuro */
         .post-header .nav-lang-switcher { position: relative; display: flex; align-items: center; }
         .post-header .lang-globe-btn { color: #f5f0e8; }
@@ -147,7 +151,9 @@
         }
 
         .post-cta {
-            background: var(--primary, #2a5240);
+            background:
+                linear-gradient(rgba(26, 45, 36, 0.55), rgba(26, 45, 36, 0.55)),
+                url('../images/uma_imagem_patterne_202604110927.png') center / cover no-repeat;
             color: #f5f0e8;
             border-radius: 8px;
             padding: 2.5rem 2rem;
@@ -183,7 +189,9 @@
         .post-cta .btn-cta:hover { opacity: 0.88; }
 
         .post-footer {
-            background: var(--bg-dark, #1a2d24);
+            background:
+                linear-gradient(rgba(26, 45, 36, 0.55), rgba(26, 45, 36, 0.55)),
+                url('../images/uma_imagem_patterne_202604110927.png') center / cover no-repeat;
             text-align: center;
             padding: 1.4rem 1rem;
             font-family: 'Inter', sans-serif;
@@ -202,31 +210,33 @@
     <!-- Header -->
     <header class="post-header">
         <a href="../index.html" class="post-header__logo">GIDE Paisagismo</a>
-        <div class="nav-lang-switcher">
-            <button class="lang-globe-btn" aria-label="Selecionar idioma" aria-expanded="false" aria-haspopup="listbox">
-                <svg class="lang-globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                <span class="lang-current-code">PT</span>
-                <svg class="lang-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="lang-dropdown" role="listbox" aria-label="Idiomas disponíveis">
-                <button class="lang-option" data-lang="pt-BR" role="option" aria-selected="true"><span class="lang-option-code">PT</span><svg class="lang-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
-                <button class="lang-option" data-lang="en-US" role="option" aria-selected="false"><span class="lang-option-code">EN</span><svg class="lang-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
-                <button class="lang-option" data-lang="es-ES" role="option" aria-selected="false"><span class="lang-option-code">ES</span><svg class="lang-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+        <div class="post-header__right">
+            <a href="../blog/index.html" class="post-header__back" data-i18n="blog.post.back">&#8592; Voltar</a>
+            <div class="nav-lang-switcher">
+                <button class="lang-globe-btn" aria-label="Selecionar idioma" aria-expanded="false" aria-haspopup="listbox">
+                    <svg class="lang-globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    <span class="lang-current-code">PT</span>
+                    <svg class="lang-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="lang-dropdown" role="listbox" aria-label="Idiomas disponíveis">
+                    <button class="lang-option" data-lang="pt-BR" role="option" aria-selected="true"><span class="lang-option-code">PT</span><svg class="lang-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+                    <button class="lang-option" data-lang="en-US" role="option" aria-selected="false"><span class="lang-option-code">EN</span><svg class="lang-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+                    <button class="lang-option" data-lang="es-ES" role="option" aria-selected="false"><span class="lang-option-code">ES</span><svg class="lang-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+                </div>
             </div>
         </div>
-        <a href="../blog/index.html" class="post-header__back" data-i18n="blog.post.back">&#8592; Voltar</a>
     </header>
 
     <!-- Hero -->
     <section class="post-hero">
         <img src="../images/Whisk_e18a178117b8b83a0bb4c7d44400d80cdr.jpeg" alt="Design Biofílico — sala com plantas e luz natural">
         <div class="post-hero__overlay">
-            <span class="post-category">Design</span>
-            <h1 class="post-title">Design Biofílico: A Arte de Trazer a Natureza para Dentro de Casa</h1>
+            <span class="post-category" data-i18n="blog.post1.category">Design</span>
+            <h1 class="post-title" data-i18n="blog.post1.title">Design Biofílico: A Arte de Trazer a Natureza para Dentro de Casa</h1>
             <div class="post-meta">
-                <time datetime="2026-02-15">15 Fev 2026</time>
+                <time datetime="2026-02-15" data-i18n="blog.post1.date">15 Fev 2026</time>
                 <span>·</span>
-                <span>6 min de leitura</span>
+                <span data-i18n="blog.post1.readtime">6 min de leitura</span>
             </div>
         </div>
     </section>
@@ -234,39 +244,39 @@
     <!-- Body -->
     <article class="post-body">
 
-        <p>Você já entrou em um ambiente e sentiu imediatamente que algo estava certo — o ar mais leve, a mente mais tranquila, uma sensação quase instintiva de conforto? Provavelmente havia natureza presente naquele espaço. É exatamente disso que trata o <strong>design biofílico</strong>: a prática consciente de incorporar elementos naturais à arquitetura e à decoração de interiores.</p>
+        <p data-i18n-html="blog.post1.body.intro">Você já entrou em um ambiente e sentiu imediatamente que algo estava certo — o ar mais leve, a mente mais tranquila, uma sensação quase instintiva de conforto? Provavelmente havia natureza presente naquele espaço. É exatamente disso que trata o <strong>design biofílico</strong>: a prática consciente de incorporar elementos naturais à arquitetura e à decoração de interiores.</p>
 
-        <h2>O que é design biofílico?</h2>
-        <p>O termo "biofilia" foi popularizado pelo biólogo E.O. Wilson nos anos 1980 e descreve a conexão inata que os seres humanos têm com a natureza. O design biofílico traduz esse conceito em decisões projetuais concretas: escolha de materiais, uso de luz, circulação de ar, presença de vegetação e água.</p>
-        <p>Mais do que uma tendência estética, trata-se de uma abordagem baseada em evidências. Pesquisas publicadas em revistas como <em>Building and Environment</em> e <em>Journal of Environmental Psychology</em> demonstram que ambientes biofílicos reduzem os níveis de cortisol, melhoram a concentração e aumentam a satisfação geral dos ocupantes.</p>
+        <h2 data-i18n="blog.post1.h2.1">O que é design biofílico?</h2>
+        <p data-i18n="blog.post1.body.p1">O termo "biofilia" foi popularizado pelo biólogo E.O. Wilson nos anos 1980 e descreve a conexão inata que os seres humanos têm com a natureza. O design biofílico traduz esse conceito em decisões projetuais concretas: escolha de materiais, uso de luz, circulação de ar, presença de vegetação e água.</p>
+        <p data-i18n-html="blog.post1.body.p2">Mais do que uma tendência estética, trata-se de uma abordagem baseada em evidências. Pesquisas publicadas em revistas como <em>Building and Environment</em> e <em>Journal of Environmental Psychology</em> demonstram que ambientes biofílicos reduzem os níveis de cortisol, melhoram a concentração e aumentam a satisfação geral dos ocupantes.</p>
 
-        <h2>Os cinco princípios fundamentais</h2>
+        <h2 data-i18n="blog.post1.h2.2">Os cinco princípios fundamentais</h2>
         <ul>
-            <li><strong>Luz natural:</strong> maximizar a entrada de luz solar direta e indireta, respeitando as orientações da fachada. Janelas maiores, claraboias e brises bem posicionados são recursos clássicos.</li>
-            <li><strong>Vegetação viva:</strong> plantas em vasos, jardins internos, paredes verdes e trepadeiras integradas à estrutura. A variedade de espécies, texturas e alturas cria profundidade visual.</li>
-            <li><strong>Materiais orgânicos:</strong> madeira, pedra, bambu, rattan e linho criam referências táteis e visuais ao mundo natural — mesmo sem a presença de plantas.</li>
-            <li><strong>Presença de água:</strong> fontes, espelhos d'água, tanques e cascatas introduzem sons e movimentos que acalmam o sistema nervoso.</li>
-            <li><strong>Ventilação cruzada e aromas:</strong> o ar em circulação, eventualmente perfumado por flores ou ervas aromáticas, completa a experiência sensorial.</li>
+            <li data-i18n-html="blog.post1.body.li1"><strong>Luz natural:</strong> maximizar a entrada de luz solar direta e indireta, respeitando as orientações da fachada. Janelas maiores, claraboias e brises bem posicionados são recursos clássicos.</li>
+            <li data-i18n-html="blog.post1.body.li2"><strong>Vegetação viva:</strong> plantas em vasos, jardins internos, paredes verdes e trepadeiras integradas à estrutura. A variedade de espécies, texturas e alturas cria profundidade visual.</li>
+            <li data-i18n-html="blog.post1.body.li3"><strong>Materiais orgânicos:</strong> madeira, pedra, bambu, rattan e linho criam referências táteis e visuais ao mundo natural — mesmo sem a presença de plantas.</li>
+            <li data-i18n-html="blog.post1.body.li4"><strong>Presença de água:</strong> fontes, espelhos d'água, tanques e cascatas introduzem sons e movimentos que acalmam o sistema nervoso.</li>
+            <li data-i18n-html="blog.post1.body.li5"><strong>Ventilação cruzada e aromas:</strong> o ar em circulação, eventualmente perfumado por flores ou ervas aromáticas, completa a experiência sensorial.</li>
         </ul>
 
-        <h2>Como aplicar em projetos residenciais</h2>
-        <p>Em residências, o ponto de partida é integrar a planta baixa ao exterior. Terraços, jardins internos (o chamado <em>jardim de inverno</em>) e fachadas com vegetação reduzem a fronteira entre dentro e fora. Internamente, o uso de vasos grandes estrategicamente posicionados — perto de janelas, em cantos mortos, ao longo de corredores — cria pontos de foco verde sem exigir reformas.</p>
-        <p>A escolha das espécies importa tanto quanto a disposição. Plantas de folhagem densa como <em>Monstera deliciosa</em>, <em>Ficus lyrata</em> e <em>Strelitzia reginae</em> entregam impacto visual com manutenção moderada. Para quem tem pouca luminosidade, <em>Zamioculca</em> e <em>Sansevieria</em> são aliadas.</p>
+        <h2 data-i18n="blog.post1.h2.3">Como aplicar em projetos residenciais</h2>
+        <p data-i18n-html="blog.post1.body.p3">Em residências, o ponto de partida é integrar a planta baixa ao exterior. Terraços, jardins internos (o chamado <em>jardim de inverno</em>) e fachadas com vegetação reduzem a fronteira entre dentro e fora. Internamente, o uso de vasos grandes estrategicamente posicionados — perto de janelas, em cantos mortos, ao longo de corredores — cria pontos de foco verde sem exigir reformas.</p>
+        <p data-i18n-html="blog.post1.body.p4">A escolha das espécies importa tanto quanto a disposição. Plantas de folhagem densa como <em>Monstera deliciosa</em>, <em>Ficus lyrata</em> e <em>Strelitzia reginae</em> entregam impacto visual com manutenção moderada. Para quem tem pouca luminosidade, <em>Zamioculca</em> e <em>Sansevieria</em> são aliadas.</p>
 
-        <h2>Aplicações em ambientes comerciais</h2>
-        <p>Escritórios, clínicas e hotéis adotam o design biofílico como estratégia de diferenciação e bem-estar corporativo. Paredes verdes no lobby, jardins suspensos em áreas de coworking e hortas em restaurantes corporativos são exemplos recorrentes. Os resultados vão além do apelo estético: estudos da Universidade de Exeter apontam aumento de 15% na produtividade de colaboradores em escritórios com elementos naturais.</p>
+        <h2 data-i18n="blog.post1.h2.4">Aplicações em ambientes comerciais</h2>
+        <p data-i18n="blog.post1.body.p5">Escritórios, clínicas e hotéis adotam o design biofílico como estratégia de diferenciação e bem-estar corporativo. Paredes verdes no lobby, jardins suspensos em áreas de coworking e hortas em restaurantes corporativos são exemplos recorrentes. Os resultados vão além do apelo estético: estudos da Universidade de Exeter apontam aumento de 15% na produtividade de colaboradores em escritórios com elementos naturais.</p>
 
-        <h2>Por onde começar?</h2>
-        <p>O design biofílico não precisa ser radical. Pequenas intervenções — uma prateleira com suculentas próxima à janela, uma bancada de madeira maciça, um quadro com padrões botânicos — já deslocam a percepção do espaço. O mais importante é a consistência: cada detalhe deve reforçar a mesma narrativa de conexão com o natural.</p>
-        <p>No GIDE Paisagismo, trabalhamos a integração entre paisagismo externo e design interno desde o início do projeto, garantindo que a linguagem verde atravesse todos os ambientes de forma coesa.</p>
+        <h2 data-i18n="blog.post1.h2.5">Por onde começar?</h2>
+        <p data-i18n="blog.post1.body.p6">O design biofílico não precisa ser radical. Pequenas intervenções — uma prateleira com suculentas próxima à janela, uma bancada de madeira maciça, um quadro com padrões botânicos — já deslocam a percepção do espaço. O mais importante é a consistência: cada detalhe deve reforçar a mesma narrativa de conexão com o natural.</p>
+        <p data-i18n="blog.post1.body.p7">No GIDE Paisagismo, trabalhamos a integração entre paisagismo externo e design interno desde o início do projeto, garantindo que a linguagem verde atravesse todos os ambientes de forma coesa.</p>
 
     </article>
 
     <!-- CTA -->
     <div class="post-cta">
-        <h3>Quer um jardim assim?</h3>
-        <p>Fale com nossa equipe e descubra como podemos transformar seu espaço com design biofílico.</p>
-        <a href="https://wa.me/5511999999999?text=Olá!%20Vi%20o%20artigo%20sobre%20Design%20Biofílico%20e%20gostaria%20de%20saber%20mais." class="btn-cta" target="_blank" rel="noopener">Fale Conosco no WhatsApp</a>
+        <h3 data-i18n="blog.post1.cta.title">Quer um jardim assim?</h3>
+        <p data-i18n="blog.post1.cta.p">Fale com nossa equipe e descubra como podemos transformar seu espaço com design biofílico.</p>
+        <a href="https://wa.me/5511999999999?text=Olá!%20Vi%20o%20artigo%20sobre%20Design%20Biofílico%20e%20gostaria%20de%20saber%20mais." class="btn-cta" target="_blank" rel="noopener" data-i18n="blog.post1.cta.btn">Fale Conosco no WhatsApp</a>
     </div>
 
     <!-- Footer -->
@@ -275,7 +285,7 @@
             <div class="footer-content">
                 <div class="footer-col">
                     <h3>GIDE Paisagismo</h3>
-                    <p>Transformando espaços verdes e conectando você com a natureza há mais de 15 anos.</p>
+                    <p data-i18n="footer.brand_desc">Transformando espaços verdes e conectando você com a natureza há mais de 15 anos.</p>
                     <div class="footer-social">
                         <div class="footer-social-icons">
                             <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
@@ -292,40 +302,40 @@
                 </div>
 
                 <div class="footer-col">
-                    <h3>Links Rápidos</h3>
+                    <h3 data-i18n="footer.quick_links">Links Rápidos</h3>
                     <ul class="footer-links">
-                        <li><a href="../index.html#sobre">Sobre</a></li>
-                        <li><a href="../index.html#servicos">Serviços</a></li>
-                        <li><a href="../index.html#depoimentos">Depoimentos</a></li>
-                        <li><a href="../index.html#contato">Contato</a></li>
+                        <li><a href="../index.html#sobre" data-i18n="footer.link_about">Sobre</a></li>
+                        <li><a href="../index.html#servicos" data-i18n="footer.link_services">Serviços</a></li>
+                        <li><a href="../index.html#depoimentos" data-i18n="footer.link_testimonials">Depoimentos</a></li>
+                        <li><a href="../index.html#contato" data-i18n="footer.link_contact">Contato</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h3>Serviços</h3>
+                    <h3 data-i18n="footer.services_title">Serviços</h3>
                     <ul class="footer-links">
-                        <li><a href="../jardins.html">Projetos de Jardins</a></li>
-                        <li><a href="../manutencao.html">Manutenção Paisagística</a></li>
-                        <li><a href="../irrigacao.html">Irrigação Automatizada</a></li>
-                        <li><a href="../jardins-verticais.html">Jardins Verticais</a></li>
-                        <li><a href="../telhados-verdes.html">Telhados Verdes</a></li>
-                        <li><a href="../consultoria.html">Consultoria Ambiental</a></li>
+                        <li><a href="../jardins.html" data-i18n="footer.link_gardens">Projetos de Jardins</a></li>
+                        <li><a href="../manutencao.html" data-i18n="footer.link_maintenance">Manutenção Paisagística</a></li>
+                        <li><a href="../irrigacao.html" data-i18n="footer.link_irrigation">Irrigação Automatizada</a></li>
+                        <li><a href="../jardins-verticais.html" data-i18n="footer.link_vertical">Jardins Verticais</a></li>
+                        <li><a href="../telhados-verdes.html" data-i18n="footer.link_green_roof">Telhados Verdes</a></li>
+                        <li><a href="../consultoria.html" data-i18n="footer.link_consulting">Consultoria Ambiental</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h3>Contato</h3>
+                    <h3 data-i18n="footer.contact_title">Contato</h3>
                     <ul class="footer-contact">
-                        <li><svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-map-marker-alt"></use></svg> <span>Rua Exemplo, 123<br>Cidade/Estado</span></li>
-                        <li><svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-phone"></use></svg> <span>(XX) XXXXX-XXXX</span></li>
-                        <li><svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-envelope"></use></svg> <span>contato@gidepaisagismo.com.br</span></li>
-                        <li><svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-clock"></use></svg> <span>Seg-Sex: 08h-18h</span></li>
+                        <li><svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-map-marker-alt"></use></svg> <span data-i18n-html="footer.address">Rua Exemplo, 123<br>Cidade/Estado</span></li>
+                        <li><svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-phone"></use></svg> <span data-i18n="footer.phone">(XX) XXXXX-XXXX</span></li>
+                        <li><svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-envelope"></use></svg> <span data-i18n="footer.email">contato@gidepaisagismo.com.br</span></li>
+                        <li><svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-clock"></use></svg> <span data-i18n="footer.hours">Seg-Sex: 08h-18h</span></li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 GIDE Paisagismo. Todos os direitos reservados.</p>
+                <p data-i18n="footer.copyright">&copy; 2026 GIDE Paisagismo. Todos os direitos reservados.</p>
                 <p>Desenvolvido com <svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#icon-heart"></use></svg> para conectar você com a natureza</p>
             </div>
         </div>

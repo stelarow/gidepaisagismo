@@ -260,10 +260,10 @@ h3 { font-size: var(--fs-h3); }
 }
 
 .nav-wrapper {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    padding: 0.15rem 0;
+    padding: 1rem 0;
     position: relative;
 }
 
@@ -277,9 +277,11 @@ h3 { font-size: var(--fs-h3); }
     text-decoration: none;
     line-height: 1;
     transition: color var(--transition-fast);
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    position: static;
+    transform: none;
+    text-align: center;
+    grid-column: 2;
+    white-space: nowrap;
 }
 
 .nav-brand:hover {
@@ -290,7 +292,10 @@ h3 { font-size: var(--fs-h3); }
     display: flex;
     gap: 1.25rem;
     align-items: center;
-    margin-left: auto;
+    grid-column: 3;
+    justify-self: end;
+    align-self: end;
+    padding-bottom: 0.25rem;
 }
 
 .nav-link {

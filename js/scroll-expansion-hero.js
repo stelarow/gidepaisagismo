@@ -36,8 +36,11 @@ class ScrollExpansionHero {
     }
 
     init() {
+        const initialHashTarget = this.getInitialHashTarget();
         document.documentElement.style.scrollSnapType = 'none';
-        window.scrollTo({ top: 0, behavior: 'instant' });
+        if (!initialHashTarget) {
+            window.scrollTo({ top: 0, behavior: 'instant' });
+        }
         requestAnimationFrame(() => {
             document.documentElement.style.scrollSnapType = '';
         });
@@ -45,6 +48,40 @@ class ScrollExpansionHero {
         this.setupEventListeners();
         this.checkIfMobile();
         this._setupVisibilityObserver();
+        if (initialHashTarget) {
+            this.navigateToInitialHash(initialHashTarget);
+        }
+    }
+
+    getInitialHashTarget() {
+        const hash = window.location.hash;
+        if (!hash || hash === '#' || hash === '#hero') return null;
+        try {
+            return document.querySelector(hash);
+        } catch (error) {
+            return null;
+        }
+    }
+
+    navigateToInitialHash(targetElement) {
+        this.navigationOverride = true;
+        this.mediaFullyExpanded = true;
+        this.showContent = true;
+        this.targetProgress = 1;
+        this.scrollProgress = 1;
+
+        requestAnimationFrame(() => {
+            this.updateProgress(1);
+            const navbar = document.getElementById('navbar');
+            const navOffset = navbar ? navbar.offsetHeight + 10 : 80;
+            const targetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - navOffset;
+            window.scrollTo({ top: Math.max(targetTop, 0), behavior: 'auto' });
+
+            clearTimeout(this._navOverrideTimer);
+            this._navOverrideTimer = setTimeout(() => {
+                this.navigationOverride = false;
+            }, 1500);
+        });
     }
 
     createElements() {

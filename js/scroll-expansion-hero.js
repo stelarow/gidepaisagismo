@@ -7,8 +7,8 @@ class ScrollExpansionHero {
     constructor(options = {}) {
         this.options = {
             mediaType: options.mediaType || 'image', // 'image' or 'video'
-            mediaSrc: options.mediaSrc || 'images/hero-bg.jpg',
-            bgImageSrc: options.bgImageSrc || 'images/hero-bg.jpg',
+            mediaSrc: options.mediaSrc || 'plantasgide.jpeg',
+            bgImageSrc: options.bgImageSrc || 'plantasgide.jpeg',
             bgVideoSrc: options.bgVideoSrc || '',
             posterSrc: options.posterSrc || '',
             title: options.title || 'GIDE Paisagismo',

@@ -4,7 +4,7 @@
   "description": "Site profissional GIDE Paisagismo - Transformando espaços verdes",
   "main": "index.html",
   "scripts": {
-    "dev": "npx http-server -p 8080 -c-1 & sleep 2 && cmd /c start chrome http://localhost:8080",
+    "dev": "npx http-server -p 8080 -c-1 -o",
     "start": "npx http-server -p 8080 -c-1",
     "dev:3000": "npx http-server -p 3000 -c-1 -o",
     "dev:5000": "npx http-server -p 5000 -c-1 -o",

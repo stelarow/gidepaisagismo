@@ -12,7 +12,7 @@ class ScrollExpansionHero {
             bgVideoSrc: options.bgVideoSrc || '',
             posterSrc: options.posterSrc || '',
             title: options.title || 'GIDE Paisagismo',
-            subtitle: options.subtitle || 'Transforme Seus Espaços Verdes',
+            subtitle: options.subtitle || 'Paisagismo sob medida para jardins, empresas e eventos',
             scrollToExpand: options.scrollToExpand || 'Role para expandir',
             textBlend: options.textBlend || false,
             ...options
@@ -407,7 +407,7 @@ document.addEventListener('DOMContentLoaded', function() {
             bgVideoSrc: 'images/Whisk_gdz4edn3qtywetnk1so2cjytudzkrtlhdto20cn.mp4',
             posterSrc: 'plantasgide.jpeg',
             title: 'GIDE PAISAGISMO',
-            subtitle: 'Transformando Espaços Verdes',
+            subtitle: 'Paisagismo sob medida para jardins, empresas e eventos',
             scrollToExpand: 'Role para explorar',
             textBlend: true
         });

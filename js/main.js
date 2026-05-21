@@ -441,7 +441,7 @@ function initializeBlogModal() {
                 renderFilters();
                 filterCards();
                 if (typeof applyLanguage === 'function') {
-                    var lang = (function() { try { return localStorage.getItem('gide-lang') || 'pt-BR'; } catch(e) { return 'pt-BR'; } })();
+                    var lang = typeof getCurrentLanguage === 'function' ? getCurrentLanguage() : 'pt-BR';
                     applyLanguage(lang);
                 }
             });
@@ -486,7 +486,8 @@ function initializeBlogModal() {
             if (match) { card.removeAttribute('hidden'); visible++; }
             else { card.setAttribute('hidden', ''); }
         });
-        var t = (typeof translations !== 'undefined') ? (translations[localStorage.getItem('gide-lang') || 'pt-BR'] || translations['pt-BR']) : null;
+        var lang = typeof getCurrentLanguage === 'function' ? getCurrentLanguage() : 'pt-BR';
+        var t = (typeof translations !== 'undefined') ? (translations[lang] || translations['pt-BR']) : null;
         var one = t ? t['blog.modal.count_one'] : 'artigo';
         var other = t ? t['blog.modal.count_other'] : 'artigos';
         countEl.textContent = visible + ' ' + (visible === 1 ? one : other);
@@ -507,7 +508,7 @@ function initializeBlogModal() {
         renderCards();
         filterCards();
         if (typeof applyLanguage === 'function') {
-            var lang = (function() { try { return localStorage.getItem('gide-lang') || 'pt-BR'; } catch(e) { return 'pt-BR'; } })();
+            var lang = typeof getCurrentLanguage === 'function' ? getCurrentLanguage() : 'pt-BR';
             applyLanguage(lang);
         }
         modal.classList.add('is-open');

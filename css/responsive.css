@@ -17,11 +17,12 @@
         grid-template-columns: 1fr auto 1fr;
         align-items: center;
         gap: 0;
+        padding: 0.55rem 0;
     }
 
     .nav-brand {
-        font-size: 1.4rem;
-        letter-spacing: 0.2em;
+        font-size: 1.2rem;
+        letter-spacing: 0.16em;
         position: static;
         transform: none;
         text-align: center;
@@ -62,7 +63,7 @@
         justify-self: end;
         margin-left: 0;
         z-index: 1001;
-        padding: 8px;
+        padding: 7px;
         transform: translateZ(0);                /* Força GPU compositing — fix para iOS Safari */
         -webkit-transform: translateZ(0);
         -webkit-backface-visibility: hidden;     /* Fix clássico iOS Safari — evita desaparecimento em GPU layer */
@@ -77,8 +78,8 @@
 
     .mobile-menu-toggle span {
         display: block;                          /* Reforço explícito no contexto mobile */
-        width: 22px;
-        height: 2.5px;
+        width: 20px;
+        height: 2px;
         background-color: var(--color-primary);  /* Verde marca em vez de preto */
     }
 
@@ -134,8 +135,8 @@
     /* ---- NAVEGAÇÃO ---- */
 
     .nav-brand {
-        font-size: 1.05rem;
-        letter-spacing: 0.08em;
+        font-size: 0.95rem;
+        letter-spacing: 0.06em;
     }
 
     .nav-link {
@@ -154,8 +155,8 @@
     }
 
     .btn-nav-contact {
-        width: 44px;
-        height: 44px;
+        width: 40px;
+        height: 40px;
         border-bottom: none !important;
     }
 

@@ -83,6 +83,18 @@ function initializeNavigation() {
     window.addEventListener('load', syncNavMenuTop);
     window.addEventListener('resize', syncNavMenuTop);
 
+    function releaseHeroForNavInteraction() {
+        if (window.scrollExpansionHero && typeof window.scrollExpansionHero.allowNavigation === 'function') {
+            window.scrollExpansionHero.allowNavigation();
+        }
+    }
+
+    if (navbar) {
+        ['pointerdown', 'touchstart', 'click'].forEach(function(eventName) {
+            navbar.addEventListener(eventName, releaseHeroForNavInteraction, { passive: true });
+        });
+    }
+
     // Força repaint do hamburger no mobile após todos os scripts carregarem (fix iOS Safari)
     window.addEventListener('load', function() {
         const toggle = document.querySelector('.mobile-menu-toggle');
@@ -155,7 +167,12 @@ function initializeNavigation() {
             if (targetElement) {
                 e.preventDefault();
 
-                if (window.scrollExpansionHero) {
+                if (window.scrollExpansionHero && typeof window.scrollExpansionHero.navigateToTarget === 'function') {
+                    window.scrollExpansionHero.navigateToTarget(targetElement);
+                    return;
+                }
+
+                if (window.scrollExpansionHero && typeof window.scrollExpansionHero.allowNavigation === 'function') {
                     window.scrollExpansionHero.allowNavigation();
                 }
 

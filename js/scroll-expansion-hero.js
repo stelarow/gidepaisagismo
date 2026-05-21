@@ -183,8 +183,13 @@ class ScrollExpansionHero {
         window.addEventListener('resize', this.checkIfMobile.bind(this));
     }
 
+    isNavbarInteraction(event) {
+        return event && event.target && event.target.closest && event.target.closest('.navbar');
+    }
+
     handleWheel(e) {
         if (!this.heroVisible) return;
+        if (this.isNavbarInteraction(e)) return;
         const navMenu = document.querySelector('.nav-menu');
         if (navMenu && navMenu.classList.contains('active')) return;
         if (this.mediaFullyExpanded && e.deltaY < 0 && window.scrollY <= 5) {
@@ -216,6 +221,11 @@ class ScrollExpansionHero {
 
     handleTouchStart(e) {
         if (!this.heroVisible) return;
+        if (this.isNavbarInteraction(e)) {
+            this.touchStartY = 0;
+            this.touchStartTarget = null;
+            return;
+        }
         const navMenu = document.querySelector('.nav-menu');
         if (navMenu && navMenu.classList.contains('active')) return;
         this.touchStartY = e.touches[0].clientY;
@@ -225,6 +235,7 @@ class ScrollExpansionHero {
     handleTouchMove(e) {
         if (!this.heroVisible) return;
         if (!this.touchStartY) return;
+        if (this.isNavbarInteraction(e)) return;
         const navMenu = document.querySelector('.nav-menu');
         if (navMenu && navMenu.classList.contains('active')) return;
         if (this.touchStartTarget && this.touchStartTarget.closest('.navbar')) return;
@@ -269,6 +280,41 @@ class ScrollExpansionHero {
         this._navOverrideTimer = setTimeout(() => {
             this.navigationOverride = false;
         }, 1200);
+    }
+
+    navigateToTarget(targetElement, options = {}) {
+        if (!targetElement) return;
+
+        const isHeroTarget = targetElement.id === 'hero';
+        const behavior = options.behavior || 'smooth';
+        const navbar = document.getElementById('navbar');
+        const navOffset = isHeroTarget ? 0 : (navbar ? navbar.offsetHeight + 10 : 80);
+
+        this.allowNavigation();
+        document.documentElement.style.scrollSnapType = 'none';
+
+        if (isHeroTarget) {
+            this.reset();
+        } else {
+            this.mediaFullyExpanded = true;
+            this.showContent = true;
+            this.expansionCooldown = false;
+            this.targetProgress = 1;
+            this.scrollProgress = 1;
+            this.updateProgress(1);
+
+            const targetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - navOffset;
+            window.scrollTo({
+                top: Math.max(targetTop, 0),
+                behavior
+            });
+        }
+
+        clearTimeout(this._navOverrideTimer);
+        this._navOverrideTimer = setTimeout(() => {
+            this.navigationOverride = false;
+            document.documentElement.style.scrollSnapType = '';
+        }, behavior === 'smooth' ? 1800 : 300);
     }
 
     handleScroll() {

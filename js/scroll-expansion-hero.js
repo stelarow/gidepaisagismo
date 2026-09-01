@@ -88,24 +88,28 @@ class ScrollExpansionHero {
         const hero = document.getElementById('hero');
         if (!hero) return;
 
-        // Limpar conteúdo existente
-        hero.innerHTML = '';
+        // Reaproveitar o vídeo já presente no HTML para que ele comece a carregar
+        // antes da inicialização do JavaScript, sem um flash branco no hero.
+        const existingBgLayer = hero.querySelector('.hero-bg-layer');
+        hero.replaceChildren();
         hero.classList.add('scroll-expansion-hero');
 
         // Background layer
-        const bgLayer = document.createElement('div');
+        const bgLayer = existingBgLayer || document.createElement('div');
         bgLayer.className = 'hero-bg-layer';
-        if (this.options.bgVideoSrc) {
+        if (!existingBgLayer && this.options.bgVideoSrc) {
             bgLayer.innerHTML = `
-                <video src="${this.options.bgVideoSrc}" autoplay muted loop playsinline class="hero-bg-video"></video>
+                <video src="${this.options.bgVideoSrc}" autoplay muted loop playsinline preload="auto" poster="${this.options.posterSrc}" class="hero-bg-video"></video>
                 <div class="hero-bg-overlay"></div>
             `;
-        } else {
+        } else if (!existingBgLayer) {
             bgLayer.innerHTML = `
                 <img src="${this.options.bgImageSrc}" alt="Background" class="hero-bg-image">
                 <div class="hero-bg-overlay"></div>
             `;
         }
+
+        this.startBackgroundVideo(bgLayer.querySelector('.hero-bg-video'));
 
         // Text container
         const textContainer = document.createElement('div');
@@ -165,6 +169,28 @@ class ScrollExpansionHero {
 
         // Aplicar dimensões iniciais (retrato) imediatamente
         this.updateProgress(0);
+    }
+
+    startBackgroundVideo(video) {
+        if (!video) return;
+
+        const playFromAnimatedFrame = () => {
+            if (video.currentTime < 0.15) {
+                try {
+                    video.currentTime = 0.15;
+                } catch (error) {
+                    // Alguns navegadores só permitem buscar após os metadados.
+                }
+            }
+            const playback = video.play();
+            if (playback) playback.catch(() => {});
+        };
+
+        if (video.readyState >= HTMLMediaElement.HAVE_METADATA) {
+            playFromAnimatedFrame();
+        } else {
+            video.addEventListener('loadedmetadata', playFromAnimatedFrame, { once: true });
+        }
     }
 
     setupEventListeners() {
